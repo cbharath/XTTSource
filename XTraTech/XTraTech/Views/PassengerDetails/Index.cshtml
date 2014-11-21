@@ -1,0 +1,308 @@
+﻿@model XTraTech.Models.PassengerModel
+@{
+    ViewBag.Title = "Index";
+}
+<div class="wrapper col3s">
+<div id="intro">
+    <script src="~/Scripts/SearchRq/SearchRs.js" type="text/javascript"></script>
+        <div class="rwrap">
+            <div class="results_holder">                
+				<div class="submission">
+                    <p class="pge_head">Flight Reservation</p>
+                </div>
+                @if (Model.SelectedOptions != null)
+                {
+                    foreach (var PricedItinerary in Model.SelectedOptions)
+                    {
+                    <div class="results">
+                        @Html.Partial("~/Views/Shared/_Itinerary.cshtml", PricedItinerary)
+                    </div>            
+                
+                    }
+                }
+				
+            </div>
+        <br />
+        <br />
+        <br />
+		<br />
+		<p class="pge_head" style="margin:0px 0px 10px 5px;">Passenger Details</p>
+        <!--ending wrap for itin(s) information -->
+        @using (Html.BeginForm())
+        {
+            int totalCount = 0;
+            if (Model.SelectedOptions.FirstOrDefault().FlightFares.Count > 0)
+            {
+                foreach (XTraTech.Entities.COM.FlightFare ptcBreakDown in Model.SelectedOptions.FirstOrDefault().FlightFares)
+                {
+                    if (ptcBreakDown.PaxType == XTraTech.Entities.COM.Enumaration.PaxType.ADT)
+                    {
+                        for (int indexPax = totalCount + 1; indexPax <= (ptcBreakDown.PaxCount) + totalCount; indexPax++)
+                        {                     
+            <div class="form_holder">
+                <div class="blk_one repeat">
+                    <div class="pax_head"><span>ADULT - @indexPax</span>
+					</div>
+                    <div class="add_aln2"><label>Title :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Title, Model.Titles, new { @class = "title" })
+                    </div>
+                    <div class="add_aln2"><label>FirstName :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FirstName, new { @class = "firstname" })
+                    </div>
+                    <div class="add_aln2"><label>LastName :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].LastName, new { @class = "lastname" })
+                    </div>
+                    <div class="add_aln2"><label>Date of birth :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Day, Model.Days, new { @class = "day_dob reduce_sz" })
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Month, Model.Months, new { @class = "mon_dob reduce_sz" })
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Year, new { @class = "yr_dob reduce_sz" })
+                    </div>
+                    <div class="add_aln2 rm_blk">
+                        @foreach (var value in Model.Genders)
+                        {
+                            @Html.RadioButtonFor(m => m.Passengers[indexPax - 1].Gender, value.Value)
+                            @Html.Label(value.Text)
+                        }
+                    </div>
+                </div>
+                <div class="blk_one">
+                    <p class="more_info">Advance Passenger Information</p>
+                    <div class="add_aln2">
+                        <label>Passport Number :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PassportNum, new { @class = "passport_no" })
+                    </div>
+                    <div class="add_aln2">
+                        <label>Expires on :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PDay, Model.Days, new { @class = "day_dob reduce_sz" })
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PMonth, Model.Months, new { @class = "exp_on_mon reduce_sz" })
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PYear, new { @class = "yr_dob reduce_sz" })
+                    </div>
+                    <div class="add_aln2">
+                        <label>Country :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Country, new { @class = "country" })
+                    </div>
+                    <div class="add_aln2">
+                        <label>Nationality :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Nationality, new { @class = "national" })
+                    </div>
+                </div>
+                <div class="blk_one">
+                    <div class="add_aln2">
+                        <label>Meal preference</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].MealReq, Model.MealPrefList, new { @class = "meal" })
+                    </div>
+                    <div class="add_aln2">
+                        <label>Seat Preference :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].SeatPref, Model.SeatPrefList, new { @class = "seat_pref" })
+                    </div>
+                    <div class="add_aln2">
+                        <label>Frequent Flier :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FFNum, new { @class = "ff_no" })
+                    </div>
+                </div>
+            </div>
+            <br />                            
+                        }
+                        totalCount += ptcBreakDown.PaxCount;
+                    }
+                    else if (ptcBreakDown.PaxType == XTraTech.Entities.COM.Enumaration.PaxType.CHD)
+                    {
+                        for (int indexPax = totalCount + 1; indexPax <= (ptcBreakDown.PaxCount) + totalCount; indexPax++)
+                        {                        
+            <div class="form_holder">
+                <div class="blk_one repeat">
+                    <p class="pax_head">
+                        <span>CHILD -@indexPax</span></p>
+                    <p class="add_aln2">
+                        <label>Title</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Title, Model.Titles, new { @class = "title" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>FirstName :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FirstName, new { @class = "firstname" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>LastName :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].LastName, new { @class = "lastname" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Date of birth :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Day, Model.Days, new { @class = "day_dob reduce_sz" })
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Month, Model.Months, new { @class = "mon_dob reduce_sz" })
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Year, new { @class = "yr_dob reduce_sz" })
+                    </p>
+                    <p class="add_aln2 rm_blk">
+                        @foreach (var value in Model.Genders)
+                        {
+                            @Html.RadioButtonFor(m => m.Passengers[indexPax - 1].Gender, value.Value)
+                            @Html.Label(value.Text)
+                        }
+                    </p>
+                </div>
+                <div class="blk_one">
+                    <p class="more_info">Advance Passenger Information</p>
+                    <p class="add_aln2">
+                        <label>Passport Number :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PassportNum, new { @class = "passport_no" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Expires On :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PDay, Model.Days, new { @class = "day_dob reduce_sz" })
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PMonth, Model.Months, new { @class = "exp_on_mon reduce_sz" })
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PYear, new { @class = "yr_dob reduce_sz" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Country :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Country, new { @class = "country" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Nationality :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Nationality, new { @class = "national" })
+                    </p>
+                </div>
+                <div class="blk_one">
+                    <p class="add_aln2">
+                        <label>Meal Preference :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].MealReq, Model.MealPrefList, new { @class = "meal" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Seat Preference :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].SeatPref, Model.SeatPrefList, new { @class = "seat_pref" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Frequent Flier :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FFNum, new { @class = "ff_no" })
+                    </p>
+                </div>
+            </div>
+            <br />
+                        }
+                        totalCount += ptcBreakDown.PaxCount;
+                    }
+                    else if (ptcBreakDown.PaxType == XTraTech.Entities.COM.Enumaration.PaxType.INF)
+                    {
+                        for (int indexPax = totalCount + 1; indexPax <= (ptcBreakDown.PaxCount) + totalCount; indexPax++)
+                        {                        
+            <div class="form_holder">
+                <div class="blk_one repeat">
+                    <p class="pax_head">
+                        <span>Infant -@indexPax</span></p>
+                    <p class="add_aln2">
+                        <label>
+                            Title</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Title, Model.Titles, new { @class = "title" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>
+                            FirstName :
+                        </label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FirstName, new { @class = "firstname" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>
+                            LastName :
+                        </label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].LastName, new { @class = "lastname" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>
+                            Date of birth :
+                        </label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Day, Model.Days, new { @class = "day_dob reduce_sz" })
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Month, Model.Months, new { @class = "mon_dob reduce_sz" })
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Year, new { @class = "yr_dob reduce_sz" })
+                    </p>
+                    <p class="add_aln2 rm_blk">
+                        @foreach (var value in Model.Genders)
+                        {
+                            @Html.RadioButtonFor(m => m.Passengers[indexPax - 1].Gender, value.Value)
+                            @Html.Label(value.Text)
+                        }
+                    </p>
+                </div>
+                <div class="blk_one">
+                    <p class="more_info">Advance Passenger Information</p>
+                    <p class="add_aln2">
+                        <label>Passport Number :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PassportNum, new { @class = "passport_no" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Expires On :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PDay, Model.Days, new { @class = "day_dob reduce_sz" })
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PMonth, Model.Months, new { @class = "exp_on_mon reduce_sz" })
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PYear, new { @class = "yr_dob reduce_sz" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Country :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Country, new { @class = "country" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Nationality :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Nationality, new { @class = "national" })
+                    </p>
+                </div>
+                <div class="blk_one">
+                    <p class="add_aln2">
+                        <label>Meal Preference :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].MealReq, Model.MealPrefList, new { @class = "meal" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Seat Preference :</label>
+                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].SeatPref, Model.SeatPrefList, new { @class = "seat_pref" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Frequent Flier :</label>
+                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FFNum, new { @class = "ff_no" })
+                    </p>
+                </div>
+            </div>
+            <br />                   
+                        }
+                        totalCount += ptcBreakDown.PaxCount;
+                    }
+                }
+            <div class="form_holder">
+                <div class="blk_one">
+                    <p class="more_info">Emergency Contact Information</p>
+                    <p class="add_aln2">
+                        <label>Address :</label>
+                        @Html.TextBoxFor(m => m.Address, new { @class = "address" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Email :</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "email" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>*Mobile :</label>
+                        @Html.TextBoxFor(m => m.MobileNum, new { @class = "mobile" })
+                    </p>
+                    <p class="add_aln2">
+                        <label>Postal Code :</label>
+                        @Html.TextBoxFor(m => m.PostalCode, new { @class = "post_code" })
+                    </p>
+                </div>
+            </div>
+            <div class="act">
+                @if (Model.SelectedOptions.Count > 0)
+                {
+                    <input type="submit" id="submit_book_btn" class="submit_btn" value="Book Ticket" />
+                }
+            </div>           
+            }
+        }
+        <!--ending results holder-->
+        <div style="display: none">
+            <div id="dialog-modal" title="Fare Rules">
+                <p id="dialog_content">
+                </p>
+            </div>
+        </div>
+        <!-- ending modal -->
+        <!-- Process bar -->
+        <div id="progressbar">
+            <div class="progress-label">
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,5 @@
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Projects\Adapters\bin\Release\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Projects\Adapters\bin\Release\Adapters.pdb
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Projects\Adapters\obj\Release\Adapters.csprojResolveAssemblyReference.cache
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Projects\Adapters\obj\Release\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Projects\Adapters\obj\Release\Adapters.pdb

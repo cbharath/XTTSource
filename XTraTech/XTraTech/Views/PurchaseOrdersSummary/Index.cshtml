@@ -1,0 +1,71 @@
+﻿@model XTraTech.Web.Models.PurchaseOrdersSummary
+@{
+    ViewBag.Title = "Index";
+}
+<div class="wrapper col3">
+<h2>
+    Purchase Orders Details</h2>
+<table>
+    <tr>
+        <th>
+            Purchase Order Ref
+        </th>
+        <th>
+            Purchased Date
+        </th>
+        <th>
+            Travel Date
+        </th>
+        <th>
+            Primary Pax
+        </th>
+        <th>
+            Pax Count
+        </th>
+        <th>
+            Airports
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Payment Status
+        </th>
+        <th>
+            Total
+        </th>
+    </tr>
+    @foreach (var item in Model.puchases)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.PurchaseOrderID, "Index", "PurchaseOrder", new { BookingId = item.PurchaseOrderID }, new { @name = item.PurchaseOrderID })
+            </td>
+            <td>
+                @item.CreatedOn.ToShortDateString()
+            </td>
+            <td>
+                @item.TravelDate
+            </td>
+            <td>
+                @item.PrimaryPax
+            </td>
+            <td>
+                @item.PaxCountSummary
+            </td>
+            <td>
+                @item.Airports
+            </td>
+            <td>
+                @item.Status
+            </td>
+            <td>
+                @item.PaymentStatus
+            </td>
+            <td>
+                @item.Total
+            </td>
+        </tr>
+    }
+</table>
+</div>

@@ -1,0 +1,12 @@
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\Adapters\bin\Debug\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\Adapters\bin\Debug\Adapters.pdb
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\Adapters\obj\Debug\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\Adapters\obj\Debug\Adapters.pdb
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\Adapters\bin\Debug\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\Adapters\bin\Debug\Adapters.pdb
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\Adapters\obj\Debug\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\Adapters\obj\Debug\Adapters.pdb
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\Adapters\bin\Debug\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\Adapters\bin\Debug\Adapters.pdb
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\Adapters\obj\Debug\Adapters.dll
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\Adapters\obj\Debug\Adapters.pdb

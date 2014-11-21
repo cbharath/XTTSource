@@ -1,0 +1,18 @@
+G:\Bharath\3NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.dll
+G:\Bharath\3NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.pdb
+G:\Bharath\3NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.dll
+G:\Bharath\3NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\3NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\6NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.csprojResolveAssemblyReference.cache
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.DAL\bin\Debug\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.csprojResolveAssemblyReference.cache
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.DAL\obj\Debug\XTraTech.DAL.pdb

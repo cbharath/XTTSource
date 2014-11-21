@@ -1,0 +1,11 @@
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\MyFares.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\MyFares.pdb
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\XTraTech.Entities.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\XTraTech.DAL.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\XTraTech.Helper.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\XTraTech.Entities.pdb
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\XTraTech.DAL.pdb
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\bin\Release\XTraTech.Helper.pdb
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\obj\Release\MyFares.csprojResolveAssemblyReference.cache
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\obj\Release\MyFares.dll
+D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\MyFares\obj\Release\MyFares.pdb

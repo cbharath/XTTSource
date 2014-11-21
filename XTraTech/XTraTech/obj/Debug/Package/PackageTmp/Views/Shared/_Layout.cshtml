@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>X.TRA.TECH - EXPERT TRAVEL TECHNOLOGY</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    <script src="~/Scripts/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/Scripts/common.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="wrapper col1">
+        <div id="header">
+            <div id="logo">
+                <h1>
+                    Your Logo here</h1>
+            </div>
+            <div id="Clogin">
+                <div id="topnav">
+                    <ul>
+                        <li class="active"><a href="index.htm">
+                            <img src="../../Images/home.gif" /></a></li>
+                        <li><a href="flight.htm">
+                            <img src="../../Images/flight.gif" /></a></li>
+                        <li><a href="hotel.htm">
+                            <img src="../../Images/hotel.gif" /></a></li>
+                        <li><a href="car.htm">
+                            <img src="../../Images/car.gif" /></a></li>
+                        <li><a href="cruise.htm">
+                            <img src="../../Images/cruise.gif" /></a></li>
+                        <li><a href="bus.htm">
+                            <img src="../../Images/bus.gif" /></a></li>
+                        <li><a href="train.htm">
+                            <img src="../../Images/train.gif" /></a></li>
+                        <li><a href="meal.htm">
+                            <img src="../../Images/meal.gif" /></a></li>
+                    </ul>
+                    </li> </ul>
+                </div>
+            </div>
+            <br class="clear" />
+        </div>
+    </div>
+    <div class="wrapper col2">
+        <div id="topbar">
+        </div>
+    </div>
+    @RenderBody()
+    <div class="wrapper col7">
+	  <div id="copyright">
+		<p class="fl_left"><a href="#">Domain Name</a></p>
+		<p class="fl_right">Copyright &copy; 2011 - All Rights Reserved</p>
+		<br class="clear" />
+	  </div>
+	</div>
+    <a href="#" class="scrollup">
+        <img style="width: 58px;" src="../../Images/scrolltoTop.jpg" />
+    </a>
+</body>
+</html>

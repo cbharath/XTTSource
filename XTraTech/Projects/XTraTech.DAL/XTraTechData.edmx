@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="XTraTechModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="XTraTechModelStoreContainer">
+          <EntitySet Name="Airports" EntityType="XTraTechModel.Store.Airports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FlightDetails" EntityType="XTraTechModel.Store.FlightDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FlightFare" EntityType="XTraTechModel.Store.FlightFare" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FlightPassenger" EntityType="XTraTechModel.Store.FlightPassenger" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FlightSegment" EntityType="XTraTechModel.Store.FlightSegment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Itineraries" EntityType="XTraTechModel.Store.Itineraries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PurchaseOrder" EntityType="XTraTechModel.Store.PurchaseOrder" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Airports">
+          <Key>
+            <PropertyRef Name="airpirtid" />
+          </Key>
+          <Property Name="airportCode" Type="nvarchar" Nullable="false" MaxLength="5" />
+          <Property Name="airportName" Type="nvarchar" MaxLength="255" />
+          <Property Name="cityCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="cityName" Type="nvarchar" MaxLength="255" />
+          <Property Name="countryName" Type="nvarchar" MaxLength="255" />
+          <Property Name="countryCode" Type="nvarchar" MaxLength="255" />
+          <Property Name="LangCode" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="ICAO" Type="nvarchar" MaxLength="255" />
+          <Property Name="latitude" Type="nvarchar" MaxLength="255" />
+          <Property Name="longitude" Type="nvarchar" MaxLength="255" />
+          <Property Name="altitude" Type="nvarchar" MaxLength="255" />
+          <Property Name="timezone" Type="nvarchar" MaxLength="255" />
+          <Property Name="DST" Type="nvarchar" MaxLength="255" />
+          <Property Name="UTCOffset" Type="nvarchar" MaxLength="255" />
+          <Property Name="airpirtid" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="FlightDetails">
+          <Key>
+            <PropertyRef Name="FlightDetailsID" />
+          </Key>
+          <Property Name="FlightDetailsID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderID" Type="bigint" Nullable="false" />
+          <Property Name="TktTimeLimit" Type="datetime" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="datetime" Nullable="false" />
+          <Property Name="PNR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ItineraryID" Type="nvarchar" Nullable="false" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="FlightFare">
+          <Key>
+            <PropertyRef Name="FlightFareID" />
+          </Key>
+          <Property Name="FlightFareID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlightDetailsID" Type="bigint" Nullable="false" />
+          <Property Name="BaseFare" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Tax" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="Currency" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="ROE" Type="decimal" Nullable="false" Scale="5" />
+          <Property Name="PaxType" Type="tinyint" Nullable="false" />
+          <Property Name="PaxCount" Type="tinyint" Nullable="false" />
+          <Property Name="MarkUp" Type="decimal" Nullable="false" Scale="2" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="datetime" Nullable="false" />
+          <Property Name="FareType" Type="nvarchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="FlightPassenger">
+          <Key>
+            <PropertyRef Name="PaxID" />
+          </Key>
+          <Property Name="PaxID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderID" Type="bigint" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="AreaCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="CountryCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="FFNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaxType" Type="tinyint" Nullable="false" />
+          <Property Name="PassportNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassportDOE" Type="datetime" />
+          <Property Name="PassportNationality" Type="nvarchar" MaxLength="2" />
+          <Property Name="SeatPref" Type="tinyint" />
+          <Property Name="MealPref" Type="tinyint" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlightSegment">
+          <Key>
+            <PropertyRef Name="FlightSegmentID" />
+          </Key>
+          <Property Name="FlightSegmentID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FlightDetailsID" Type="bigint" Nullable="false" />
+          <Property Name="Origin" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="Destination" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="DepartureDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ArrivalDateime" Type="datetime" Nullable="false" />
+          <Property Name="JourneyDuration" Type="nvarchar" MaxLength="10" />
+          <Property Name="StopQuantity" Type="nvarchar" MaxLength="10" />
+          <Property Name="FlightNumber" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="FlightCode" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="OperatingAirline" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="EquipmentType" Type="nvarchar" MaxLength="10" />
+          <Property Name="BookingClass" Type="nvarchar" MaxLength="10" />
+          <Property Name="CabinClass" Type="nvarchar" MaxLength="10" />
+          <Property Name="MarketingAirline" Type="nvarchar" MaxLength="10" />
+          <Property Name="AirlinePNR" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="datetime" Nullable="false" />
+          <Property Name="SegmentGroupID" Type="int" />
+          <Property Name="IsReturn" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Itineraries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ItineraryID" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="SerializedXML" Type="varbinary(max)" Nullable="false" />
+          <Property Name="SearchID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsBooked" Type="bit" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="PurchaseOrderID" />
+          </Key>
+          <Property Name="PurchaseOrderID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="datetime" Nullable="false" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="SearchID" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Function Name="GetAirports" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="LangCode" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetAllPurchaseOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetFlightDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PurchaseOrderID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetFlightFares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FlightDetailsID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetFlightPassengers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PurchaseOrderID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetFlightSegments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FlightDetailsID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetItinerary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItineraryID" Type="varchar" Mode="In" />
+          <Parameter Name="SearchID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GetPurchaseOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PurchaseOrderID" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="InsertFlightDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TktTimeLimit" Type="datetime" Mode="In" />
+          <Parameter Name="PNR" Type="nvarchar" Mode="In" />
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+          <Parameter Name="ModefiedOn" Type="datetime" Mode="In" />
+          <Parameter Name="ItineraryID" Type="nvarchar" Mode="In" />
+          <Parameter Name="PurchaseOrderID" Type="bigint" Mode="In" />
+          <Parameter Name="FlightDetailsID" Type="bigint" Mode="InOut" />
+        </Function>
+        <Function Name="InsertFlightFare" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Currency" Type="nvarchar" Mode="In" />
+          <Parameter Name="BaseFare" Type="decimal" Mode="In" />
+          <Parameter Name="Tax" Type="decimal" Mode="In" />
+          <Parameter Name="MarkUp" Type="decimal" Mode="In" />
+          <Parameter Name="ROE" Type="decimal" Mode="In" />
+          <Parameter Name="PaxCount" Type="tinyint" Mode="In" />
+          <Parameter Name="PaxType" Type="tinyint" Mode="In" />
+          <Parameter Name="FareType" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+          <Parameter Name="ModefiedOn" Type="datetime" Mode="In" />
+          <Parameter Name="FlightDetailsID" Type="bigint" Mode="In" />
+          <Parameter Name="FlightFareID" Type="bigint" Mode="InOut" />
+        </Function>
+        <Function Name="InsertFlightPassenger" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Title" Type="nvarchar" Mode="In" />
+          <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+          <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="DOB" Type="datetime" Mode="In" />
+          <Parameter Name="Gender" Type="nvarchar" Mode="In" />
+          <Parameter Name="AreaCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="CountryCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="FFNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="PaxType" Type="tinyint" Mode="In" />
+          <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="PassportNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="PassportNationality" Type="nvarchar" Mode="In" />
+          <Parameter Name="PassportDOE" Type="datetime" Mode="In" />
+          <Parameter Name="SearPref" Type="tinyint" Mode="In" />
+          <Parameter Name="MealPref" Type="tinyint" Mode="In" />
+          <Parameter Name="Address1" Type="nvarchar" Mode="In" />
+          <Parameter Name="Address2" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+          <Parameter Name="ModefiedOn" Type="datetime" Mode="In" />
+          <Parameter Name="PurchaseOrderID" Type="bigint" Mode="In" />
+          <Parameter Name="PaxID" Type="bigint" Mode="InOut" />
+        </Function>
+        <Function Name="InsertFlightSegment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SegmentGroupID" Type="int" Mode="In" />
+          <Parameter Name="IsReturn" Type="bit" Mode="In" />
+          <Parameter Name="Origin" Type="nvarchar" Mode="In" />
+          <Parameter Name="Destination" Type="nvarchar" Mode="In" />
+          <Parameter Name="DepartureDateTime" Type="datetime" Mode="In" />
+          <Parameter Name="ArrivalDateime" Type="datetime" Mode="In" />
+          <Parameter Name="JourneyDuration" Type="nvarchar" Mode="In" />
+          <Parameter Name="StopQuantity" Type="nvarchar" Mode="In" />
+          <Parameter Name="FlightNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="FlightCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="OperatingAirline" Type="nvarchar" Mode="In" />
+          <Parameter Name="EquipmentType" Type="nvarchar" Mode="In" />
+          <Parameter Name="BookingClass" Type="nvarchar" Mode="In" />
+          <Parameter Name="CabinClass" Type="nvarchar" Mode="In" />
+          <Parameter Name="MarketingAirline" Type="nvarchar" Mode="In" />
+          <Parameter Name="AirlinePNR" Type="nvarchar" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+          <Parameter Name="ModefiedOn" Type="datetime" Mode="In" />
+          <Parameter Name="FlightDetailsID" Type="bigint" Mode="In" />
+          <Parameter Name="FlightSegmentID" Type="bigint" Mode="InOut" />
+        </Function>
+        <Function Name="InsertItinerary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ItineraryID" Type="varchar" Mode="In" />
+          <Parameter Name="SerializedXML" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="SearchID" Type="varchar" Mode="In" />
+          <Parameter Name="IsBooked" Type="bit" Mode="In" />
+          <Parameter Name="ID" Type="bigint" Mode="InOut" />
+        </Function>
+        <Function Name="InsertPurchaseOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Status" Type="int" Mode="In" />
+          <Parameter Name="clientID" Type="int" Mode="In" />
+          <Parameter Name="SearchID" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedOn" Type="datetime" Mode="In" />
+          <Parameter Name="ModefiedOn" Type="datetime" Mode="In" />
+          <Parameter Name="PurchaseOrderID" Type="bigint" Mode="InOut" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="XTraTechModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="XTraTechEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FlightDetails" EntityType="XTraTechModel.FlightDetail" />
+          <EntitySet Name="FlightFares" EntityType="XTraTechModel.FlightFare" />
+          <EntitySet Name="FlightPassengers" EntityType="XTraTechModel.FlightPassenger" />
+          <EntitySet Name="FlightSegments" EntityType="XTraTechModel.FlightSegment" />
+          <EntitySet Name="Itineraries" EntityType="XTraTechModel.Itinerary" />
+          <EntitySet Name="PurchaseOrders" EntityType="XTraTechModel.PurchaseOrder" />
+          <EntitySet Name="Airports" EntityType="XTraTechModel.Airport" />
+        </EntityContainer>
+        <EntityType Name="FlightDetail">
+          <Key>
+            <PropertyRef Name="FlightDetailsID" />
+          </Key>
+          <Property Name="FlightDetailsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderID" Type="Int64" Nullable="false" />
+          <Property Name="TktTimeLimit" Type="DateTime" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="PNR" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="ItineraryID" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FlightFare">
+          <Key>
+            <PropertyRef Name="FlightFareID" />
+          </Key>
+          <Property Name="FlightFareID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FlightDetailsID" Type="Int64" Nullable="false" />
+          <Property Name="BaseFare" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Tax" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Currency" Type="String" Nullable="false" MaxLength="3" Unicode="true" FixedLength="false" />
+          <Property Name="ROE" Type="Decimal" Nullable="false" Precision="18" Scale="5" />
+          <Property Name="PaxType" Type="Byte" Nullable="false" />
+          <Property Name="PaxCount" Type="Byte" Nullable="false" />
+          <Property Name="MarkUp" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="FareType" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FlightPassenger">
+          <Key>
+            <PropertyRef Name="PaxID" />
+          </Key>
+          <Property Name="PaxID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PurchaseOrderID" Type="Int64" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DOB" Type="DateTime" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="AreaCode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CountryCode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="FFNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PaxType" Type="Byte" Nullable="false" />
+          <Property Name="PassportNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PassportDOE" Type="DateTime" />
+          <Property Name="PassportNationality" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+          <Property Name="SeatPref" Type="Byte" />
+          <Property Name="MealPref" Type="Byte" />
+          <Property Name="Address1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FlightSegment">
+          <Key>
+            <PropertyRef Name="FlightSegmentID" />
+          </Key>
+          <Property Name="FlightSegmentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FlightDetailsID" Type="Int64" Nullable="false" />
+          <Property Name="Origin" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="Destination" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="DepartureDateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ArrivalDateime" Type="DateTime" Nullable="false" />
+          <Property Name="JourneyDuration" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="StopQuantity" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="FlightNumber" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="FlightCode" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="OperatingAirline" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="EquipmentType" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="BookingClass" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CabinClass" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="MarketingAirline" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="AirlinePNR" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="SegmentGroupID" Type="Int32" />
+          <Property Name="IsReturn" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Itinerary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItineraryID" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SerializedXML" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="SearchID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsBooked" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="PurchaseOrderID" />
+          </Key>
+          <Property Name="PurchaseOrderID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ModefiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="SearchID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Airport">
+          <Key>
+            <PropertyRef Name="airpirtid" />
+          </Key>
+          <Property Type="String" Name="airportCode" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="airportName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cityCode" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="cityName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="countryName" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="countryCode" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LangCode" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ICAO" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="latitude" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="longitude" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="altitude" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="timezone" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DST" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UTCOffset" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="airpirtid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="XTraTechModelStoreContainer" CdmEntityContainer="XTraTechEntities">
+          <EntitySetMapping Name="FlightDetails">
+            <EntityTypeMapping TypeName="XTraTechModel.FlightDetail">
+              <MappingFragment StoreEntitySet="FlightDetails">
+                <ScalarProperty Name="FlightDetailsID" ColumnName="FlightDetailsID" />
+                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+                <ScalarProperty Name="TktTimeLimit" ColumnName="TktTimeLimit" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModefiedOn" ColumnName="ModefiedOn" />
+                <ScalarProperty Name="PNR" ColumnName="PNR" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ItineraryID" ColumnName="ItineraryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlightFares">
+            <EntityTypeMapping TypeName="XTraTechModel.FlightFare">
+              <MappingFragment StoreEntitySet="FlightFare">
+                <ScalarProperty Name="FlightFareID" ColumnName="FlightFareID" />
+                <ScalarProperty Name="FlightDetailsID" ColumnName="FlightDetailsID" />
+                <ScalarProperty Name="BaseFare" ColumnName="BaseFare" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="ROE" ColumnName="ROE" />
+                <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+                <ScalarProperty Name="PaxCount" ColumnName="PaxCount" />
+                <ScalarProperty Name="MarkUp" ColumnName="MarkUp" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModefiedOn" ColumnName="ModefiedOn" />
+                <ScalarProperty Name="FareType" ColumnName="FareType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlightPassengers">
+            <EntityTypeMapping TypeName="XTraTechModel.FlightPassenger">
+              <MappingFragment StoreEntitySet="FlightPassenger">
+                <ScalarProperty Name="PaxID" ColumnName="PaxID" />
+                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+                <ScalarProperty Name="FFNumber" ColumnName="FFNumber" />
+                <ScalarProperty Name="PaxType" ColumnName="PaxType" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="PassportDOE" ColumnName="PassportDOE" />
+                <ScalarProperty Name="PassportNationality" ColumnName="PassportNationality" />
+                <ScalarProperty Name="SeatPref" ColumnName="SeatPref" />
+                <ScalarProperty Name="MealPref" ColumnName="MealPref" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModefiedOn" ColumnName="ModefiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FlightSegments">
+            <EntityTypeMapping TypeName="XTraTechModel.FlightSegment">
+              <MappingFragment StoreEntitySet="FlightSegment">
+                <ScalarProperty Name="FlightSegmentID" ColumnName="FlightSegmentID" />
+                <ScalarProperty Name="FlightDetailsID" ColumnName="FlightDetailsID" />
+                <ScalarProperty Name="Origin" ColumnName="Origin" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="DepartureDateTime" ColumnName="DepartureDateTime" />
+                <ScalarProperty Name="ArrivalDateime" ColumnName="ArrivalDateime" />
+                <ScalarProperty Name="JourneyDuration" ColumnName="JourneyDuration" />
+                <ScalarProperty Name="StopQuantity" ColumnName="StopQuantity" />
+                <ScalarProperty Name="FlightNumber" ColumnName="FlightNumber" />
+                <ScalarProperty Name="FlightCode" ColumnName="FlightCode" />
+                <ScalarProperty Name="OperatingAirline" ColumnName="OperatingAirline" />
+                <ScalarProperty Name="EquipmentType" ColumnName="EquipmentType" />
+                <ScalarProperty Name="BookingClass" ColumnName="BookingClass" />
+                <ScalarProperty Name="CabinClass" ColumnName="CabinClass" />
+                <ScalarProperty Name="MarketingAirline" ColumnName="MarketingAirline" />
+                <ScalarProperty Name="AirlinePNR" ColumnName="AirlinePNR" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModefiedOn" ColumnName="ModefiedOn" />
+                <ScalarProperty Name="SegmentGroupID" ColumnName="SegmentGroupID" />
+                <ScalarProperty Name="IsReturn" ColumnName="IsReturn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Itineraries">
+            <EntityTypeMapping TypeName="XTraTechModel.Itinerary">
+              <MappingFragment StoreEntitySet="Itineraries">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ItineraryID" ColumnName="ItineraryID" />
+                <ScalarProperty Name="SerializedXML" ColumnName="SerializedXML" />
+                <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrders">
+            <EntityTypeMapping TypeName="XTraTechModel.PurchaseOrder">
+              <MappingFragment StoreEntitySet="PurchaseOrder">
+                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ModefiedOn" ColumnName="ModefiedOn" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="SearchID" ColumnName="SearchID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Airports">
+            <EntityTypeMapping TypeName="XTraTechModel.Airport">
+              <MappingFragment StoreEntitySet="Airports">
+                <ScalarProperty Name="airpirtid" ColumnName="airpirtid" />
+                <ScalarProperty Name="UTCOffset" ColumnName="UTCOffset" />
+                <ScalarProperty Name="DST" ColumnName="DST" />
+                <ScalarProperty Name="timezone" ColumnName="timezone" />
+                <ScalarProperty Name="altitude" ColumnName="altitude" />
+                <ScalarProperty Name="longitude" ColumnName="longitude" />
+                <ScalarProperty Name="latitude" ColumnName="latitude" />
+                <ScalarProperty Name="ICAO" ColumnName="ICAO" />
+                <ScalarProperty Name="LangCode" ColumnName="LangCode" />
+                <ScalarProperty Name="countryCode" ColumnName="countryCode" />
+                <ScalarProperty Name="countryName" ColumnName="countryName" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="cityCode" ColumnName="cityCode" />
+                <ScalarProperty Name="airportName" ColumnName="airportName" />
+                <ScalarProperty Name="airportCode" ColumnName="airportCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="XTraTechData" ZoomLevel="81">
+        <EntityTypeShape EntityType="XTraTechModel.FlightDetail" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5771907552083331" IsExpanded="true" />
+        <EntityTypeShape EntityType="XTraTechModel.FlightFare" Width="1.5" PointX="2.75" PointY="0.75" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="XTraTechModel.FlightPassenger" Width="1.5" PointX="4.75" PointY="0.75" Height="5.2494108072916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="XTraTechModel.FlightSegment" Width="1.5" PointX="0.75" PointY="5.75" Height="4.8648079427083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="XTraTechModel.Itinerary" Width="1.5" PointX="6.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="XTraTechModel.PurchaseOrder" Width="1.5" PointX="2.75" PointY="6.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="XTraTechModel.Airport" Width="1.5" PointX="5.375" PointY="6.75" Height="3.9033007812499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

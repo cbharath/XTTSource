@@ -1,0 +1,1 @@
+﻿wsdl /par:C:/Bharath/BharathDev/CreateProxy.bat /f /out:C:/Bharath/BharathDev

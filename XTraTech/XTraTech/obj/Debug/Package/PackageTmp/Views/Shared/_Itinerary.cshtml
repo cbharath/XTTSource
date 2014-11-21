@@ -1,0 +1,93 @@
+﻿@using XTraTech.Models
+@model XTraTech.Entities.COM.FlightDetail
+<div class="results">
+    <div class="rslt_head">
+        <div class="rslt_fare">
+            <span><a>@Model.GetFare(Model.FlightFares, "currency") @Model.GetFare(Model.FlightFares, "basefare").Split(new[] { '.' })[0]</a><a
+                style="font-size: 10px;">.@Model.GetFare(Model.FlightFares, "basefare").Split(new[] { '.' })[1]</a></span>+
+            <span><a>@Model.GetFare(Model.FlightFares, "currency") @Model.GetFare(Model.FlightFares, "tax").Split(new[] { '.' })[0]</a><a
+                style="font-size: 10px;">.@Model.GetFare(Model.FlightFares, "tax").Split(new[] { '.' })[1]</a></span>
+            <span style="font-size: 11px;">(taxes)</span>= <span><a>@Model.GetFare(Model.FlightFares, "currency")
+                @Model.GetFare(Model.FlightFares, "total").Split(new[] { '.' })[0]</a><a style="font-size: 10px;">.@Model.GetFare(Model.FlightFares, "total").Split(new[] { '.' })[1]</a></span>
+            <div class="rslt_fare_text">
+                Final Total fare (incl. fees)
+            </div>
+        </div>
+        <div class="rslt_spcl_text">
+            Special fare</div>
+        @if (ViewBag.PageName == "Search")
+        {
+            @Html.ActionLink("SELECT", "Index", "PassengerDetails", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })
+        }
+        else if (ViewBag.PageName == "PassengerDetails")
+        {
+            @Html.ActionLink("CHANGE", "SearchResponse", "PassengerDetails", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })
+        }
+    </div>
+    <div class="newDiv" style="display: inline-block; width: 100%; height: auto; margin: 0px;
+        padding: 0px;">
+        @for (int i = 0; i < Model.FlightSegments.Count(); i++)
+        {
+            int value = i + 1;
+            <div class="flt_result">
+                <div class="row">
+                    <div class="flight">
+                        <div class="dp_inline flightno">@string.Format("{0}", "0" + value)
+                        </div>
+                        <div class="dp_inline alinfo">
+                            <div class="allogo">
+                                <img src="@Url.Content("http://www.mediawego.com/images/partners/66x42/airlines/" + Model.FlightSegments[i].OperatingAirline.ToUpper() + ".png")" width="60"
+                                    height="38" /></div>
+                            <div class="dp_inline airline_hld">
+                                @Model.FlightSegments[i].OperatingAirline@Model.FlightSegments[i].FlightNumber</div>
+                            <div class="dp_inline equipment">
+                                @Model.FlightSegments[i].EquipmentType</div>
+                            <div class="dp_inline clss">
+                                <span class="cabin_cls">@Utility.GetCabinName(Model.FlightSegments[i].CabinClass)</span>-<span class="booking_cls">@Model.FlightSegments[i].BookingClass</span></div>
+                        </div>
+                        <div class="dp_inline flight_arrive">
+                            <div class="dp_inline dept">
+                                <span class="origin_det">@Utility.GetAirportName(Model.FlightSegments[i].Origin)</span><span>(@Model.FlightSegments[i].Origin)</span></div>
+                            <div class="flt_time">
+                                <span class="flight_det">@Model.FlightSegments[i].DepartureDateTime.ToShortTimeString()</span>
+                            </div>
+                            <div class="flt_date">
+                                <span class="flight_det">@String.Format("{0:ddd, MMM d, yyyy}", Model.FlightSegments[i].DepartureDateTime)</span></div>
+                        </div>
+                        <div class="dp_inline fltinfo">
+                            <div class="stpOver">
+                                <span class="stp">non-stop</span></div>
+                            <div class="fltduration">
+                                <div class="dp_inline duration">
+                                    <span class="prefix">@Utility.MinutesToHours(Model.FlightSegments[i].JourneyDuration)</span></div>
+                            </div>
+                        </div>
+                        <div class="dp_inline flight_arrive">
+                            <div class="dp_inline dest">
+                                <span class="destination_det">@Utility.GetAirportName(Model.FlightSegments[i].Destination)</span><span>(@Model.FlightSegments[i].Destination)</span></div>
+                            <div class="flt_time">
+                                <span class="destination_det">@Model.FlightSegments[i].ArrivalDateime.ToShortTimeString()</span></div>
+                            <div class="flt_date">
+                                <span class="arrival_det">@String.Format("{0:ddd, MMM d, yyyy}", Model.FlightSegments[i].ArrivalDateime)</span></div>
+                        </div>
+                        <div class="dp_inline fltinfo">
+                            <div class="dp_inline bkgstatus">
+                                Available</div>
+                        </div>
+                        <div class="dp_inline fltinfo">
+                            <div class="dp_inline fltdirection">
+                                @if (@Model.FlightSegments[i].IsReturn)
+                                {
+                                    <img src="~/Images/fltrtn.png" width="40" height="14">
+                                }
+                                else
+                                {
+                                    <img src="~/Images/fltow.png" width="40" height="14">
+                                }</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
