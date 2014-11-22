@@ -23,6 +23,17 @@ namespace XTraTech.Entities.COM
         public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public List<Staff> Staffs { get; set; }
+        public DateTime CreatedOn
+        {
+            get;
+            set;
+        }
+        public DateTime ModefiedOn
+        {
+            get;
+            set;
+        }
 
         public void Save()
         {
@@ -54,38 +65,44 @@ namespace XTraTech.Entities.COM
             {
             }
         }
-        public List<FlightFare> Load(int FlightDetailsID)
+        public void Load(int ClinetID, bool doLoadStaff = true)
         {
             DataTable dataTable = new DataTable();
-            List<FlightFare> FlightFares = new List<FlightFare>();
+            List<Client> clients = new List<Client>();
             try
             {
-                dataTable = SqlHelper.FillDataTableSP("GetFlightFares", new List<SqlParameter>
+                dataTable = SqlHelper.FillDataTableSP("GetClient", new List<SqlParameter>
 				{
-					new SqlParameter("@FlightDetailsID", FlightDetailsID)
+					new SqlParameter("@ClientID", ClinetID)
 				}.ToArray());
                 for (int index = 0; index < dataTable.Rows.Count; index++)
                 {
-                    FlightFares.Add(new FlightFare
+                    this.ClintID = Convert.ToInt32(dataTable.Rows[index]["ClintID"].ToString());
+                    this.CompanyName = dataTable.Rows[index]["CompanyName"].ToString();
+                    this.MemberOf = dataTable.Rows[index]["MemberOf"].ToString();
+                    this.Country = dataTable.Rows[index]["Country"].ToString();
+                    this.City = dataTable.Rows[index]["City"].ToString();
+                    this.State = dataTable.Rows[index]["State"].ToString();
+                    this.ZIP = dataTable.Rows[index]["ZIP"].ToString();
+                    this.Address1 = dataTable.Rows[index]["Address1"].ToString();
+                    this.Address2 = dataTable.Rows[index]["Address2"].ToString();
+                    this.FirstName = dataTable.Rows[index]["FirstName"].ToString();
+                    this.LastName = dataTable.Rows[index]["LastName"].ToString();
+                    this.Email = dataTable.Rows[index]["Email"].ToString();
+                    this.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
+
+                    this.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
+                    this.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
+                    if (doLoadStaff)
                     {
-                        FlightFareID = Convert.ToInt32(dataTable.Rows[index]["FlightFareID"].ToString()),
-                        PaxCount = Convert.ToInt32(dataTable.Rows[index]["PaxCount"].ToString()),
-                        Currency = dataTable.Rows[index]["Currency"].ToString(),
-                        FareType = dataTable.Rows[index]["FareType"].ToString(),
-                        BaseFare = Convert.ToDecimal(dataTable.Rows[index]["BaseFare"]),
-                        Tax = Convert.ToDecimal(dataTable.Rows[index]["Tax"]),
-                        MarkUp = Convert.ToDecimal(dataTable.Rows[index]["MarkUp"]),
-                        ROE = Convert.ToDecimal(dataTable.Rows[index]["ROE"]),
-                        PaxType = (XTraTech.Entities.COM.Enumaration.PaxType)Convert.ToInt32(dataTable.Rows[index]["PaxType"]),
-                        CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]),
-                        ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"])
-                    });
+                        Staff staff = new Staff();
+                        this.Staffs = staff.Load(ClintID);
+                    }
                 }
             }
             catch (Exception)
             {
             }
-            return FlightFares;
         }
     }
 }

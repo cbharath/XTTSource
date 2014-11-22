@@ -55,6 +55,7 @@
     <Compile Include="COM\Itinerary.cs" />
     <Compile Include="COM\PassengerDetail.cs" />
     <Compile Include="COM\PurchaseOrder.cs" />
+    <Compile Include="COM\Staff.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
