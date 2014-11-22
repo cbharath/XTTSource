@@ -47,6 +47,7 @@
     <Compile Include="API\Message.cs" />
     <Compile Include="API\Search\Search.cs" />
     <Compile Include="COM\Airport.cs" />
+    <Compile Include="COM\Client.cs" />
     <Compile Include="COM\Enumaration.cs" />
     <Compile Include="COM\FlightDetail.cs" />
     <Compile Include="COM\FlightFare.cs" />
