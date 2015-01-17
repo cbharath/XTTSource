@@ -18,6 +18,7 @@ namespace XTraTech.DAL
                 return SqlHelper.connectionString;
             }
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2100:Review SQL queries for security vulnerabilities")]
         private static DataSet Fill(string query, SqlParameter[] paramList, CommandType cmdType, string connString)
         {
             DataSet dataSet = new DataSet();

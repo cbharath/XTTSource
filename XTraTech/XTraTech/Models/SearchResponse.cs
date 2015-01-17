@@ -46,8 +46,18 @@ namespace XTraTech.Models
             for (int l = 0; l < flightSearchResult.FareDetails.Fares.Count<Fare>(); l++)
             {
                 FlightFare flightFare = new FlightFare();
-                flightFare.BaseFare = Convert.ToDecimal(flightSearchResult.FareDetails.Fares[l].SinglePassangerBaseFare.Amount);
-                flightFare.Tax = Convert.ToDecimal(flightSearchResult.FareDetails.Fares[l].SinglePassangerTax.Amount);
+                if (flightSearchResult.FareDetails.Fares[l].SinglePassangerBaseFare != null)
+                {
+                    if (!string.IsNullOrEmpty(flightSearchResult.FareDetails.Fares[l].SinglePassangerBaseFare.Amount))
+                    {
+                        flightFare.BaseFare = Convert.ToDecimal(flightSearchResult.FareDetails.Fares[l].SinglePassangerBaseFare.Amount);
+                    }
+                }
+                if (flightSearchResult.FareDetails.Fares[l].SinglePassangerTax != null)
+                {
+                    if (!string.IsNullOrEmpty(flightSearchResult.FareDetails.Fares[l].SinglePassangerTax.Amount))
+                        flightFare.Tax = Convert.ToDecimal(flightSearchResult.FareDetails.Fares[l].SinglePassangerTax.Amount);
+                }
                 flightFare.PaxCount = Convert.ToInt32(flightSearchResult.FareDetails.Fares[l].PassengerQuantity);
                 if (flightSearchResult.FareDetails.Fares[l].PassengerType.Trim().ToUpper() == "ADT")
                 {

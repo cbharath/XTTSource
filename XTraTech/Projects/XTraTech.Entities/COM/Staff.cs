@@ -85,5 +85,68 @@ namespace XTraTech.Entities.COM
             }
             return Staffs;
         }
+
+        public Staff LoadStaffFromStaffID(int StaffID)
+        {
+            DataTable dataTable = new DataTable();
+            Staff staff = new Staff();
+            try
+            {
+                dataTable = SqlHelper.FillDataTableSP("GetStaffFromID", new List<SqlParameter>
+				{
+					new SqlParameter("@StaffID", ClientID)
+				}.ToArray());
+                for (int index = 0; index < dataTable.Rows.Count; index++)
+                {
+                    staff.StaffID = Convert.ToInt32(dataTable.Rows[index]["StaffID"].ToString());
+                    staff.ClientID = Convert.ToInt32(dataTable.Rows[index]["ClintID"].ToString());
+                    staff.UserName = dataTable.Rows[index]["UserName"].ToString();
+                    staff.Password = dataTable.Rows[index]["Password"].ToString();
+                    staff.FirstName = dataTable.Rows[index]["FirstName"].ToString();
+                    staff.LastName = dataTable.Rows[index]["LastName"].ToString();
+                    staff.Email = dataTable.Rows[index]["Email"].ToString();
+                    staff.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
+                    staff.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
+                    staff.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return staff;
+        }
+
+        public Staff AuthnticateUser(string UserName, string Password)
+        {
+            DataTable dataTable = new DataTable();
+            Staff staff = null;
+            try
+            {
+                dataTable = SqlHelper.FillDataTableSP("AuthenticateUser", new List<SqlParameter>
+				{
+					new SqlParameter("@UserName", UserName),
+                    new SqlParameter("@Password", Password)
+				}.ToArray());
+                for (int index = 0; index < dataTable.Rows.Count;)
+                {
+                    staff = new Staff();
+                    staff.StaffID = Convert.ToInt32(dataTable.Rows[index]["StaffID"].ToString());
+                    staff.ClientID = Convert.ToInt32(dataTable.Rows[index]["ClintID"].ToString());
+                    staff.UserName = dataTable.Rows[index]["UserName"].ToString();
+                    staff.Password = dataTable.Rows[index]["Password"].ToString();
+                    staff.FirstName = dataTable.Rows[index]["FirstName"].ToString();
+                    staff.LastName = dataTable.Rows[index]["LastName"].ToString();
+                    staff.Email = dataTable.Rows[index]["Email"].ToString();
+                    staff.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
+                    staff.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
+                    staff.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
+                    break;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return staff;
+        }
     }
 }

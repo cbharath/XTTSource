@@ -9,6 +9,7 @@ using XTraTech.Entities.API.Search;
 using XTraTech.Entities.COM;
 using Tickets.ID;
 using XTraTech.Helper;
+using Sabre;
 
 namespace XTraTech.FlightCore
 {
@@ -40,7 +41,15 @@ namespace XTraTech.FlightCore
                 });
                 taskList.Add(ticketsTask);
             }
-
+            //Sabre Task
+            //if (Convert.ToBoolean(Configuration.XTraTechConfigurationSettings["EnableTickets"]))
+            {
+                Task ticketsTask = Task.Factory.StartNew(delegate
+                {
+                    this.GetFlightResultsFromSabre(rq, itineraries);
+                });
+                taskList.Add(ticketsTask);
+            }
             Task.WaitAll(taskList.ToArray());
             this.rs.SearchID = strUniqueIdentifier;
             this.rs.Version = "1.0.0";
@@ -82,7 +91,13 @@ namespace XTraTech.FlightCore
         private void GetFlightResultsFromTickets(FareXtractorRq rq, List<AirItinerary> itineraries)
         {
             TicketsSearch search = new TicketsSearch();
-            search.Search(rq, itineraries);
+            //search.Search(rq, itineraries);
+        }
+
+        private void GetFlightResultsFromSabre(FareXtractorRq rq, List<AirItinerary> itineraries)
+        {
+            SabreSearch search = new SabreSearch();
+            //search.Search(rq, itineraries);
         }
     }
 }

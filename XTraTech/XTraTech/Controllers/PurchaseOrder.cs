@@ -14,26 +14,33 @@ namespace XTraTech.Controllers
             PurchaseOrder purchaseOrder = new PurchaseOrder();
             PurchaseOrderDetails purchaseOrderDetails = new PurchaseOrderDetails();
             string purchaseOrderRef = string.Empty;
-            if (!string.IsNullOrEmpty(BookingId))
+            if (Session["LoggedInUser"] != null)
             {
-                purchaseOrder.PurchaseOrderID = XTraTech.Helper.Helper.GetPurchaseOrderID(BookingId).ToString();
-                purchaseOrder.Load(true, true);
+                if (!string.IsNullOrEmpty(BookingId))
+                {
+                    purchaseOrder.PurchaseOrderID = XTraTech.Helper.Helper.GetPurchaseOrderID(BookingId).ToString();
+                    purchaseOrder.Load(true, true);
+                }
+                else
+                {
+                    if (base.Session["BookingResponse"] != null)
+                    {
+                        purchaseOrderRef = base.Session["BookingResponse"].ToString();
+                        purchaseOrder.PurchaseOrderID = XTraTech.Helper.Helper.GetPurchaseOrderID(purchaseOrderRef).ToString();
+                        purchaseOrder.Load(true, true);
+                    }
+                }
+                if (base.Session["SearchRequest"] != null)
+                {
+                    purchaseOrderDetails.SearchRequest = (base.Session["SearchRequest"] as FareXtractorRq);
+                }
+                purchaseOrderDetails.purchaseOrder = purchaseOrder;
+                return base.View(purchaseOrderDetails);
             }
             else
             {
-                if (base.Session["BookingResponse"] != null)
-                {
-                    purchaseOrderRef = base.Session["BookingResponse"].ToString();
-                    purchaseOrder.PurchaseOrderID = XTraTech.Helper.Helper.GetPurchaseOrderID(purchaseOrderRef).ToString();
-                    purchaseOrder.Load(true, true);
-                }
+                return base.RedirectToAction("Index", "Login");
             }
-            if (base.Session["SearchRequest"] != null)
-            {
-                purchaseOrderDetails.SearchRequest = (base.Session["SearchRequest"] as FareXtractorRq);
-            }
-            purchaseOrderDetails.purchaseOrder = purchaseOrder;
-            return base.View(purchaseOrderDetails);
         }
     }
 }

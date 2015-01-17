@@ -1,49 +1,93 @@
-﻿@{
+﻿@model XTraTech.Models.Login
+@{
     Layout = null;
 }
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>X.TRA.TECH - EXPERT TRAVEL TECHNOLOGY</title>
-    <link rel="stylesheet" href="~/Content/Login/style.css" media="screen" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"
-        type="text/css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>BookeTickets.com - Ultimate enterprise for the best tariffs on flights, hotels and cars.</title>
+
+    <script src="~/Scripts/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-ui.js" type="text/javascript"></script>
+
+    <link href="~/Content/ValidationJS/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="~/Content/ValidationJS/jquery.validationEngine.js"></script>
+    <script src="~/Content/ValidationJS/jquery.validationEngine-en.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[type=checkbox]").click(function () {
+                $("input[name=FirstName]").toggle(500);
+                $("input[name=LastName]").toggle(500);
+                $("input[name=CompanyName]").toggle(500);
+                $("input[name=Country]").toggle(500);
+                $("input[name=ConfirmPassward]").toggle(500);
+
+                if ($("input[type=checkbox]").is(':checked'))
+                    $("input[name=Password]").css("width", "320px");  // checked
+                else
+                    $("input[name=Password]").css("width", "149px");
+                
+            });
+
+            // binds form submission and fields to the validation engine
+            jQuery("#LoginForm").validationEngine({ autoHidePrompt: true });
+        });
+    </script>
+
 </head>
-<body>
-    @using (Html.BeginForm("Index", "Login"))
-    {
-        <div id="logmsk" style="display: block;">
-            <div id='close'>
-                X
-            </div>
-            <div id="userbox">
-                <h1 id="signup" style="background-color: rgb(118, 171, 219); background-position: initial initial;
-                    background-repeat: initial initial;">
-                    Sign up</h1>
-                <div id="sumsk" style="display: none;">
-                    Sending
+<body style="margin:auto; float:none; width:1100px;">
+    <div style="background-image:url(images/bketixbg.png); background-size:700px 650px; background-repeat:no-repeat; width:700px; height:650px; margin-top:0px; margin-left: -25px;position: relative; float:left;">
+    </div>
+    <div style="position: relative; float:left;">
+        <img src="~/images/Bketixlogo.png" width="370" height="102" title="Book eTickets" style="position: relative; float:left;" />
+    </div>
+    <div style="background-color:#3e96d2; width: 350px; height: auto; position: relative; float:left; border-radius: 10px; margin-top:10px; margin-left: 10px; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #eee; letter-spacing: 1px;" align="center">
+
+        <div style="position:relative; float:none; width:auto; margin:4px;">
+            @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "LoginForm" }))
+            {
+                <br />
+                <a>It's free to make money.</a>
+                <br />
+                <a style="font-size:12px;">@Html.CheckBoxFor(m => m.Member) Member</a>
+                <br />
+
+                <div style="position:relative; float:left;">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "validate[required]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:149px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "First Name" })
                 </div>
-                <input id="name" placeholder="ID" style="opacity: 1; background-color: rgb(255, 255, 255);
-                    background-position: initial initial; background-repeat: initial initial;">
-                <input id="pass" type="password" placeholder="Password" style="opacity: 1; background-color: rgb(255, 255, 255);
-                    background-position: initial initial; background-repeat: initial initial;">
-                <p id="logint" style="opacity: 1;">
-                    Login as an existing user
-                </p>
-                <p id="nameal" style="display: none; opacity: 1;">
-                    ID:
-                </p>
-                <p id="passal" style="display: none; opacity: 1;">
-                    Password:
-                </p>
-                <button id="signupb" style="opacity: 0.2; cursor: default;">
-                    Sign up
-                </button>
-            </div>
+                <div style="position:relative; float:left;">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "validate[required]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:150px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "Last Name" })
+                </div>
+                <div style="position:relative; float:left;">
+                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "validate[required]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:149px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "Company" })
+                </div>
+                <div style="position:relative; float:left;">
+                    @Html.TextBoxFor(m => m.Country, new { @class = "validate[required]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:150px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "Country" })
+                </div>
+                <div style="position:relative; float:left;">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "validate[required,custom[email]]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:320px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "Email address" })
+                </div>
+                <div style="position:relative; float:left;">
+                    @Html.PasswordFor(m => m.Password, new { @class = "validate[required]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:149px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "Password" })
+                </div>
+                <div style="position:relative; float:left;">
+                    @Html.PasswordFor(m => m.ConfirmPassward, new { @class = "validate[required,equals[Password]]", @data_prompt_position = "topRight:-30", style = "background-color:#eee; border:1px solid #FFF; border-radius: 5px; width:150px; height: 30px; margin:5px; padding: 4px; line-height: 20px;", placeholder = "Confirm Password" })
+                </div>
+                <div style="position:relative; float:left;">
+                    <input style="background-color:#00974B; width: 150px; height: 30px; border:2px groove #093; border-radius: 5px; margin:5px; line-height: 25px; font-size: 16px; font-weight:bold; letter-spacing:1px; color:#FFF;" name="login" type="submit" value="Sign In" />
+                    <a href="#" style="font-size:12px; text-decoration:none; color:#eee;">Forgot password?</a>
+                </div>
+            }
         </div>
-    }
-    <script src="~/Scripts/Login/index.js"></script>
+    </div>
+    <div style="font-size:10px; color:#666; position:relative; float:left; margin: 50px 0px 10px 15px;">
+        <a>Powered by X.TRA.TECH | Terms of use | Privacy Policy</a>
+    </div>
+    <div style="font-size:10px; color:#666; position:relative; float:left; margin: 150px 0px 10px 15px;">
+        <a>Copyright 2014 | XTRATECH. All rights reserved.</a>
+    </div>
+
 </body>
 </html>

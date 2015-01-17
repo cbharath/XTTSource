@@ -23,6 +23,14 @@ namespace XTraTech.Entities.COM
         public string LastName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+
+        public bool UseDefaultSMTP { get; set; }
+        public string SMTPAddress { get; set; }
+        public string PortNumber { get; set; }
+        public bool EnableSSL { get; set; }
+        public string FromEmail { get; set; }
+        public string EmailPassword { get; set; }
+
         public List<Staff> Staffs { get; set; }
         public DateTime CreatedOn
         {
@@ -55,11 +63,23 @@ namespace XTraTech.Entities.COM
                 sqlParameterList.Add(new SqlParameter("@Email", Email));
                 sqlParameterList.Add(new SqlParameter("@PhoneNumber", PhoneNumber));
 
+                sqlParameterList.Add(new SqlParameter("@UseDefaultSMTP", UseDefaultSMTP));
+                sqlParameterList.Add(new SqlParameter("@SMTPAddress", SMTPAddress));
+                sqlParameterList.Add(new SqlParameter("@PortNumber", PortNumber));
+                sqlParameterList.Add(new SqlParameter("@EnableSSL", EnableSSL));
+                sqlParameterList.Add(new SqlParameter("@FromEmail", FromEmail));
+                sqlParameterList.Add(new SqlParameter("@EmailPassword", EmailPassword));
+
                 SqlParameter paramBookingRef = new SqlParameter("@ClientID", SqlDbType.Int);
                 paramBookingRef.Direction = ParameterDirection.Output;
                 sqlParameterList.Add(paramBookingRef);
                 SqlHelper.ExecuteNonQuery("InsertClient", sqlParameterList.ToArray());
-                int flightFareID = (int)paramBookingRef.Value;
+                int clientID = (int)paramBookingRef.Value;
+
+                foreach (Staff item in Staffs)
+                {
+                    item.Save(clientID);
+                }
             }
             catch (SqlException ex_167)
             {
@@ -90,6 +110,13 @@ namespace XTraTech.Entities.COM
                     this.LastName = dataTable.Rows[index]["LastName"].ToString();
                     this.Email = dataTable.Rows[index]["Email"].ToString();
                     this.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
+
+                    this.PhoneNumber = dataTable.Rows[index]["UseDefaultSMTP"].ToString();
+                    this.PhoneNumber = dataTable.Rows[index]["SMTPAddress"].ToString();
+                    this.PhoneNumber = dataTable.Rows[index]["PortNumber"].ToString();
+                    this.PhoneNumber = dataTable.Rows[index]["EnableSSL"].ToString();
+                    this.PhoneNumber = dataTable.Rows[index]["FromEmail"].ToString();
+                    this.PhoneNumber = dataTable.Rows[index]["EmailPassword"].ToString();
 
                     this.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
                     this.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);

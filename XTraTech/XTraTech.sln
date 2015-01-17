@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTraTech", "XTraTech\XTraTech.csproj", "{49DA810A-000C-4409-97F4-5FE3E48F2F6C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTraTech.DAL", "Projects\XTraTech.DAL\XTraTech.DAL.csproj", "{D384489E-ED8B-430A-A1B5-04C9DEE6D9CB}"
@@ -20,6 +22,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{FA0C2274-32A2-44BA-A696-4D7AB0CC7EA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapters", "Projects\Adapters\Adapters.csproj", "{9A29B6D0-9208-453D-BA31-FF946CBFCD0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sabre", "Suppliers\Sabre\Sabre.csproj", "{6E69097A-457B-40C8-B954-EF30EA109016}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +63,10 @@ Global
 		{9A29B6D0-9208-453D-BA31-FF946CBFCD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A29B6D0-9208-453D-BA31-FF946CBFCD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A29B6D0-9208-453D-BA31-FF946CBFCD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E69097A-457B-40C8-B954-EF30EA109016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E69097A-457B-40C8-B954-EF30EA109016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E69097A-457B-40C8-B954-EF30EA109016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E69097A-457B-40C8-B954-EF30EA109016}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +75,9 @@ Global
 		{DBD385D2-310A-4567-B5AD-D74ED75C9F6F} = {A9083570-0B71-4486-8BD7-B7B298673B57}
 		{B0B2E2D0-82CA-46D1-9793-12C5C4828D59} = {A9083570-0B71-4486-8BD7-B7B298673B57}
 		{9A29B6D0-9208-453D-BA31-FF946CBFCD0D} = {FA0C2274-32A2-44BA-A696-4D7AB0CC7EA9}
+		{6E69097A-457B-40C8-B954-EF30EA109016} = {A9083570-0B71-4486-8BD7-B7B298673B57}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
 	EndGlobalSection
 EndGlobal

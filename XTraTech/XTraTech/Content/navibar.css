@@ -1,0 +1,205 @@
+@import url(http://fonts.googleapis.com/css?family=Trebuchet:700);
+#betmenu {
+	background-color: #3d98d3;
+	margin:0px;
+	padding:0px;
+}
+#betmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  display: block;
+  zoom: 1;
+}
+
+#betmenu ul:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+#betmenu ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+#betmenu.align-right ul li {
+  float: right;
+}
+#betmenu.align-center ul {
+  text-align: center;
+}
+#betmenu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 15px 25px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#betmenu ul li a:hover {
+  color: #666666;
+}
+#betmenu ul li a:hover:before {
+  width: 100%;
+}
+#betmenu ul li a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -3px;
+  top: 19px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#betmenu ul li a:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #666666;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+#betmenu ul li.last > a:after,
+#betmenu ul li:last-child > a:after {
+  display: none;
+}
+#betmenu ul li.active a {
+  color: #333333;
+}
+#betmenu ul li.active a:before {
+  width: 100%;
+}
+#betmenu.align-right li.last > a:after,
+#betmenu.align-right li:last-child > a:after {
+  display: block;
+}
+#betmenu.align-right li:first-child a:after {
+  display: none;
+}
+#betmenu ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 44px;
+  left: 0;
+  width: 100%;
+  z-index:999999;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+
+#betmenu ul li ul li {
+  background-color: #EEE;
+  display: block;
+}
+
+#betmenu ul li ul li:hover { background: #EEE; }
+#betmenu ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+#betmenu ul li ul a {
+	width: auto;
+	margin-left:10px;
+	padding:10px;
+	line-height:15px;
+    color: #666;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  font-family: 'Trebuchet MS', sans-serif;
+  text-transform: none;
+  font-size: 13px;
+  font-weight:normal;
+  position: relative;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
+}
+#betmenu ul li ul a:hover {
+  color: #666;
+}
+#betmenu ul li ul a:hover:before {
+  width: 100%;
+}
+#betmenu ul li ul a:after {
+  content: "";
+  position: absolute;
+  right: -3px;
+  top: 10px;
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+  opacity: .5;
+}
+#betmenu ul li ul a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background: #666666;
+  -webkit-transition: width .25s;
+  -moz-transition: width .25s;
+  -ms-transition: width .25s;
+  -o-transition: width .25s;
+  transition: width .25s;
+}
+
+
+@media sc	reen and (max-width: 768px) {
+  #betmenu ul li {
+    float: none;
+    display: block;
+  }
+  #betmenu ul li a {
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-bottom: 1px solid #666666;
+  }
+  #betmenu ul li.last > a,
+  #betmenu ul li:last-child > a {
+    border: 0;
+  }
+  #betmenu ul li a:after {
+    display: none;
+  }
+  #betmenu ul li a:before {
+    display: none;
+  }
+}

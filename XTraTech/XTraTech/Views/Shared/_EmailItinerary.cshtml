@@ -1,0 +1,290 @@
+﻿@using XTraTech.Models
+@model XTraTech.Entities.COM.FlightDetail
+<div style="width: 800px;
+    clear: both;
+    margin-top: 5px;
+    float: left;
+    position: relative;">
+    <div style="padding: 3px;
+    background: #EEE;
+    width: 786px;
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    text-decoration: none;
+    color: #3384B8;">
+        <div style="width: 350px;
+    height: 26px;
+    border: 0px solid white;
+    float: left;
+    position: relative;
+    font-size: 14px;
+    font-family:'Arial', Gadget, sans-serif;
+    font-weight: bold;
+    padding: 0px 0px 0px 5px;">
+            <span style="padding: 0px 5px 0px 0px;">
+                <a>@Model.GetFare(Model.FlightFares, "currency") @Model.GetFare(Model.FlightFares, "basefare").Split(new[] { '.' })[0]</a><a style="font-size: 10px;">.@Model.GetFare(Model.FlightFares, "basefare").Split(new[] { '.' })[1]</a>
+            </span>+
+            <span style="padding: 0px 5px 0px 0px;">
+                <a>@Model.GetFare(Model.FlightFares, "currency") @Model.GetFare(Model.FlightFares, "tax").Split(new[] { '.' })[0]</a><a style="font-size: 10px;">.@Model.GetFare(Model.FlightFares, "tax").Split(new[] { '.' })[1]</a>
+            </span>
+            <span style="font-size: 11px; padding: 0px 5px 0px 0px;">(taxes)</span>= <span>
+                <a>
+                    @Model.GetFare(Model.FlightFares, "currency")
+                    @Model.GetFare(Model.FlightFares, "total").Split(new[] { '.' })[0]
+                </a><a style="font-size: 10px;">.@Model.GetFare(Model.FlightFares, "total").Split(new[] { '.' })[1]</a>
+            </span>
+            <div style="width: 300px;
+    height: 12px;
+    border: 0px solid white;
+    float: left;
+    position: relative;
+    font-size: 10px;
+    color: #999;">
+                Final Total fare (incl. fees)
+            </div>
+        </div>
+        <div style="width: 350px;
+    height: 26px;
+    border: 0px solid white;
+    float: left;
+    position: relative;
+    font-size: 12px;">
+            @if (Model.FlightFares.FirstOrDefault().FareType == "Private")
+            {
+                <span>Special fare</span>
+            }
+            else if (Model.FlightFares.FirstOrDefault().FareType == "WebFare")
+            {
+                <span>Low Cost</span>
+            }
+        </div>
+        @if (ViewBag.PageName == "Search")
+        {
+            @Html.ActionLink("SELECT", "Index", "PassengerDetails", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })
+            @Html.ActionLink("SEND", "Send", "Search", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })
+        }
+        else if (ViewBag.PageName == "PassengerDetails")
+        {
+            @Html.ActionLink("CHANGE", "SearchResponse", "PassengerDetails", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })
+        }
+    </div>
+    <div class="newDiv" style="display: inline-block; width: 100%; height: auto; margin: 0px;
+        padding: 0px;">
+        @for (int i = 0; i < Model.FlightSegments.Count(); i++)
+        {
+            int value = i + 1;
+            <div Style="width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 0px;">
+                <div style="width: 790px;
+    float: left;
+    position: relative;
+    margin: 0px 0px 0px 4px;
+    padding: 0px;">
+                    <div style="width: 100%;
+    height: 40px;
+    float: left;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: #0;
+    border: 1px solid #EEE;
+    border-top: 1px dotted #FFF;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom: 3px solid #EEE;">
+                        <div style="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; width: auto;
+    font-size: 18px;
+    border-right: 1px solid #EEE;
+    float: left;
+    position: relative;
+    margin: 0px;
+    padding: 0px;">
+                            @string.Format("{0}", "0" + value)
+                        </div>
+                        <div style="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; width: 160px;
+    height: auto;
+    float: left;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;">
+                            <div style="width: 66px;
+    height: 38px;
+    float: left;
+    position: relative;
+    margin-left: 2px;
+    padding: 0px;">
+                                <img src="@Url.Content("http://www.mediawego.com/images/partners/66x42/airlines/" + Model.FlightSegments[i].OperatingAirline.ToUpper() + ".png")" width="60"
+                                     height="38" />
+                            </div>
+                            <div style="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; width: 50px;
+    margin: 0px;
+    font-size: 11px padding: 0px 0px 0px 5px;
+    float: left;
+    position: relative;
+    border: 0px solid red;
+    line-height: 22px;
+    text-align: left;">
+                                @Model.FlightSegments[i].OperatingAirline@Model.FlightSegments[i].FlightNumber
+                            </div>
+                            <div style="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; width: 30px;
+    float: left;
+    position: relative;
+    margin: 0px;
+    padding: 0px 0px 0px 2px;
+    border: 0px solid red;
+    font-size: 10px;
+    text-align: left;
+    line-height: 20px;">
+                                @Model.FlightSegments[i].EquipmentType
+                            </div>
+                            <div style="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top;  width: 80px;
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    padding: 0px 0px 0px 3px;
+    border: 0px solid red;
+    text-align: left;
+    line-height: 20px;">
+                                <span class="cabin_cls">@Utility.GetCabinName(Model.FlightSegments[i].CabinClass)</span>-<span class="booking_cls">@Model.FlightSegments[i].BookingClass</span>
+                            </div>
+                        </div>
+                        <div style="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; width: 210px;
+    font-size: 11px;
+    border: 1px solid #EEE;
+    background: #EEE;
+    float: left;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;">
+                            <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; dept">
+                                <span class="origin_det">@Utility.GetAirportName(Model.FlightSegments[i].Origin)</span><span>(@Model.FlightSegments[i].Origin)</span>
+                            </div>
+                            <div class="flt_time">
+                                <span class="flight_det">@Model.FlightSegments[i].DepartureDateTime.ToShortTimeString()</span>
+                            </div>
+                            <div class="flt_date">
+                                <span class="flight_det">@String.Format("{0:ddd, MMM d, yyyy}", Model.FlightSegments[i].DepartureDateTime)</span>
+                            </div>
+                        </div>
+                        <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; fltinfo">
+                            <div class="stpOver">
+                                <span class="stp">non-stop</span>
+                            </div>
+                            <div class="fltduration">
+                                <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; duration">
+                                    <span class="prefix">@Utility.MinutesToHours(Model.FlightSegments[i].JourneyDuration)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; flight_arrive">
+                            <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; dest">
+                                <span class="destination_det">@Utility.GetAirportName(Model.FlightSegments[i].Destination)</span><span>(@Model.FlightSegments[i].Destination)</span>
+                            </div>
+                            <div class="flt_time">
+                                <span class="destination_det">@Model.FlightSegments[i].ArrivalDateime.ToShortTimeString()</span>
+                            </div>
+                            <div class="flt_date">
+                                <span class="arrival_det">@String.Format("{0:ddd, MMM d, yyyy}", Model.FlightSegments[i].ArrivalDateime)</span>
+                            </div>
+                        </div>
+                        <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; fltinfo">
+                            <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; bkgstatus">
+                                Available
+                            </div>
+                        </div>
+                        <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; fltinfo">
+                            <div class="display: inline-block;
+    font-size: 11px;
+    padding-left: 3px;
+    padding-right: 3px;
+    vertical-align: top; fltdirection">
+                                @if (@Model.FlightSegments[i].IsReturn)
+                                {
+                                    <img src="~/Images/fltrtn.png" width="40" height="14">
+                                }
+                                else
+                                {
+                                    <img src="~/Images/fltow.png" width="40" height="14">
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

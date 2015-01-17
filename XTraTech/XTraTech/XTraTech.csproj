@@ -45,6 +45,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -171,20 +172,31 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PassengerDetailsController.cs" />
     <Compile Include="Controllers\PurchaseOrder.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\PassengerModel.cs" />
     <Compile Include="Models\PurchaseOrderDetails.cs" />
+    <Compile Include="Models\Registration.cs" />
+    <Compile Include="Models\ReservationsModel.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\SearchResponse.cs" />
     <Compile Include="Models\Utility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\css\bootstrap-theme-Panel-Tabs.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min-Panel-Tabs.js" />
     <Content Include="Content\forms.css" />
     <Content Include="Content\info.png" />
     <Content Include="Content\jquery-1.11.0.min.js" />
@@ -193,6 +205,7 @@
     <Content Include="Content\layout.css" />
     <Content Include="Content\Login\style.css" />
     <Content Include="Content\navi.css" />
+    <Content Include="Content\navibar.css" />
     <Content Include="Content\NewSearchPad\compositeDemos.css" />
     <Content Include="Content\NewSearchPad\images\ajax-loader.gif" />
     <Content Include="Content\NewSearchPad\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
@@ -274,15 +287,28 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\Trvlitinstyle.css" />
+    <Content Include="Content\ValidationJS\jquery-1.8.2.min.js" />
+    <Content Include="Content\ValidationJS\jquery.validationEngine-en.js" />
+    <Content Include="Content\ValidationJS\jquery.validationEngine.js" />
+    <Content Include="Content\ValidationJS\validationEngine.jquery.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="HTMLPage1.htm" />
     <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\arrow-up.png" />
     <Content Include="Images\baggage.gif" />
     <Content Include="Images\bfly.jpg" />
+    <Content Include="Images\bketixbg.png" />
+    <Content Include="Images\bketixfff.png" />
+    <Content Include="Images\Bketixlogo.png" />
     <Content Include="Images\bkflht.jpg" />
     <Content Include="Images\black_file.gif" />
     <Content Include="Images\blue_file.gif" />
+    <Content Include="Images\BookingStatus\booked.png" />
+    <Content Include="Images\BookingStatus\canceled.png" />
+    <Content Include="Images\BookingStatus\expired.png" />
+    <Content Include="Images\BookingStatus\inprocess.png" />
+    <Content Include="Images\BookingStatus\pending.png" />
+    <Content Include="Images\BookingStatus\ticketed.png" />
     <Content Include="Images\bus.gif" />
     <Content Include="Images\car.gif" />
     <Content Include="Images\cruise.gif" />
@@ -298,6 +324,7 @@
     <Content Include="Images\demo\imgl.gif" />
     <Content Include="Images\demo\imgr.gif" />
     <Content Include="Images\direction.gif" />
+    <Content Include="Images\donut.png" />
     <Content Include="Images\flight.gif" />
     <Content Include="Images\fltow.png" />
     <Content Include="Images\fltrtn.png" />
@@ -308,6 +335,7 @@
     <Content Include="Images\hotel.gif" />
     <Content Include="Images\info.png" />
     <Content Include="Images\lastmindeal.gif" />
+    <Content Include="Images\loader.gif" />
     <Content Include="Images\map.gif" />
     <Content Include="Images\meal.gif" />
     <Content Include="Images\passport.gif" />
@@ -322,8 +350,10 @@
     <Content Include="Images\trvlinsure.jpg" />
     <Content Include="Images\trvlinsure2.jpg" />
     <Content Include="Images\trvlofr.jpg" />
+    <Content Include="Images\vertbar.png" />
     <Content Include="Images\XTTLogo.png" />
     <Content Include="Images\XTTLogo_theme_small.png" />
+    <Content Include="Scripts\ChartJS\Chart.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\jquery-1.11.0.min.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
@@ -435,7 +465,12 @@
     <Content Include="Views\PurchaseOrder\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap\config.json" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\RegistrationSuccess.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
+    <Content Include="Views\Shared\_EmailItinerary.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

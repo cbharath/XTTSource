@@ -11,3 +11,16 @@ D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\Tickets.ID\bin\
 D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\Tickets.ID\obj\Release\Tickets.ID.csprojResolveAssemblyReference.cache
 D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\Tickets.ID\obj\Release\Tickets.ID.dll
 D:\Bharath BKP\Bharath\Personal\work\7NOV2014\XTraTech\Suppliers\Tickets.ID\obj\Release\Tickets.ID.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\Tickets.ID.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\Tickets.ID.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\Adapters.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\XTraTech.Entities.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\XTraTech.Helper.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\XTraTech.DAL.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\Adapters.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\XTraTech.Entities.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\XTraTech.Helper.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\bin\Release\XTraTech.DAL.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\obj\Release\Tickets.ID.csprojResolveAssemblyReference.cache
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\obj\Release\Tickets.ID.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\Tickets.ID\obj\Release\Tickets.ID.pdb

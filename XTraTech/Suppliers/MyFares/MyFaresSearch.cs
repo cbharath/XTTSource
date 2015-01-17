@@ -160,7 +160,7 @@ namespace MyFares
                     airItinerary.SecquenceNumber = (i + 1).ToString();
                     airItinerary.ItineraryID = airItinerary.SecquenceNumber + "_" + searchRS.PricedItineraries[i].AirItineraryPricingInfo.FareSourceCode;
                     FareDetails fareDetails = new FareDetails();
-                    fareDetails.FareType = "Public";
+                    fareDetails.FareType = searchRS.PricedItineraries[i].AirItineraryPricingInfo.FareType.ToString();
                     List<XTraTech.Entities.API.Search.Fare> fares = new List<XTraTech.Entities.API.Search.Fare>();
                     for (int fareindex = 0; fareindex < searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns.Length; fareindex++)
                     {
@@ -178,11 +178,19 @@ namespace MyFares
                             fare.PassengerType = "INF";
                         }
                         fare.PassengerQuantity = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerTypeQuantity.Quantity.ToString();
+                        //fare.SinglePassangerBaseFare = new Money
+                        //{
+                        //    Amount = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.Amount.ToString("#.##"),
+                        //    Currency = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode
+                        //};
+
+                        //Temp changes for demo
                         fare.SinglePassangerBaseFare = new Money
                         {
-                            Amount = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.Amount.ToString(),
-                            Currency = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode
+                            Amount = ((Convert.ToDouble(searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.Amount) - 5) * 0.65).ToString("#.##"),
+                            Currency = "GBP"//searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode
                         };
+
                         Money taxes = new Money();
                         decimal totaltax = 0m;
                         Tax[] taxes2 = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.Taxes;
@@ -191,8 +199,12 @@ namespace MyFares
                             Tax item = taxes2[k];
                             totaltax += Convert.ToDecimal(item.Amount);
                         }
-                        taxes.Amount = totaltax.ToString();
-                        taxes.Currency = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode;
+                        //taxes.Amount = totaltax.ToString("#.##");
+                        //taxes.Currency = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode;
+
+                        //Temp changes for demo.
+                        taxes.Amount = (Convert.ToDouble(totaltax) * 0.65).ToString("#.##");
+                        taxes.Currency = "GBP";// searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode;
                         fare.SinglePassangerTax = taxes;
                         fares.Add(fare);
                     }

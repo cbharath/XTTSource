@@ -1,0 +1,147 @@
+﻿@model XTraTech.Models.Registration
+@{
+    ViewBag.Title = "Clinet Registration";
+}
+<script>
+		jQuery(document).ready(function(){
+			// binds form submission and fields to the validation engine
+		    jQuery("#RegistrationForm").validationEngine();
+		});
+
+</script>
+<div class="wrapper col3s">
+    <div id="intro">
+        <div class="rwrap">
+            <p class="pge_head">Clinet Registration</p>
+            @using (Html.BeginForm("Index", "Registration", FormMethod.Post, new { @id = "RegistrationForm"}))
+            {
+                <div class="form_holder">
+                    <div class="blk_one repeat">
+                        <div class="pax_head">
+                            <span>Company Information</span>
+                        </div>
+                        <div>
+                            <label>Company Name :</label>
+                            @Html.TextBoxFor(m => m.CompanyName, new { @class = "validate[required]", @data_prompt_position="topRight:-30" })
+                        </div>
+                        <div>
+                            <label>Member of :</label>
+                            @Html.TextBoxFor(m => m.MemberOf)
+                        </div>
+                        <div>
+                            <label>Country :</label>
+                            @Html.TextBoxFor(m => m.Country)
+                        </div>
+                        <div>
+                            <label>Address Line1 :</label>
+                            @Html.TextBoxFor(m => m.Address1)
+                        </div>
+                        <div>
+                            <label>Address Line2 :</label>
+                            @Html.TextBoxFor(m => m.Address2)
+                        </div>
+                        <div>
+                            <label>City :</label>
+                            @Html.TextBoxFor(m => m.City)
+                        </div>
+                        <div>
+                            <label>State :</label>
+                            @Html.TextBoxFor(m => m.State)
+                        </div>
+                        <div>
+                            <label>Zip/Postal Code :</label>
+                            @Html.TextBoxFor(m => m.ZIP)
+                        </div>
+                    </div>
+
+                    <div class="blk_one repeat">
+                        <div class="pax_head">
+                            <span>Contact Information</span>
+                        </div>
+                        <div>
+                            <label>First Name :</label>
+                            @Html.TextBoxFor(m => m.FirstName)
+                        </div>
+                        <div>
+                            <label>Last Name :</label>
+                            @Html.TextBoxFor(m => m.LastName)
+                        </div>
+                        <div>
+                            <label>Email :</label>
+                            @Html.TextBoxFor(m => m.Email)
+                        </div>
+                        <div>
+                            <label>Phone Number :</label>
+                            @Html.TextBoxFor(m => m.PhoneNumber)
+                        </div>
+                    </div>
+
+                    <div class="blk_one repeat">
+                        <div class="pax_head">
+                            <span>Referral Information</span>
+                        </div>
+                        <div>
+                            @Html.TextBoxFor(m => m.CompanyName)
+                        </div>
+                    </div>
+
+                    <div class="blk_one repeat">
+                        <div class="pax_head">
+                            <span>Access Registration</span>
+                        </div>
+                        <div>
+                            <label>Username :</label>
+                            @Html.TextBoxFor(m => m.UserName)
+                        </div>
+                        <div>
+                            <label>Password :</label>
+                            @Html.PasswordFor(m => m.Password)
+                        </div>
+                        <div>
+                            <label>Confirm Password :</label>
+                            @Html.PasswordFor(m => m.Password)
+                        </div>
+                        <div>
+                            <label>Captcha Code :</label>
+                            @Html.TextBoxFor(m => m.CaptchaCode)
+                        </div>
+                    </div>
+
+                    <div class="blk_one repeat">
+                        <div class="pax_head">
+                            <span>Mail Configurations</span>
+                        </div>
+                        <div>
+                            <label>Usedefaults</label>
+                            @Html.CheckBoxFor(m => m.usedefautSMTP, new { @checked = "checked" })
+                        </div>
+                        <div>
+                            <label>SMTP Address :</label>
+                            @Html.TextBoxFor(m => m.SMTPAddress)
+                        </div>
+                        <div>
+                            <label>Portnumber :</label>
+                            @Html.TextBoxFor(m => m.PortNumber)
+                        </div>
+                        <div>
+                            <label>Enable SSL :</label>
+                            @Html.CheckBoxFor(m => m.enableSSL, new { @checked = "checked" })
+                        </div>
+                        <div>
+                            <label>From Emailaddress :</label>
+                            @Html.TextBoxFor(m => m.FromEmail)
+                        </div>
+                        <div>
+                            <label>Email Password :</label>
+                            @Html.TextBoxFor(m => m.EmailPwd)
+                        </div>
+                    </div>
+
+                    <div class="act">
+                        <input type="submit" id="submit_book_btn" class="submit_btn" value="Register" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

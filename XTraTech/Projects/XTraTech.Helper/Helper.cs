@@ -74,7 +74,7 @@ namespace XTraTech.Helper
         {
             return string.Concat(new object[]
 			{
-				"XTT",
+				"BeT",
 				createdOn.ToString("yy"),
 				createdOn.ToString("MM"),
 				createdOn.ToString("dd"),

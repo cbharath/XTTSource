@@ -163,7 +163,7 @@ namespace XTraTech.Entities.COM
                     purOrder.clientID = Convert.ToInt32(dataTable.Rows[index]["clientID"].ToString());
                     purOrder.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
                     purOrder.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
-                    purOrder.PurchaseOrderID = XTraTech.Helper.Helper.CreatePurchaseReference(purchaseOrderID, this.CreatedOn);
+                    purOrder.PurchaseOrderID = XTraTech.Helper.Helper.CreatePurchaseReference(purchaseOrderID, purOrder.CreatedOn);
                     FlightDetail flightDetail = new FlightDetail();
                     purOrder.FlightDetails = flightDetail.Load(purchaseOrderID, true, true);
                     PassengerDetail passengerDetail = new PassengerDetail();
@@ -191,7 +191,7 @@ namespace XTraTech.Entities.COM
                         airportsummary = airportsummary + item.Origin + "," + item.Destination;
                     }
                     purOrder.Airports = airportsummary;
-                    purOrder.PaymentStatus = "Pending";
+                    purOrder.PaymentStatus = "Deposit";
                     purOrder.Total = Helper.GetFare(purOrder.FlightDetails.FirstOrDefault<FlightDetail>().FlightFares, "total");
                     purchaseOrderList.Add(purOrder);
                 }

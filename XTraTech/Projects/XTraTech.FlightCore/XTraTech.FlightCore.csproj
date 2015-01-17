@@ -49,6 +49,10 @@
       <Project>{DBD385D2-310A-4567-B5AD-D74ED75C9F6F}</Project>
       <Name>MyFares</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Suppliers\Sabre\Sabre.csproj">
+      <Project>{6e69097a-457b-40c8-b954-ef30ea109016}</Project>
+      <Name>Sabre</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Suppliers\Tickets.ID\Tickets.ID.csproj">
       <Project>{B0B2E2D0-82CA-46D1-9793-12C5C4828D59}</Project>
       <Name>Tickets.ID</Name>

@@ -70,7 +70,9 @@ namespace MyFares
         
         /// <remarks/>
         public OnePoint() {
-            this.Url = "http://apidemo.myfarebox.com/V2/OnePoint.svc";
+            //this.Url = "http://apidemo.myfarebox.com/V2/OnePoint.svc";
+            //this.Url = "https://flights.myfarebox.com/V2/OnePoint.svc";
+            this.Url = "http://50.23.215.116/onepoint/v2/onepoint.svc";
         }
         
         /// <remarks/>
