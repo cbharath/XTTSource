@@ -215,5 +215,16 @@ function modifySearch() {
     window.location.href = "/Search/Index";
 }
 
+//Loader
+function loader() {
+
+    var wid = $(window).width();
+    var hei = $(window).height();
+    var str1 = '<div class="overBgOthers"><p><img src="/Images/progress_bar.gif" /> Patience is a virtue...</p></div>';
+    $('body').append(str1)
+
+    $('.overBgOthers').css({ 'width': wid, 'height': hei })
+}
+
 
 

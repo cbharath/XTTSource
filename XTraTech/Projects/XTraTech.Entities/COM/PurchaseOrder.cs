@@ -79,7 +79,7 @@ namespace XTraTech.Entities.COM
             get;
             set;
         }
-        public void Save()
+        public int Save()
         {
             try
             {
@@ -110,7 +110,9 @@ namespace XTraTech.Entities.COM
             }
             catch (SqlException ex_175)
             {
+                return 0;
             }
+            return 0;
         }
         public void Load(bool DoLoadFlightDetails, bool DoLoadPassengerDetails)
         {

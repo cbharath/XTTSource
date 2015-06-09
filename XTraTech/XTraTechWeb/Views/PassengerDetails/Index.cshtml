@@ -1,0 +1,782 @@
+﻿@using XTraTech.Models
+@model XTraTechWeb.Models.PassengerModel
+@{
+    ViewBag.Title = "Index";
+}
+<div class="page-title-container">
+    <div class="container">
+        <div class="page-title pull-left">
+            <h2 class="entry-title">Fligt Details</h2>
+        </div>
+        <ul class="breadcrumbs pull-right">
+            <li><a href="#">HOME</a></li>
+            <li class="active">Flight Details</li>
+        </ul>
+    </div>
+</div>
+<section id="content">
+    <div class="container flight-detail-page">
+        <div class="row">
+            <div id="main" class="col-md-9">
+                <br />
+                <div id="flight-features" class="tab-container">
+                    <ul class="tabs">
+                        <li class="active"><a href="#flight-details" data-toggle="tab">Flight Details</a></li>
+                        <!-- <li><a href="#inflight-features" data-toggle="tab">Inflight Features</a></li> -->
+                        <li><a href="#flgiht-seat-selection" data-toggle="tab">Seat Selection</a></li>
+
+                        <li><a href="#flight-fare-rules" data-toggle="tab">Fare Rules</a></li>
+                        <li><a href="#flight-baggage" data-toggle="tab">Baggage</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="flight-details">
+                            <div class="intro table-wrapper full-width hidden-table-sm box">
+                                <div class="single-itn row-overide clearfix">
+                                    @if (Model.SelectedOptions != null)
+                                    {
+                                        foreach (var PricedItinerary in Model.SelectedOptions)
+                                        {
+                                            bool showReturnindicator = true;
+                                            <div class="single-itn row-overide clearfix">
+                                                @for (int i = 0; i < PricedItinerary.FlightSegments.Count(); i++)
+                                                {
+                                                    if (PricedItinerary.FlightSegments[i].IsReturn && showReturnindicator)
+                                                    {
+                                                        showReturnindicator = false;
+                                                        <a class="return-indicator">RETURN</a>
+                                                    }
+                                                    <div class="row-overide clearfix single-segment">
+                                                        <div class="col-md-3">
+                                                            <span class="airlines_all airline-@PricedItinerary.FlightSegments[i].OperatingAirline ">
+                                                                @*<img src="@Url.Content("http://www.mediawego.com/images/partners/66x42/airlines/" + PricedItinerary.FlightSegments[i].OperatingAirline.ToUpper() + ".png")" width="60"
+                                                                    height="38" />*@
+                                                            </span>
+                                                            <span class="airline-details">
+                                                                <span class="skin-color">Malaysian Airlines</span><br>(@PricedItinerary.FlightSegments[i].OperatingAirline-@PricedItinerary.FlightSegments[i].FlightNumber)
+                                                            </span>
+                                                        </div>
+                                                        <div class="col-md-3 city-pair">
+
+                                                            <div>
+                                                                <i class="soap-icon-plane-right flight-icon-take"></i>
+                                                                <span class="skin-color">@Utility.GetAirportName(PricedItinerary.FlightSegments[i].Origin) (@PricedItinerary.FlightSegments[i].Origin)</span><br> @String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].DepartureDateTime) @PricedItinerary.FlightSegments[i].DepartureDateTime.ToShortTimeString() @*<span class="depart_time">@FlightSegment.DepartureDateTime.ToString("HH:mm")</span>*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 city-pair">
+
+                                                            <div>
+                                                                <i class="soap-icon-plane-right flight-icon-land"></i>
+                                                                <span class="skin-color">@Utility.GetAirportName(PricedItinerary.FlightSegments[i].Destination) (@PricedItinerary.FlightSegments[i].Destination)</span><br />@String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].ArrivalDateime) @PricedItinerary.FlightSegments[i].ArrivalDateime.ToShortTimeString()
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3 city-pair">
+
+                                                            <div>
+                                                                <i class="soap-icon-clock flight-duration"></i>
+                                                                <span class="skin-color">Total time</span><br />@Utility.MinutesToHours(PricedItinerary.FlightSegments[i].JourneyDuration)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="inflight-features">
+                            <h2>Features Style 01</h2>
+                            <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
+                            <ul class="amenities clearfix style1 box">
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-wifi"></i>WI_FI</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-entertainment"></i>entertainment</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-television"></i>television</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-aircon"></i>air conditioning</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-juice"></i>drink</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-joystick"></i>games</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-coffee"></i>coffee</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-winebar"></i>wines</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-shopping"></i>shopping</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-food"></i>food</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-comfort"></i>comfort</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style1"><i class="soap-icon-magazine"></i>magazines</div>
+                                </li>
+                            </ul>
+                            <h2>Features Style 02</h2>
+                            <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
+                            <ul class="amenities clearfix style2">
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-wifi circle"></i>WI_FI</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-entertainment circle"></i>entertainment</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-television circle"></i>television</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-aircon circle"></i>air conditioning</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-juice circle"></i>drink</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-joystick circle"></i>games</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-coffee circle"></i>coffee</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-winebar circle"></i>wines</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-shopping circle"></i>shopping</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-food circle"></i>food</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-comfort circle"></i>comfort</div>
+                                </li>
+                                <li class="col-md-4 col-sm-6">
+                                    <div class="icon-box style2"><i class="soap-icon-magazine circle"></i>magazines</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="flgiht-seat-selection">
+                            <h2>Select your Seats</h2>
+                            <p>Would you like a window seat or treat yourself to more comfort? Select your seats online in advance with our easy-to-use seat map.  You can choose and change your seat until 48 hours before departure, when booking on Travelo.com. Also you can choose and change your seats at a self-service machine at the airport.</p>
+                            <hr>
+                            <div class="image-box style12">
+                                <article class="box">
+                                    <figure>
+                                        <img src="http://placehold.it/120x100" alt="" class="middle-item" />
+                                    </figure>
+                                    <div class="details">
+                                        <h4 class="box-title">Standard advance seat selection</h4>
+                                        <p>Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcor  vulputate nisi, et fringilla ante convallis quis. </p>
+                                    </div>
+                                    <div class="action">
+                                        <span class="price"><small>starting at</small>$18</span>
+                                        <a href="flight-booking.html" class="button btn-small">SELECT NOW</a>
+                                    </div>
+                                </article>
+                                <hr>
+                                <article class="box">
+                                    <figure>
+                                        <img src="http://placehold.it/120x100" alt="" class="middle-item" />
+                                    </figure>
+                                    <div class="details">
+                                        <h4 class="box-title">Standard advance seat selection</h4>
+                                        <p>Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcor  vulputate nisi, et fringilla ante convallis quis. </p>
+                                    </div>
+                                    <div class="action">
+                                        <span class="price"><small>starting at</small>$18</span>
+                                        <a href="flight-booking.html" class="button btn-small">SELECT NOW</a>
+                                    </div>
+                                </article>
+                                <hr>
+                                <article class="box">
+                                    <figure>
+                                        <img src="http://placehold.it/120x100" alt="" class="middle-item" />
+                                    </figure>
+                                    <div class="details">
+                                        <h4 class="box-title">Standard advance seat selection</h4>
+                                        <p>Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcor  vulputate nisi, et fringilla ante convallis quis. </p>
+                                    </div>
+                                    <div class="action">
+                                        <span class="price"><small>starting at</small>$18</span>
+                                        <a href="flight-booking.html" class="button btn-small">SELECT NOW</a>
+                                    </div>
+                                </article>
+                                <hr>
+                                <article class="box">
+                                    <figure>
+                                        <img src="http://placehold.it/120x100" alt="" class="middle-item" />
+                                    </figure>
+                                    <div class="details">
+                                        <h4 class="box-title">Standard advance seat selection</h4>
+                                        <p>Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcor  vulputate nisi, et fringilla ante convallis quis. </p>
+                                    </div>
+                                    <div class="action">
+                                        <span class="price"><small>starting at</small>$18</span>
+                                        <a href="flight-booking.html" class="button btn-small">SELECT NOW</a>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="flight-baggage">
+                            <div class="travelo-box border-box box clearfix">
+                                <form>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="form-group">
+                                            <h5 class="title">From</h5>
+                                            <input type="text" class="input-text full-width" placeholder="city, airport or country name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="form-group">
+                                            <h5 class="title">To</h5>
+                                            <input type="text" class="input-text full-width" placeholder="city, airport or country name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="form-group">
+                                            <h5 class="title">Top Tier Status</h5>
+                                            <div class="selector full-width">
+                                                <select>
+                                                    <option value="">super elite 100K</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="form-group">
+                                            <h5 class="title">Bag weight</h5>
+                                            <div class="selector full-width">
+                                                <select>
+                                                    <option value="">20kgs (44lbs)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="form-group">
+                                            <h5 class="title">Class of service</h5>
+                                            <input type="text" class="input-text full-width" placeholder="economy class">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <div class="form-group">
+                                            <h5 class="title">&nbsp;</h5>
+                                            <button class="full-width icon-check uppercase">View baggage allowance</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox">Infant/child (0 to 11 years) occupying a seat (with own ticket)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <h2>Baggage</h2>
+                            <p>In this section you'll find information on baggage allowances, special equipment and sports items as well as restricted items. We've also included some tips to make your trip more enjoyable.</p>
+                            <div class="baggage column-5">
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-carryon"></i>
+                                    <h5 class="box-title">Carry-on<br>Allowance</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-baggage"></i>
+                                    <h5 class="box-title">Baggage<br>Allowance</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-delayed-baggage"></i>
+                                    <h5 class="box-title">Delayed<br>Baggage</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-damaged-baggage"></i>
+                                    <h5 class="box-title">Damaged<br>Baggage</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-baggage-status"></i>
+                                    <h5 class="box-title">Baggage<br>Status</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-phone"></i>
+                                    <h5 class="box-title">Baggage<br>Services</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-status"></i>
+                                    <h5 class="box-title">Baggage<br>Tips</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-restricted"></i>
+                                    <h5 class="box-title">Restricted<br>Items</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-liability"></i>
+                                    <h5 class="box-title">Liability<br>Limitations</h5>
+                                </div>
+                                <div class="icon-box style9">
+                                    <i class="soap-icon-lost-found"></i>
+                                    <h5 class="box-title">Lost and<br>Found</h5>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <h2>Basic Information</h2>
+                            <p>Sed aliquam nunc eget velit imperdiet, in rutrum mauris malesuada. Quisque ullamcorper vulputate nisi, et fringilla ante convallis quis. Nullam vel tellus non elit suscipit volutpat. Integer id felis et nibh rutrum dignissim ut non risus. In tincidunt urna quis sem luctus, sed accumsan magna pellentesque. Donec et iaculis tellus. Vestibulum ut iaculis justo, auctor sodales lectus. Donec et tellus tempus, dignissim maurornare, consequat lacus. Integer dui neque, scelerisque nec sollicitudin sit amet, sodales a erat. Duis vitae condimentum ligula. Integer eu mi nisl. Donec massa dui, commodo id arcu quis, venenatis scelerisque velit.</p>
+                        </div>
+                        <div class="tab-pane fade" id="flight-fare-rules">
+                            <h2>Fare Rules for your Flight</h2>
+                            <div class="topics">
+                                <ul class="check-square clearfix">
+                                    <li class="col-sm-6 col-md-4"><a href="#">Rules and Policies</a></li>
+                                    <li class="col-sm-6 col-md-4"><a href="#">Flight Changes</a></li>
+                                    <li class="col-sm-6 col-md-4"><a href="#">refunds</a></li>
+                                    <li class="col-sm-6 col-md-4"><a href="#">Airline Penalties</a></li>
+                                    <li class="col-sm-6 col-md-4 active"><a href="#">Flight Cancellation</a></li>
+                                    <li class="col-sm-6 col-md-4"><a href="#">Airline terms of use</a></li>
+                                </ul>
+                            </div>
+                            <p>Maecenas vitae turpis condimentum metus tincidunt semper bibendum ut orci. Donec eget accumsan est. Duis laoreet sagittis elit et vehicula. Cras viverra posuere condimentum. Donec urna arcu, venenatis quis augue sit amet, mattis gravida nunc. Integer faucibus, tortor a tristique adipiscing, arcu metus luctus libero, nec vulputate risus elit id nibh.</p>
+                            <div class="toggle-container">
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" href="#question1" data-toggle="collapse">Flight cancellation charges</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question1">
+                                        <div class="panel-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" href="#question2" data-toggle="collapse">WAmendment in higher class charges</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question2">
+                                        <div class="panel-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="" href="#question3" data-toggle="collapse">Amendment in same class charges</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question3">
+                                        <div class="panel-content">
+                                            <p>Sed a justo enim. Vivamus volutpat ipsum ultrices augue porta lacinia. Proin in elementum enim. <span class="skin-color">Duis suscipit justo</span> non purus consequat molestie. Etiam pharetra ipsum sagittis sollicitudin ultricies. Praesent luctus, diam ut tempus aliquam, diam ante euismod risus, euismod viverra quam quam eget turpis. Nam <span class="skin-color">tristique congue</span> arcu, id bibendum diam. Ut hendrerit, leo a pellentesque porttitor, purus arcu tristique erat, in faucibus elit leo in turpis vitae luctus enim, a mollis nulla.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" href="#question4" data-toggle="collapse">Rebooking/cancellation charges</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question4">
+                                        <div class="panel-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" href="#question5" data-toggle="collapse">Canellation through the customer support</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question5">
+                                        <div class="panel-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" href="#question6" data-toggle="collapse">Do we accept cancellations through email?</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question6">
+                                        <div class="panel-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" href="#question7" data-toggle="collapse">What is the minimum day limit of cancellation?</a>
+                                    </h4>
+                                    <div class="panel-collapse collapse" id="question7">
+                                        <div class="panel-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-section travelo-box">
+                    @using (Html.BeginForm(new { @class = "booking-form" }))
+                    {
+                        int totalCount = 0;
+                        if (Model.SelectedOptions.FirstOrDefault().FlightFares.Count > 0)
+                        {
+                            foreach (XTraTech.Entities.COM.FlightFare ptcBreakDown in Model.SelectedOptions.FirstOrDefault().FlightFares)
+                            {
+                                <div class="person-information">
+                                    <h2>Passenger Details <span class="small-size">(please specify the details as per the passport)</span></h2>
+                                    <hr />
+                                    @if (ptcBreakDown.PaxType == XTraTech.Entities.COM.Enumaration.PaxType.ADT)
+                                    {
+                                        for (int indexPax = totalCount + 1; indexPax <= (ptcBreakDown.PaxCount) + totalCount; indexPax++)
+                                        {
+                                            <h4>ADULT - @indexPax</h4>
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <label>Title</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Title, Model.Titles, new { @class = "full-width" })
+                                                        @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Gender</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Gender, Model.Genders, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>First name</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FirstName, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Last name</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].LastName, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <label>Date of birth</label>
+                                                    <div class="constant-column-3">
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Day, Model.Days, new { @class = "full-width" })
+                                                        </div>
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Month, Model.Months, new { @class = "full-width" })
+                                                        </div>
+                                                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Year, new { @class = "input-text", @placeholder = "YYYY" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>FF Number</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FFNum, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Seat pref</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].SeatPref, Model.SeatPrefList, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Meal Req</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].MealReq, Model.MealPrefList, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                @*<div class="col-md-4">
+                                                    <label>Email</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="">
+                                                    </div>*@
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <label>Passport No</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PassportNum, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Expires On</label>
+                                                    <div class="constant-column-3">
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PDay, Model.Days, new { @class = "full-width" })
+                                                        </div>
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PMonth, Model.Months, new { @class = "full-width" })
+                                                        </div>
+                                                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PYear, new { @class = "input-text", @placeholder = "YYYY" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Issuance Country</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Country, new { @class = "input-text full-width" })
+                                                </div>
+                                            </div>
+                                        }
+                                        totalCount += ptcBreakDown.PaxCount;
+                                    }
+                                    else if (ptcBreakDown.PaxType == XTraTech.Entities.COM.Enumaration.PaxType.CHD)
+                                    {
+                                        for (int indexPax = totalCount + 1; indexPax <= (ptcBreakDown.PaxCount) + totalCount; indexPax++)
+                                        {
+                                            <h4>CHILD - @indexPax</h4>
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <label>Title</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Title, Model.Titles, new { @class = "full-width" })
+                                                        @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Gender</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Gender, Model.Genders, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>First name</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FirstName, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Last name</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].LastName, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <label>Date of birth</label>
+                                                    <div class="constant-column-3">
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Day, Model.Days, new { @class = "full-width" })
+                                                        </div>
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Month, Model.Months, new { @class = "full-width" })
+                                                        </div>
+                                                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Year, new { @class = "input-text", @placeholder = "YYYY" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>FF Number</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FFNum, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Seat pref</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].SeatPref, Model.SeatPrefList, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Meal Req</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].MealReq, Model.MealPrefList, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                @*<div class="col-md-4">
+                                                    <label>Email</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="">
+                                                    </div>*@
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <label>Passport No</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PassportNum, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Expires On</label>
+                                                    <div class="constant-column-3">
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PDay, Model.Days, new { @class = "full-width" })
+                                                        </div>
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PMonth, Model.Months, new { @class = "full-width" })
+                                                        </div>
+                                                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PYear, new { @class = "input-text", @placeholder = "YYYY" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Issuance Country</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Country, new { @class = "input-text full-width" })
+                                                </div>
+                                            </div>
+                                        }
+                                        totalCount += ptcBreakDown.PaxCount;
+                                    }
+                                    else if (ptcBreakDown.PaxType == XTraTech.Entities.COM.Enumaration.PaxType.INF)
+                                    {
+                                        for (int indexPax = totalCount + 1; indexPax <= (ptcBreakDown.PaxCount) + totalCount; indexPax++)
+                                        {
+                                            <h4>INFANT - @indexPax</h4>
+                                            <div class="form-group row">
+                                                <div class="col-md-2">
+                                                    <label>Title</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Title, Model.Titles, new { @class = "full-width" })
+                                                        @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Gender</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Gender, Model.Genders, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>First name</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FirstName, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Last name</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].LastName, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <label>Date of birth</label>
+                                                    <div class="constant-column-3">
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Day, Model.Days, new { @class = "full-width" })
+                                                        </div>
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].Month, Model.Months, new { @class = "full-width" })
+                                                        </div>
+                                                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Year, new { @class = "input-text", @placeholder = "YYYY" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>FF Number</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].FFNum, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Seat pref</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].SeatPref, Model.SeatPrefList, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Meal Req</label>
+                                                    <div class="selector">
+                                                        @Html.DropDownListFor(m => m.Passengers[indexPax - 1].MealReq, Model.MealPrefList, new { @class = "full-width" })
+                                                    </div>
+                                                </div>
+                                                @*<div class="col-md-4">
+                                                    <label>Email</label>
+                                                    <input type="text" class="input-text full-width" value="" placeholder="">
+                                                    </div>*@
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-md-4">
+                                                    <label>Passport No</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PassportNum, new { @class = "input-text full-width" })
+                                                    @*<input type="text" class="input-text full-width" value="" placeholder="">*@
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Expires On</label>
+                                                    <div class="constant-column-3">
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PDay, Model.Days, new { @class = "full-width" })
+                                                        </div>
+                                                        <div class="selector">
+                                                            @Html.DropDownListFor(m => m.Passengers[indexPax - 1].PMonth, Model.Months, new { @class = "full-width" })
+                                                        </div>
+                                                        @Html.TextBoxFor(m => m.Passengers[indexPax - 1].PYear, new { @class = "input-text", @placeholder = "YYYY" })
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Issuance Country</label>
+                                                    @Html.TextBoxFor(m => m.Passengers[indexPax - 1].Country, new { @class = "input-text full-width" })
+                                                </div>
+                                            </div>
+                                        }
+                                        totalCount += ptcBreakDown.PaxCount;
+                                    }
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <label>Address</label>
+                                            @Html.TextBoxFor(m => m.Address, new { @class = "input-text full-width" })
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Email Address</label>
+                                            @Html.TextBoxFor(m => m.Email, new { @class = "input-text full-width" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-4">
+                                            <label>Mobile Number</label>
+                                            @Html.TextBoxFor(m => m.MobileNum, new { @class = "input-text full-width" })
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Postal Code</label>
+                                            @Html.TextBoxFor(m => m.PostalCode, new { @class = "input-text full-width" })
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox"> By continuing, you agree to the <a href="#"><span class="skin-color">Terms and Conditions</span></a>.
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 col-md-5">
+                                            <button type="submit" class="full-width btn-large">CONFIRM BOOKING</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+            <div class="sidebar col-md-3">
+                <br /><br /><br />
+                <div class="travelo-box contact-box">
+                    <h4>Need Travelo Help?</h4>
+                    <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                    <address class="contact-details">
+                        <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                        <br>
+                        <a class="contact-email" href="#">help@travelo.com</a>
+                    </address>
+                </div>
+                <div class="travelo-box book-with-us-box">
+                    <h4>Why Book with us?</h4>
+                    <ul>
+                        <li>
+                            <i class="soap-icon-hotel-1 circle"></i>
+                            <h5 class="title"><a href="#">135,00+ Hotels</a></h5>
+                            <p>Nunc cursus libero pur congue arut nimspnty.</p>
+                        </li>
+                        <li>
+                            <i class="soap-icon-savings circle"></i>
+                            <h5 class="title"><a href="#">Low Rates &amp; Savings</a></h5>
+                            <p>Nunc cursus libero pur congue arut nimspnty.</p>
+                        </li>
+                        <li>
+                            <i class="soap-icon-support circle"></i>
+                            <h5 class="title"><a href="#">Excellent Support</a></h5>
+                            <p>Nunc cursus libero pur congue arut nimspnty.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

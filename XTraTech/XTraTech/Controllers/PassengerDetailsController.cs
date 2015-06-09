@@ -46,6 +46,9 @@ namespace XTraTech.Controllers
                     base.Session["SelectedOptions"] = list;
                 }
                 ViewBag.PageName = "PassengerDetails";
+                //Adding sleep for 10 sec.
+
+                System.Threading.Thread.Sleep(5000);
                 return base.View(passengerModel);
             }
             else
@@ -125,6 +128,10 @@ namespace XTraTech.Controllers
                     FlightBooking flightBooking = new FlightBooking();
                     string value2 = flightBooking.DoBooking(purchaseOrder);
                     base.Session["BookingResponse"] = value2;
+
+                    //Adding sleep for 10 sec.
+
+                    System.Threading.Thread.Sleep(10000);
                 }
                 else
                 {
@@ -144,9 +151,7 @@ namespace XTraTech.Controllers
 					{
 						ex.Message,
 						"\n",
-						ex.StackTrace,
-						"\n\n",
-						text
+						ex.StackTrace
 					})
                 });
             }

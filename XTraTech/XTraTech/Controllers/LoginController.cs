@@ -106,5 +106,11 @@ namespace XTraTech.Controllers
             }
 
         }
+
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return base.RedirectToAction("Index", "Login");
+        }
     }
 }

@@ -159,6 +159,7 @@ namespace XTraTech.Controllers
             }
             return result;
         }
+
         public ActionResult SearchResponse()
         {
             SearchResponse searchResponse = new SearchResponse();
@@ -210,6 +211,7 @@ namespace XTraTech.Controllers
             }
             return base.View(searchResponse);
         }
+
         public ActionResult AirportList(string term)
         {
             List<Airport> source = new List<Airport>();

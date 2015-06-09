@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PassengerDetailsController.cs" />
@@ -339,6 +340,7 @@
     <Content Include="Images\map.gif" />
     <Content Include="Images\meal.gif" />
     <Content Include="Images\passport.gif" />
+    <Content Include="Images\progress_bar.gif" />
     <Content Include="Images\scrolltoTop.jpg" />
     <Content Include="Images\search.ico" />
     <Content Include="Images\select.jpg" />
@@ -471,6 +473,7 @@
     <Content Include="Views\Registration\RegistrationSuccess.cshtml" />
     <Content Include="Views\Reservations\Index.cshtml" />
     <Content Include="Views\Shared\_EmailItinerary.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

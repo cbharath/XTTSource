@@ -31,7 +31,7 @@
         </div>
         @if (ViewBag.PageName == "Search")
         {
-            @Html.ActionLink("SELECT", "Index", "PassengerDetails", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })
+            @Html.ActionLink("SELECT", "Index", "PassengerDetails", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct", @onclick = "return loader()" })
             @*@Html.ActionLink("SEND", "Send", "Search", new { ItineraryID = Model.ItineraryID }, new { @class = "rslt_slct" })*@
         }
         else if (ViewBag.PageName == "PassengerDetails")

@@ -1,5 +1,6 @@
 ﻿using System;
 using XTraTech.Entities.COM;
+using System.Transactions;
 
 namespace XTraTech.FlightCore
 {
@@ -12,7 +13,11 @@ namespace XTraTech.FlightCore
             {
                 item.TktTimeLimit = DateTime.Now.AddDays(1.0);
             }
-            purchaseOrder.Save();
+            using (var scope = new System.Transactions.TransactionScope())
+            {
+                purchaseOrder.Save();
+                scope.Complete();
+            }
             return purchaseOrder.PurchaseOrderID;
         }
     }

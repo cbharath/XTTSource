@@ -1,0 +1,208 @@
+﻿@model XTraTechWeb.Models.Login
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!--[if IE 8]>          <html class="ie ie8"> <![endif]-->
+<!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="">
+<!--<![endif]-->
+<!-- Mirrored from www.soaptheme.net/html/travelo/pages-login3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 Apr 2015 06:48:06 GMT -->
+<head>
+    <!-- Page Title -->
+    <title>BookeTickets.com - Ultimate enterprise for the best tariffs on flights, hotels and cars.</title>
+
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="BookeTickets" />
+    <meta name="description" content="BookeTickets | Ultimate enterprise for the best tariffs on flights, hotels and cars.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Theme Styles -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,200,300,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/css/animate.min.css">
+
+    <!-- Main Style -->
+    <link id="main-style" rel="stylesheet" href="~/css/style.css">
+    @*<script type="text/javascript">
+            var mainStyle = "style.html";
+            if (typeof localStorage != "undefined") {
+                var colorSkin = localStorage.getItem("colorSkin");
+                if (colorSkin != null) {
+                    mainStyle = "style-" + colorSkin + ".css";
+                }
+            }
+            document.write('<link id="main-style" rel="stylesheet" href="css/' + mainStyle + '">');
+        </script>*@
+
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="~/css/custom.css">
+    <!-- Updated Styles -->
+    <link rel="stylesheet" href="~/css/updates.css">
+
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <link href="~/components/ValidationJS/validationEngine.jquery.css" rel="stylesheet" />
+    <!-- CSS for IE -->
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+</head>
+<body class="soap-login-page style3 body-blank">
+    <div id="page-wrapper" class="wrapper-blank">
+        <section id="content">
+            <div class="container">
+                <div id="main">
+                    <h1 class="logo block">
+                        <a href="index.html" title="Travelo - home">
+                            <img src="~/images/logo/bketixfff.png" alt="Travelo HTML5 Template" />
+                        </a>
+                    </h1>
+                    <div class="welcome-text box" style="">Welcome to BookeTickets.com!</div>
+                    <p class="white-color block" style="font-size: 1.5em;">Please login to your account.</p>
+                    <img src="~/images/pages/login/plane.png" class="plane animated" alt="" data-animation-type="fadeInRight" data-animation-duration="1" data-animation-delay="1">
+                    <div class="col-sm-8 col-md-8 col-lg-5 no-float no-padding center-block">
+                        @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "login-form", id="LoginForm" }))
+                        {
+                            <div class="form-group">
+                                <label class="checkbox">
+                                    @Html.CheckBoxFor(m => m.Member) member login
+                                </label>
+                            </div>
+                            <div class="form-group row" id="firstname">
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "input-text input-large full-width validate[required,custom[email]]", @data_prompt_position = "topRight:-30", placeholder = "first name" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "input-text input-large full-width validate[required,custom[email]]", @data_prompt_position = "topRight:-30", placeholder = "first name" })
+                                </div>
+                            </div>
+                            <div class="form-group row" id="company">
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.CompanyName, new { @class = "input-text input-large full-width validate[required,custom[email]]", @data_prompt_position = "topRight:-30", placeholder = "first name" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(m => m.Country, new { @class = "input-text input-large full-width validate[required,custom[email]]", @data_prompt_position = "topRight:-30", placeholder = "first name" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "input-text input-large full-width validate[required,custom[email]]", @data_prompt_position = "topRight:-30", placeholder = "enter your email address" })
+                                @*<input type="text" class="input-text input-large full-width" placeholder="enter your email address">*@
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(m => m.Password, new { @class = "input-text input-large full-width validate[required]", @data_prompt_position = "topRight:-30", placeholder = "enter your password" })
+                                @*<input type="text" class="input-text input-large full-width" placeholder="enter your password">*@
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(m => m.ConfirmPassward, new { @class = "input-text input-large full-width validate[required,equals[Password]]", @data_prompt_position = "topRight:-30", placeholder = "enter your password" })
+                                @*<input type="text" class="input-text input-large full-width" placeholder="enter your password">*@
+                            </div>
+                            <div class="form-group">
+                                <label class="checkbox">
+                                    <input type="checkbox" value="">remember my details
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-large full-width yellow">ACCESS NOW</button>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        @*<div class="container">
+                <img src="images/pages/login/plane.png" class="plane animated" alt="" data-animation-type="fadeInRight" data-animation-delay="1">
+            </div>*@
+        <footer id="footer">
+            <div class="footer-wrapper">
+                <div class="container">
+                    <div class="copyright">
+                        <p>&copy; 2015 Booketickets.com</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        @*<img src="images/pages/login/places.png" class="places animated" alt="" data-animation-type="fadeInRight">*@
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="~/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.noconflict.js"></script>
+    <script type="text/javascript" src="~/js/modernizr.2.7.1.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="~/js/jquery-ui.1.10.4.min.js"></script>
+
+    <!-- Twitter Bootstrap -->
+    <script type="text/javascript" src="~/js/bootstrap.js"></script>
+
+    <!-- parallax -->
+    <script type="text/javascript" src="~/js/jquery.stellar.min.js"></script>
+
+    <!-- waypoint -->
+    <script type="text/javascript" src="~/js/waypoints.min.js"></script>
+    <!-- load page Javascript -->
+    <script type="text/javascript" src="~/js/theme-scripts.js"></script>
+    <script type="text/javascript" src="~/js/scripts.js"></script>
+    <!-- Validation Scripts -->
+    <script src="~/components/ValidationJS/jquery.validationEngine.js"></script>
+    <script src="~/components/ValidationJS/jquery.validationEngine-en.js"></script>
+    <script>
+        tjq(document).ready(function () {
+            if (tjq("input[name=Member]").is(':checked')) {
+                tjq("input[name=FirstName]").hide();
+                tjq("input[name=LastName]").hide();
+                tjq("#firstname").hide();
+                tjq("input[name=CompanyName]").hide();
+                tjq("input[name=Country]").hide();
+                tjq("#company").hide();
+                tjq("input[name=ConfirmPassward]").hide();
+            }
+            else {
+                tjq("input[name=FirstName]").show();
+                tjq("input[name=LastName]").show();
+                tjq("#firstname").show();
+                tjq("input[name=CompanyName]").show();
+                tjq("input[name=Country]").show();
+                tjq("#company").show();
+                tjq("input[name=ConfirmPassward]").show();
+            }
+
+            tjq("input[name=Member]").click(function () {
+                if (tjq("input[name=Member]").is(':checked')) {
+                    tjq("input[name=FirstName]").hide();
+                    tjq("input[name=LastName]").hide();
+                    tjq("#firstname").hide();
+                    tjq("input[name=CompanyName]").hide();
+                    tjq("input[name=Country]").hide();
+                    tjq("#company").hide();
+                    tjq("input[name=ConfirmPassward]").hide();
+                }
+                else {
+                    tjq("input[name=FirstName]").show();
+                    tjq("input[name=LastName]").show();
+                    tjq("#firstname").show();
+                    tjq("input[name=CompanyName]").show();
+                    tjq("input[name=Country]").show();
+                    tjq("#company").show();
+                    tjq("input[name=ConfirmPassward]").show();
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        enableChaser = 0; //disable chaser
+    </script>
+</body>
+</html>

@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapters", "Projects\Adapte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sabre", "Suppliers\Sabre\Sabre.csproj", "{6E69097A-457B-40C8-B954-EF30EA109016}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XTraTechWeb", "XTraTechWeb\XTraTechWeb.csproj", "{DF25D086-DE22-42E3-B78F-5B60E54ADD4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{6E69097A-457B-40C8-B954-EF30EA109016}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E69097A-457B-40C8-B954-EF30EA109016}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E69097A-457B-40C8-B954-EF30EA109016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF25D086-DE22-42E3-B78F-5B60E54ADD4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF25D086-DE22-42E3-B78F-5B60E54ADD4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF25D086-DE22-42E3-B78F-5B60E54ADD4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF25D086-DE22-42E3-B78F-5B60E54ADD4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
