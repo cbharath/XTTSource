@@ -58,7 +58,7 @@
         <header id="header" class="navbar-static-top style7">
             @*<div class="container">
 
-                </div>*@
+            </div>*@
             <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
                 Mobile Menu Toggle
             </a>
@@ -66,8 +66,8 @@
             <div class="main-navigation">
                 <div class="container">
                     <h1 class="logo navbar-brand">
-                        <a href="index.html" title="Travelo - home">
-                            <img src="~/images/logo.png" alt="Travelo HTML5 Template" />
+                        <a href="#" title="BookeTickets - home">
+                            <img src="~/images/logo/booketixblue.png" alt="Travelo HTML5 Template" />
                         </a>
                     </h1>
 
@@ -77,6 +77,30 @@
                         <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
                         <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
                     </ul>
+                    @*<nav class="navbar navbar-inverse navbar-fixed-top">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Project name</a>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li><a href="#">Settings</a></li>
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Help</a></li>
+                                </ul>
+                                <form class="navbar-form navbar-right">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                </form>
+                            </div>
+                        </div>
+                    </nav>*@
                     <nav id="main-menu" role="navigation">
                         <ul class="menu">
                             <li class="menu-item-has-children">
@@ -647,9 +671,7 @@
                 <p>Don't have an account? <a href="#travelo-signup" class="goto-signup soap-popupbox">Sign up</a></p>
             </div>
         </header>
-
-        @RenderBody()
-
+            @RenderBody()
         <footer id="footer">
             <div class="footer-wrapper">
                 <div class="container">
@@ -736,7 +758,7 @@
                 <div class="container">
                     <div class="logo pull-left">
                         <a href="index.html" title="Travelo - home">
-                            <img src="~/images/logo.png" alt="Travelo HTML5 Template" />
+                            <img src="~/images/logo/Bketixlogo_small.png" alt="Travelo HTML5 Template" />
                         </a>
                     </div>
                     <div class="pull-right">
@@ -785,7 +807,24 @@
     <script type="text/javascript" src="~/js/scripts.js"></script>
 
     <!-- Javascript -->
-    
+    <!-- Javascript -->
+    <div id="loader">
+        <br />
+        <div style="color:#777; background: #fff; width:700px; height:300px; border: 2px groove #EEE; border-radius: 10px; margin: 0 auto; margin-top:100px;" align="center">
+            <div>
+                <h1>BookeTickets.com Processing Request...</h1>
+            </div>
+            <div>
+                <img src="~/images/loader.gif" width="124" height="128" />
+            </div>
+            <div>
+                <h2>Please wait</h2>
+            </div>
+            <div>
+                <h3><span>We will bring the best result for you!..</span></h3>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

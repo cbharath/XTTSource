@@ -1,0 +1,171 @@
+﻿@model XTraTechWeb.Models.PurchaseOrderDetails
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<div class="page-title-container">
+    <div class="container">
+        <div class="page-title pull-left">
+            <h2 class="entry-title">Thank You</h2>
+        </div>
+        <ul class="breadcrumbs pull-right">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">Pages</a></li>
+            <li class="active">Thank you</li>
+        </ul>
+    </div>
+</div>*@
+<section id="content" class="gray-area">
+    <div class="container">
+        <div class="row">
+            <div id="main" class="col-sm-8 col-md-9">
+                <div class="booking-information travelo-box">
+                    <h2>Purchase Order Details</h2>
+                    <hr />
+                    @if (Model.IsShowThankYou)
+                    {
+                        <div class="booking-confirmation clearfix">
+                            <i class="soap-icon-recommend icon circle"></i>
+                            <div class="message">
+                                <h4 class="main-message">Thank You. Your Booking Order is Confirmed Now.</h4>
+                                <p>A confirmation email has been sent to your provided email address.</p>
+                            </div>
+                            <a href="#" class="print-button button btn-small">PRINT DETAILS</a>
+                        </div>
+                        <hr />
+                    }
+                    <dl class="term-description">
+                        <dt>Booking number:</dt>
+                        <dd>@Model.purchaseOrder.PurchaseOrderID</dd>
+                        <dt>Booked At</dt>
+                        <dd>@Model.purchaseOrder.CreatedOn</dd>
+                        <dt>Ticket by</dt>
+                        <dd>@Model.purchaseOrder.FlightDetails.FirstOrDefault().TktTimeLimit</dd>
+                    </dl>
+                    <hr />
+                    <h2>Itinerary Details</h2>
+                    @if (Model.purchaseOrder != null)
+                    {
+                        foreach (var PricedItinerary in Model.purchaseOrder.FlightDetails)
+                        {
+                            bool showReturnindicator = true;
+                            <div class="single-itn row-overide clearfix">
+                                @for (int i = 0; i < PricedItinerary.FlightSegments.Count(); i++)
+                                {
+                                    if (PricedItinerary.FlightSegments[i].IsReturn && showReturnindicator)
+                                    {
+                                        showReturnindicator = false;
+                                        <a class="return-indicator">RETURN</a>
+                                    }
+                                    <div class="row-overide clearfix single-segment">
+                                        <div class="col-md-3">
+                                            <span class="airlines_all airline-@PricedItinerary.FlightSegments[i].OperatingAirline ">
+                                            </span>
+                                            <span class="airline-details">
+                                                <span class="skin-color">Malaysian Airlines</span><br>(@PricedItinerary.FlightSegments[i].OperatingAirline-@PricedItinerary.FlightSegments[i].FlightNumber)
+                                            </span>
+                                        </div>
+                                        <div class="col-md-3 city-pair">
+
+                                            <div>
+                                                <i class="soap-icon-plane-right flight-icon-take"></i>
+                                                <span class="skin-color">@XTraTech.Models.Utility.GetAirportName(PricedItinerary.FlightSegments[i].Origin) (@PricedItinerary.FlightSegments[i].Origin)</span><br> @String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].DepartureDateTime) @PricedItinerary.FlightSegments[i].DepartureDateTime.ToShortTimeString() @*<span class="depart_time">@FlightSegment.DepartureDateTime.ToString("HH:mm")</span>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 city-pair">
+
+                                            <div>
+                                                <i class="soap-icon-plane-right flight-icon-land"></i>
+                                                <span class="skin-color">@XTraTech.Models.Utility.GetAirportName(PricedItinerary.FlightSegments[i].Destination) (@PricedItinerary.FlightSegments[i].Destination)</span><br />@String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].ArrivalDateime) @PricedItinerary.FlightSegments[i].ArrivalDateime.ToShortTimeString()
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 city-pair">
+
+                                            <div>
+                                                <i class="soap-icon-clock flight-duration"></i>
+                                                <span class="skin-color">Total time</span><br />@XTraTech.Models.Utility.MinutesToHours(PricedItinerary.FlightSegments[i].JourneyDuration)
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    }
+                    <br />
+                    <h2>Traveller Information</h2>
+                    @foreach (var item in Model.purchaseOrder.PassengerDetails)
+                    {
+                        <hr />
+                        <dl class="term-description">
+                            <dt>
+                                Ticket Number
+                            </dt>
+                            <dd></dd>
+                            <dt>Name</dt>
+                            <dd>@item.Title @item.FirstName + @item.LastName (@item.PaxType)</dd>
+
+                            <dt>Date Of Birth</dt>
+                            <dd>@item.DOB</dd>
+
+                            <dt>Gender</dt>
+                            <dd>@item.Gender</dd>
+
+                            <dt>Email</dt>
+                            <dd>@item.Email</dd>
+
+                            <dt>Frequent Flyer Number</dt>
+                            <dd>@item.FFNumber</dd>
+
+                            <dt>Meal Preference</dt>
+                            <dd>@item.MealPref</dd>
+
+                            <dt>Seat Preference</dt>
+                            <dd>@item.SeatPref</dd>
+
+                            <dt>Passport</dt>
+                            <dd>@item.PassportNumber</dd>
+
+                            <dt>Date Of Expire</dt>
+                            <dd>@item.PassportDOE</dd>
+
+                            <dt>Nationality</dt>
+                            <dd>@item.PassportNationality</dd>
+
+                        </dl>
+                    }
+                </div>
+            </div>
+            <div class="sidebar col-sm-4 col-md-3">
+                <div class="travelo-box contact-box">
+                    <h4>Need Travelo Help?</h4>
+                    <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                    <address class="contact-details">
+                        <span class="contact-phone"><i class="soap-icon-phone"></i> 1-800-123-HELLO</span>
+                        <br>
+                        <a class="contact-email" href="#">help@travelo.com</a>
+                    </address>
+                </div>
+                <div class="travelo-box book-with-us-box">
+                    <h4>Why Book with us?</h4>
+                    <ul>
+                        <li>
+                            <i class="soap-icon-hotel-1 circle"></i>
+                            <h5 class="title"><a href="#">135,00+ Hotels</a></h5>
+                            <p>Nunc cursus libero pur congue arut nimspnty.</p>
+                        </li>
+                        <li>
+                            <i class="soap-icon-savings circle"></i>
+                            <h5 class="title"><a href="#">Low Rates &amp; Savings</a></h5>
+                            <p>Nunc cursus libero pur congue arut nimspnty.</p>
+                        </li>
+                        <li>
+                            <i class="soap-icon-support circle"></i>
+                            <h5 class="title"><a href="#">Excellent Support</a></h5>
+                            <p>Nunc cursus libero pur congue arut nimspnty.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

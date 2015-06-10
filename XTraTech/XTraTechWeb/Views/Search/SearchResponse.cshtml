@@ -14,280 +14,304 @@
         </ul>
     </div>
 </div>
-<section id="content">
-    <div class="container">
-        <div id="main">
-            <div class="row">
-                <div class="col-sm-4 col-md-3">
-                    <h4 class="search-results-title"><i class="soap-icon-search"></i><b>@Model.SearchResults.Count</b> results found.</h4>
-                    <div class="toggle-container filters-container">
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#price-filter" class="">Price</a>
-                            </h4>
-                            <div id="price-filter" class="panel-collapse collapse in">
-                                <div class="panel-content">
-                                    <div id="price-range"></div>
-                                    <br />
-                                    <span class="min-price-label pull-left"></span>
-                                    <span class="max-price-label pull-right"></span>
-                                    <div class="clearer"></div>
-                                </div><!-- end content -->
+@if (Model.SearchResults != null && Model.SearchResults.Count > 0)
+{
+    <section id="content">
+        <div class="container">
+            <div id="main">
+                @if (!ViewBag.IsClientProfileComplete)
+                {
+                    <div class="row">
+                        <div class="col-sms-12 col-md-12">
+                            <div class="alert alert-error">
+                                Client profile is not complete. You cannot book the flights. Please  @Html.ActionLink("  CLICK HERE  ", "Index", "Registration", new { ClientId = ViewBag.ClientId }, new { @class = "skin-color" }) to complete client profile details!..
+                                <span class="close"></span>
                             </div>
                         </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#flight-times-filter" class="">Flight Times</a>
-                            </h4>
-                            <div id="flight-times-filter" class="panel-collapse collapse in">
-                                <div class="panel-content">
-                                    <div id="flight-times" class="slider-color-yellow"></div>
-                                    <br />
-                                    <span class="start-time-label pull-left"></span>
-                                    <span class="end-time-label pull-right"></span>
-                                    <div class="clearer"></div>
-                                </div><!-- end content -->
-                            </div>
-                        </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#flight-stops-filter" class="">Flight Stops</a>
-                            </h4>
-                            <div id="flight-stops-filter" class="panel-collapse collapse in">
-                                <div class="panel-content">
-                                    <ul class="check-square filters-option">
-                                        <li><a href="#">1 Stop</a></li>
-                                        <li><a href="#">2 Stops</a></li>
-                                        <li class="active"><a href="#">3 Stops</a></li>
-                                        <li><a href="#">MultiStops</a></li>
-                                    </ul>
-                                    <a class="button btn-mini">MORE</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#airlines-filter" class="">Airlines</a>
-                            </h4>
-                            <div id="airlines-filter" class="panel-collapse collapse in">
-                                <div class="panel-content">
-                                    <ul class="check-square filters-option">
-                                        <li><a href="#">Major Airline<small>($620)</small></a></li>
-                                        <li><a href="#">United Airlines<small>($982)</small></a></li>
-                                        <li class="active"><a href="#">delta airlines<small>($1,127)</small></a></li>
-                                        <li><a href="#">Alitalia<small>($2,322)</small></a></li>
-                                        <li><a href="#">US airways<small>($3,158)</small></a></li>
-                                        <li><a href="#">Air France<small>($4,239)</small></a></li>
-                                        <li><a href="#">Air tahiti nui<small>($5,872)</small></a></li>
-                                    </ul>
-                                    <a class="button btn-mini">MORE</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="panel style1 arrow-right">
-                            <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#flight-type-filter" class="">Flight Type</a>
-                            </h4>
-                            <div id="flight-type-filter" class="panel-collapse collapse in">
-                                <div class="panel-content">
-                                    <ul class="check-square filters-option">
-                                        <li><a href="#">Business</a></li>
-                                        <li><a href="#">First class</a></li>
-                                        <li class="active"><a href="#">Economy</a></li>
-                                        <li><a href="#">Premium Economy</a></li>
-                                    </ul>
-                                    <a class="button btn-mini">MORE</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        @*<div class="panel style1 arrow-right">
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-sm-4 col-md-3">
+                        <h4 class="search-results-title"><i class="soap-icon-search"></i><b>@Model.SearchResults.Count</b> results found.</h4>
+                        <div class="toggle-container filters-container">
+                            <div class="panel style1 arrow-right">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#inflight-experience-filter" class="">Inflight Experience</a>
+                                    <a data-toggle="collapse" href="#price-filter" class="">Price</a>
                                 </h4>
-                                <div id="inflight-experience-filter" class="panel-collapse collapse in">
+                                <div id="price-filter" class="panel-collapse collapse in">
+                                    <div class="panel-content">
+                                        <div id="price-range"></div>
+                                        <br />
+                                        <span class="min-price-label pull-left"></span>
+                                        <span class="max-price-label pull-right"></span>
+                                        <div class="clearer"></div>
+                                    </div><!-- end content -->
+                                </div>
+                            </div>
+
+                            <div class="panel style1 arrow-right">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#flight-times-filter" class="">Flight Times</a>
+                                </h4>
+                                <div id="flight-times-filter" class="panel-collapse collapse in">
+                                    <div class="panel-content">
+                                        <div id="flight-times" class="slider-color-yellow"></div>
+                                        <br />
+                                        <span class="start-time-label pull-left"></span>
+                                        <span class="end-time-label pull-right"></span>
+                                        <div class="clearer"></div>
+                                    </div><!-- end content -->
+                                </div>
+                            </div>
+
+                            <div class="panel style1 arrow-right">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#flight-stops-filter" class="">Flight Stops</a>
+                                </h4>
+                                <div id="flight-stops-filter" class="panel-collapse collapse in">
                                     <div class="panel-content">
                                         <ul class="check-square filters-option">
-                                            <li><a href="#">Inflight Dining</a></li>
-                                            <li><a href="#">Music</a></li>
-                                            <li class="active"><a href="#">Sky Shopping</a></li>
-                                            <li><a href="#">Wi-fi</a></li>
-                                            <li><a href="#">Seats &amp; Cabin</a></li>
+                                            <li><a href="#">1 Stop</a></li>
+                                            <li><a href="#">2 Stops</a></li>
+                                            <li class="active"><a href="#">3 Stops</a></li>
+                                            <li><a href="#">MultiStops</a></li>
                                         </ul>
                                         <a class="button btn-mini">MORE</a>
                                     </div>
                                 </div>
-                            </div>*@
+                            </div>
 
-                        @*<div class="panel style1 arrow-right">
+                            <div class="panel style1 arrow-right">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#modify-search-panel" class="">Modify Search</a>
+                                    <a data-toggle="collapse" href="#airlines-filter" class="">Airlines</a>
                                 </h4>
-                                <div id="modify-search-panel" class="panel-collapse collapse in">
+                                <div id="airlines-filter" class="panel-collapse collapse in">
                                     <div class="panel-content">
-                                        <form method="post">
-                                            <div class="form-group">
-                                                <label>Leaving from</label>
-                                                <input type="text" class="input-text full-width" placeholder="" value="city, district, or specific airpot" />
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Departure on</label>
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Arriving On</label>
-                                                <div class="datepicker-wrap">
-                                                    <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
-                                                </div>
-                                            </div>
-                                            <br />
-                                            <button class="btn-medium icon-check uppercase full-width">search again</button>
-                                        </form>
+                                        <ul class="check-square filters-option">
+                                            <li><a href="#">Major Airline<small>($620)</small></a></li>
+                                            <li><a href="#">United Airlines<small>($982)</small></a></li>
+                                            <li class="active"><a href="#">delta airlines<small>($1,127)</small></a></li>
+                                            <li><a href="#">Alitalia<small>($2,322)</small></a></li>
+                                            <li><a href="#">US airways<small>($3,158)</small></a></li>
+                                            <li><a href="#">Air France<small>($4,239)</small></a></li>
+                                            <li><a href="#">Air tahiti nui<small>($5,872)</small></a></li>
+                                        </ul>
+                                        <a class="button btn-mini">MORE</a>
                                     </div>
                                 </div>
-                            </div>*@
-                    </div>
-                </div>
-                <div class="col-sm-8 col-md-9">
-                    <div class="sort-by-section clearfix box">
-                        <h4 class="sort-by-title block-sm">
-                            <span class="from_de">@Utility.GetAirportName(Model.SearchRequest.FlightSearchDetails.AirTravelDetails[0].Origin)</span>
-                            <span class="dull">to</span>
-                            <span class="to_de">@Utility.GetAirportName(Model.SearchRequest.FlightSearchDetails.AirTravelDetails[0].Destination)</span>
-                            <span class="from_date">@Model.SearchRequest.FlightSearchDetails.AirTravelDetails[0].DepartureDateTime.ToString("dd MMM yyyy HH:mm")</span>
-                            <span class="flight-class">@Utility.GetCabinName(Model.SearchResults[0].FlightSegments[0].CabinClass)</span>
-                        </h4>
-                        @*<ul class="sort-bar clearfix block-sm">
-                                <li class="sort-by-name"><a class="sort-by-container" href="#"><span>name</span></a></li>
-                                <li class="sort-by-price"><a class="sort-by-container" href="#"><span>price</span></a></li>
-                                <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>duration</span></a></li>
-                            </ul>*@
-
-                        <ul class="swap-tiles clearfix block-sm">
-                            <li class="swap-list active">
-                                <a href="flight-list-view.html"><i class="soap-icon-list"></i></a>
-                            </li>
-                            <li class="swap-grid">
-                                <a href="flight-grid-view.html"><i class="soap-icon-grid"></i></a>
-                            </li>
-                            <li class="swap-block">
-                                <a href="flight-block-view.html"><i class="soap-icon-block"></i></a>
-                            </li>
-                        </ul>
-
-                        @*<ul class="swap-tiles clearfix block-sm  modify-search">
-                                <li>
-                                    <a href="#" class="button modify-button">MODIFY SEARCH</a>
-                                </li>
-                            </ul>*@
-                    </div>
-                    @*<div class="sort-by-section clearfix box search-wrapper" style="display: block;">
-                            <ul class="search-tabs searchresult clearfix">
-                                <li class="active"><a class="oneway" href="#oneway-tab" data-toggle="tab">One way</a></li>
-                                <li class=""><a class="return" href="#returntrip-tab" data-toggle="tab">Round trip</a></li>
-                                <li class=""><a class="multi" href="#multicity-tab" data-toggle="tab">Multi-City</a></li>
-                            </ul>
-                            <div class="search-tab-content col-md-12" id="modify-search-form">
-                                @{Html.RenderAction("Searchpartial", "search");}
                             </div>
-                        </div>*@
-                    <div class="flight-list listing-style3 flight">
-                        @using (Html.BeginForm())
+
+                            <div class="panel style1 arrow-right">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" href="#flight-type-filter" class="">Flight Type</a>
+                                </h4>
+                                <div id="flight-type-filter" class="panel-collapse collapse in">
+                                    <div class="panel-content">
+                                        <ul class="check-square filters-option">
+                                            <li><a href="#">Business</a></li>
+                                            <li><a href="#">First class</a></li>
+                                            <li class="active"><a href="#">Economy</a></li>
+                                            <li><a href="#">Premium Economy</a></li>
+                                        </ul>
+                                        <a class="button btn-mini">MORE</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            @*<div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#inflight-experience-filter" class="">Inflight Experience</a>
+                                    </h4>
+                                    <div id="inflight-experience-filter" class="panel-collapse collapse in">
+                                        <div class="panel-content">
+                                            <ul class="check-square filters-option">
+                                                <li><a href="#">Inflight Dining</a></li>
+                                                <li><a href="#">Music</a></li>
+                                                <li class="active"><a href="#">Sky Shopping</a></li>
+                                                <li><a href="#">Wi-fi</a></li>
+                                                <li><a href="#">Seats &amp; Cabin</a></li>
+                                            </ul>
+                                            <a class="button btn-mini">MORE</a>
+                                        </div>
+                                    </div>
+                                </div>*@
+
+                            @*<div class="panel style1 arrow-right">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#modify-search-panel" class="">Modify Search</a>
+                                    </h4>
+                                    <div id="modify-search-panel" class="panel-collapse collapse in">
+                                        <div class="panel-content">
+                                            <form method="post">
+                                                <div class="form-group">
+                                                    <label>Leaving from</label>
+                                                    <input type="text" class="input-text full-width" placeholder="" value="city, district, or specific airpot" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Departure on</label>
+                                                    <div class="datepicker-wrap">
+                                                        <input type="text" name="date_from" class="input-text full-width" placeholder="mm/dd/yy" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Arriving On</label>
+                                                    <div class="datepicker-wrap">
+                                                        <input type="text" name="date_to" class="input-text full-width" placeholder="mm/dd/yy" />
+                                                    </div>
+                                                </div>
+                                                <br />
+                                                <button class="btn-medium icon-check uppercase full-width">search again</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>*@
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-md-9">
+                        <div class="sort-by-section clearfix box">
+                            <h4 class="sort-by-title block-sm">
+                                <span class="from_de">@Utility.GetAirportName(Model.SearchRequest.FlightSearchDetails.AirTravelDetails[0].Origin)</span>
+                                <span class="dull">to</span>
+                                <span class="to_de">@Utility.GetAirportName(Model.SearchRequest.FlightSearchDetails.AirTravelDetails[0].Destination)</span>
+                                <span class="from_date">@Model.SearchRequest.FlightSearchDetails.AirTravelDetails[0].DepartureDateTime.ToString("dd MMM yyyy HH:mm")</span>
+                                <span class="flight-class">@Utility.GetCabinName(Model.SearchResults[0].FlightSegments[0].CabinClass)</span>
+                            </h4>
+                            @*<ul class="sort-bar clearfix block-sm">
+                                    <li class="sort-by-name"><a class="sort-by-container" href="#"><span>name</span></a></li>
+                                    <li class="sort-by-price"><a class="sort-by-container" href="#"><span>price</span></a></li>
+                                    <li class="sort-by-rating active"><a class="sort-by-container" href="#"><span>duration</span></a></li>
+                                </ul>*@
+
+                            <ul class="swap-tiles clearfix block-sm">
+                                <li class="swap-list active">
+                                    <a href="flight-list-view.html"><i class="soap-icon-list"></i></a>
+                                </li>
+                                <li class="swap-grid">
+                                    <a href="flight-grid-view.html"><i class="soap-icon-grid"></i></a>
+                                </li>
+                                <li class="swap-block">
+                                    <a href="flight-block-view.html"><i class="soap-icon-block"></i></a>
+                                </li>
+                            </ul>
+
+                            @*<ul class="swap-tiles clearfix block-sm  modify-search">
+                                    <li>
+                                        <a href="#" class="button modify-button">MODIFY SEARCH</a>
+                                    </li>
+                                </ul>*@
+                        </div>
+                        @*<div class="sort-by-section clearfix box search-wrapper" style="display: block;">
+                                <ul class="search-tabs searchresult clearfix">
+                                    <li class="active"><a class="oneway" href="#oneway-tab" data-toggle="tab">One way</a></li>
+                                    <li class=""><a class="return" href="#returntrip-tab" data-toggle="tab">Round trip</a></li>
+                                    <li class=""><a class="multi" href="#multicity-tab" data-toggle="tab">Multi-City</a></li>
+                                </ul>
+                                <div class="search-tab-content col-md-12" id="modify-search-form">
+                                    @{Html.RenderAction("Searchpartial", "search");}
+                                </div>
+                            </div>*@
+                        <div class="flight-list listing-style3 flight">
+                            @using (Html.BeginForm())
                         {
                             if (Model.SearchResults != null)
                             {
                                 foreach (var PricedItinerary in Model.SearchResults)
                                 {
                                     bool showReturnindicator = true;
-                                    <div class="single-itn row-overide clearfix">
-                                        @for (int i = 0; i < PricedItinerary.FlightSegments.Count(); i++)
+                        <div class="single-itn row-overide clearfix">
+                            @for (int i = 0; i < PricedItinerary.FlightSegments.Count(); i++)
                                         {
                                             if (PricedItinerary.FlightSegments[i].IsReturn && showReturnindicator)
                                             {
                                                 showReturnindicator = false;
-                                                <a class="return-indicator">RETURN</a>
+                                        <a class="return-indicator">RETURN</a>
                                             }
-                                            <div class="row-overide clearfix single-segment">
-                                                <div class="col-md-3">
-                                                    <span class="airlines_all airline-@PricedItinerary.FlightSegments[i].OperatingAirline ">
-                                                        @*<img src="@Url.Content("http://www.mediawego.com/images/partners/66x42/airlines/" + PricedItinerary.FlightSegments[i].OperatingAirline.ToUpper() + ".png")" width="60"
-                                                            height="38" />*@
-                                                    </span>
-                                                    <span class="airline-details">
-                                                        <span class="skin-color">Malaysian Airlines</span><br>(@PricedItinerary.FlightSegments[i].OperatingAirline-@PricedItinerary.FlightSegments[i].FlightNumber)
-                                                    </span>
-                                                </div>
-                                                <div class="col-md-3 city-pair">
+                                        <div class="row-overide clearfix single-segment">
+                                            <div class="col-md-3">
+                                                <span class="airlines_all airline-@PricedItinerary.FlightSegments[i].OperatingAirline ">
+                                                    @*<img src="@Url.Content("http://www.mediawego.com/images/partners/66x42/airlines/" + PricedItinerary.FlightSegments[i].OperatingAirline.ToUpper() + ".png")" width="60"
+                                                        height="38" />*@
+                                                </span>
+                                                <span class="airline-details">
+                                                    <span class="skin-color">Malaysian Airlines</span><br>(@PricedItinerary.FlightSegments[i].OperatingAirline-@PricedItinerary.FlightSegments[i].FlightNumber)
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3 city-pair">
 
-                                                    <div>
-                                                        <i class="soap-icon-plane-right flight-icon-take"></i>
-                                                        <span class="skin-color">@Utility.GetAirportName(PricedItinerary.FlightSegments[i].Origin) (@PricedItinerary.FlightSegments[i].Origin)</span><br> @String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].DepartureDateTime) @PricedItinerary.FlightSegments[i].DepartureDateTime.ToShortTimeString() @*<span class="depart_time">@FlightSegment.DepartureDateTime.ToString("HH:mm")</span>*@
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 city-pair">
-
-                                                    <div>
-                                                        <i class="soap-icon-plane-right flight-icon-land"></i>
-                                                        <span class="skin-color">@Utility.GetAirportName(PricedItinerary.FlightSegments[i].Destination) (@PricedItinerary.FlightSegments[i].Destination)</span><br />@String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].ArrivalDateime) @PricedItinerary.FlightSegments[i].ArrivalDateime.ToShortTimeString()
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3 city-pair">
-
-                                                    <div>
-                                                        <i class="soap-icon-clock flight-duration"></i>
-                                                        <span class="skin-color">Total time</span><br />@Utility.MinutesToHours(PricedItinerary.FlightSegments[i].JourneyDuration)
-                                                    </div>
+                                                <div>
+                                                    <i class="soap-icon-plane-right flight-icon-take"></i>
+                                                    <span class="skin-color">@Utility.GetAirportName(PricedItinerary.FlightSegments[i].Origin) (@PricedItinerary.FlightSegments[i].Origin)</span><br> @String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].DepartureDateTime) @PricedItinerary.FlightSegments[i].DepartureDateTime.ToShortTimeString() @*<span class="depart_time">@FlightSegment.DepartureDateTime.ToString("HH:mm")</span>*@
                                                 </div>
                                             </div>
+                                            <div class="col-md-3 city-pair">
+
+                                                <div>
+                                                    <i class="soap-icon-plane-right flight-icon-land"></i>
+                                                    <span class="skin-color">@Utility.GetAirportName(PricedItinerary.FlightSegments[i].Destination) (@PricedItinerary.FlightSegments[i].Destination)</span><br />@String.Format("{0:ddd, MMM d, yyyy}", PricedItinerary.FlightSegments[i].ArrivalDateime) @PricedItinerary.FlightSegments[i].ArrivalDateime.ToShortTimeString()
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 city-pair">
+
+                                                <div>
+                                                    <i class="soap-icon-clock flight-duration"></i>
+                                                    <span class="skin-color">Total time</span><br />@Utility.MinutesToHours(PricedItinerary.FlightSegments[i].JourneyDuration)
+                                                </div>
+                                            </div>
+                                        </div>
                                         }
 
-                                        <div class="row-overide itn-headers clearfix">
-                                            <div class="col-md-10 city-pair-head">
-                                                <span class="price pull-left">TOTAL @Model.GetFare(PricedItinerary.FlightFares, "currency") @Model.GetFare(PricedItinerary.FlightFares, "total").Split(new[] { '.' })[0].@Model.GetFare(PricedItinerary.FlightFares, "total").Split(new[] { '.' })[1]</span>
-                                                @*@if (PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() > 1)
-                                                    {
-                                                        <span class="stop-details">Onwards | <b class="skin-color @(PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() - 1)Stop">  @(PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() - 1) Stop</b></span>
-                                                    }
-                                                    else if (PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() == 1)
-                                                    {
-                                                        <span class="stop-details">Onwards | <b class="skin-color nonStop">Non Stop</b></span>
-                                                    }
+                            <div class="row-overide itn-headers clearfix">
+                                <div class="col-md-10 city-pair-head">
+                                    <span class="price pull-left">TOTAL @Model.GetFare(PricedItinerary.FlightFares, "currency") @Model.GetFare(PricedItinerary.FlightFares, "total").Split(new[] { '.' })[0].@Model.GetFare(PricedItinerary.FlightFares, "total").Split(new[] { '.' })[1]</span>
+                                    @*@if (PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() > 1)
+                                        {
+                                            <span class="stop-details">Onwards | <b class="skin-color @(PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() - 1)Stop">  @(PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() - 1) Stop</b></span>
+                                        }
+                                        else if (PricedItineraries.OriginDestinationOptions[0].FlightSegments.Count() == 1)
+                                        {
+                                            <span class="stop-details">Onwards | <b class="skin-color nonStop">Non Stop</b></span>
+                                        }
 
 
-                                                    @if (PricedItineraries.DirectionInd == OnePointObjects.AirTripType.Return)
-                                                    {
-                                                        int count = PricedItineraries.OriginDestinationOptions[1].FlightSegments.Count();
-                                                        if (count > 1)
-                                                        {
-                                                            <span class="stop-details">Return | <b class="skin-color @(count - 1)Stop ">@(count - 1) Stop</b></span>
-                                                        }
-                                                        else if (count == 1)
-                                                        {
-                                                            <span class="stop-details">Return | <b class="skin-color nonStop">Non Stop</b></span>
-                                                        }
-                                                    }
-                                                    <a href="#" class="pull-right fare-details">Fare Details <b class="caret"></b></a>*@
-                                            </div>
+                                        @if (PricedItineraries.DirectionInd == OnePointObjects.AirTripType.Return)
+                                        {
+                                            int count = PricedItineraries.OriginDestinationOptions[1].FlightSegments.Count();
+                                            if (count > 1)
+                                            {
+                                                <span class="stop-details">Return | <b class="skin-color @(count - 1)Stop ">@(count - 1) Stop</b></span>
+                                            }
+                                            else if (count == 1)
+                                            {
+                                                <span class="stop-details">Return | <b class="skin-color nonStop">Non Stop</b></span>
+                                            }
+                                        }
+                                        <a href="#" class="pull-right fare-details">Fare Details <b class="caret"></b></a>*@
+                                </div>
 
-                                            <div class="col-md-2 pull-right">
-                                                @Html.ActionLink("SELECT NOW", "Index", "PassengerDetails", new { ItineraryID = PricedItinerary.ItineraryID }, new { @class = "button btn-medium green icon-check full-width" })
-                                            </div>
+                                <div class="col-md-2 pull-right">
+                                    @Html.ActionLink("SELECT NOW", "Index", "PassengerDetails", new { ItineraryID = PricedItinerary.ItineraryID }, new { @class = "button btn-medium green icon-check full-width" })
+                                </div>
 
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
                                 }
                             }
                         }
+                        </div>
+                        @*<a class="button uppercase full-width btn btn-large">load more listings</a>*@
                     </div>
-                    @*<a class="button uppercase full-width btn btn-large">load more listings</a>*@
                 </div>
             </div>
         </div>
+    </section>
+}
+else
+{
+    <div class="container">
+        <br />
+        <br />
+        <p class="alert alert-help">
+            Sorry  No Flights Results Found
+        </p>
     </div>
-</section>
+}

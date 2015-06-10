@@ -7484,7 +7484,8 @@ ul.check-circle li:before {
                 }
 
     #header .logo a, #footer .logo a, .chaser .logo a {
-        background: url("../images/logo/skin1/logo.png") no-repeat 0 0;
+        background: url("../images/logo/booketixwhite.png") no-repeat 0 0;
+        width:220px;
         display: block;
     }
 
@@ -8319,8 +8320,9 @@ ul.menu.mini {
         }
 
 .chaser {
-    background: rgba(255,255,255,0.95);
+    background: #2d3e52;
     position: fixed;
+    border-bottom:1px solid gray;
     right: 0;
     top: 0;
     width: 100%;
@@ -14600,6 +14602,58 @@ a.vendor {
     .overBg img {
         text-align: center;
     }
+
+/****** MIS Booking Manager ********/
+
+#BManage {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+    #BManage table {
+        width: 100%;
+        height: auto;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-spacing: 0px;
+        font-size: 12px;
+    }
+
+        #BManage table th {
+            padding: 3px 5px 3px 5px;
+            border-right: 1px dotted #666;
+        }
+
+            #BManage table th img {
+                margin: 0px 0px 0px 5px;
+            }
+
+        #BManage table caption {
+            line-height: 30px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: bold;
+            color: #666666;
+        }
+
+        #BManage table thead tr {
+            background-color: #dddddd !important;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        #BManage table thead th {
+            background-color: #dddddd !important;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        #BManage table td {
+            padding: 3px;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px dotted #ddd;
+        }
 
 /*Airline Css*/
 .airlines_all {

@@ -1,0 +1,95 @@
+﻿@model XTraTechWeb.Models.ReservationsModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<section id="content">
+    <div class="container flight-detail-page">
+        <div class="row">
+            <div id="main" class="col-md-12" style="background-color: white;">
+                <div class=" booking-section travelo-box">
+                <div class="person-information">
+                    <h2>Booking Manager</h2>
+                    <hr />
+                    <div>
+                        <table class="table table-bordered table-condensed" align="center">
+                            <thead>
+                                <tr class="info">
+                                    <th>Select</th>
+                                    <th>Reference ID</th>
+                                    <th colspan="2">Created</th>
+                                    <th colspan="2">Pax</th>
+                                    <th colspan="2">Travel</th>
+                                    <th colspan="2">Payment</th>
+                                    <th>Total</th>
+                                    <th>Earnings</th>
+                                </tr>
+                                <tr class="active">
+                                    <th><a href="#"><img src="~/images/arrow-up.png" width="10" height="7" /></a></th>
+                                    <th>
+                                    </th>
+                                    <th>Date<a href="#"><img src="~/images/arrow-up.png" width="10" height="7" /></a></th>
+                                    <th>by</th>
+                                    <th>Prime</th>
+                                    <th>Sum</th>
+                                    <th>Date<a href="#"><img src="~/images/arrow-up.png" width="10" height="7" /></a></th>
+                                    <th>Airports</th>
+                                    <th>Source</th>
+                                    <th>Status</th>
+                                    <th>INR</th>
+                                    <th>INR<a href="#"><img src="~/images/arrow-up.png" width="10" height="7" /></a></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- repeat -->
+                                @for (int i = 0, j = 1; i < Model.Reservations.Count; i++, j++)
+                                {
+                                    <tr>
+                                        <td><input type="checkbox" /></td>
+                                        <td><a href="#">@Html.ActionLink(Model.Reservations[i].PurchaseOrderID, "Index", "PurchaseOrder", new { BookingId = Model.Reservations[i].PurchaseOrderID }, new { @class = "skin-color" })</a></td><!--Open to view the details-->
+                                        <td>@Model.Reservations[i].CreatedOn</td><!--No of booking of that day-->
+                                        <td>@Model.Reservations[i].clientID</td><!--On hover pop up No of bookings by-->
+                                        <td><a href="#">@Model.Reservations[i].PrimaryPax</a></td><!--expand to show all-->
+                                        <td>@Model.Reservations[i].PaxCountSummary</td>
+                                        <td>@Model.Reservations[i].TravelDate</td>
+                                        <td>@Model.Reservations[i].Airports</td><!--On hover show itin-->
+                                        <td>@Model.Reservations[i].PaymentStatus</td><!--Pop up to change the type-->
+                                        @if (@Model.Reservations[i].Status == XTraTech.Entities.COM.Enumaration.BookingStatus.Booked)
+                                        {
+                                            <td><img src="~/images/BookingStatus/booked.png" width="20" height="20" /></td>
+                                        }
+                                        else if (@Model.Reservations[i].Status == XTraTech.Entities.COM.Enumaration.BookingStatus.InProcess)
+                                        {
+                                            <td><img src="~/images/BookingStatus/inprocess.png" width="20" height="20" /></td>
+                                        }
+                                        else if (@Model.Reservations[i].Status == XTraTech.Entities.COM.Enumaration.BookingStatus.NotBooked)
+                                        {
+                                            <td><img src="~/images/BookingStatus/booked.png" width="20" height="20" /></td>
+                                        }
+                                        else if (@Model.Reservations[i].Status == XTraTech.Entities.COM.Enumaration.BookingStatus.Pending)
+                                        {
+                                            <td><img src="~/images/BookingStatus/pending.png" width="20" height="20" /></td>
+                                        }
+                                        else if (@Model.Reservations[i].Status == XTraTech.Entities.COM.Enumaration.BookingStatus.Ticketed)
+                                        {
+                                            <td><img src="~/images/BookingStatus/ticketed.png" width="20" height="20" /></td>
+                                        }
+                                        else
+                                        {
+                                            <td><img src="~/images/BookingStatus/booked.png" width="20" height="20" /></td>
+                                        }
+                                        <td>@Model.Reservations[i].Total</td><!--On hover break up-->
+                                        <td>715.00</td><!--Pop up to change the type-->
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+

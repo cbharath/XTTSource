@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using XTraTech.Entities.COM;
 
-namespace XTraTech.Models
+namespace XTraTechWeb.Models
 {
     public class ReservationsModel
     {

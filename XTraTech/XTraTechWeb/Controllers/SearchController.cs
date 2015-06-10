@@ -19,6 +19,16 @@ namespace XTraTechWeb.Controllers
             {
                 SearchModel model = new SearchModel();
                 ViewBag.EnableNewDesign = false;
+                Client client = Session["LoggedInUser"] as Client;
+                ViewBag.ClientId = client.ClintID;
+                if (!string.IsNullOrEmpty(client.ZIP))
+                {
+                    ViewBag.IsClientProfileComplete = true;
+                }
+                else
+                {
+                    ViewBag.IsClientProfileComplete = false;
+                }
                 return View(model);
             }
             else
@@ -125,6 +135,7 @@ namespace XTraTechWeb.Controllers
                     base.Session["SearchResults"] = value;
                     base.Session["SearchRequest"] = fareXtractorRq;
                     result = base.RedirectToAction("SearchResponse", "Search");
+
                 }
                 else
                 {
@@ -177,6 +188,16 @@ namespace XTraTechWeb.Controllers
                         searchResponse.SearchRequest = (base.Session["SearchRequest"] as FareXtractorRq);
                     }
                     ViewBag.PageName = "Search";
+                    Client client = Session["LoggedInUser"] as Client;
+                    ViewBag.ClientId = client.ClintID;
+                    if (!string.IsNullOrEmpty(client.ZIP))
+                    {
+                        ViewBag.IsClientProfileComplete = true;
+                    }
+                    else
+                    {
+                        ViewBag.IsClientProfileComplete = false;
+                    }
                 }
                 else
                 {
@@ -214,15 +235,6 @@ namespace XTraTechWeb.Controllers
                  where r.airportCode.ToLower().Contains(term.ToLower())
                  select '(' + r.airportCode + ')' + ',' + r.airportName).ToList();
             return base.Json(data, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult RevalidateSelectedItineraries(string SelectedFSC)
-        {
-
-            SearchResponse SearchResponse = new SearchResponse();
-
-            return RedirectToAction("Index", "PassengerDetails", new { ItineraryID = SelectedFSC });
-
         }
     }
 }

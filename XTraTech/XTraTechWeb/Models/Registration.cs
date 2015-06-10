@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.ComponentModel.DataAnnotations;
 
-namespace XTraTech.Models
+namespace XTraTechWeb.Models
 {
     public class Registration
     {

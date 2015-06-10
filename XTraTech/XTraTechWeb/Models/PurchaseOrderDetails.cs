@@ -4,12 +4,13 @@ using System.Linq;
 using XTraTech.Entities.API.Search;
 using XTraTech.Entities.COM;
 
-namespace XTraTech.Models
+namespace XTraTechWeb.Models
 {
     public class PurchaseOrderDetails
     {
         public PurchaseOrder purchaseOrder = new PurchaseOrder();
         public FareXtractorRq SearchRequest = new FareXtractorRq();
+        public bool IsShowThankYou { get; set; }
         public string GetFare(List<FlightFare> flightFare, string content)
         {
             string result = string.Empty;

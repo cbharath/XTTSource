@@ -4,6 +4,17 @@
 }
 <section id="content" class="image-bg1">
     <div class="container">
+        @if (!ViewBag.IsClientProfileComplete)
+        {
+            <div class="row">
+                <div class="col-sms-12 col-md-12">
+                    <div class="alert alert-notice">
+                        Client profile is not complete. Please  @Html.ActionLink(" CLICK HERE ", "Index", "Registration", new { ClientId = ViewBag.ClientId }, new { @class = "skin-color" }) to complete client profile details!..
+                        <span class="close"></span>
+                    </div>
+                </div>
+            </div>
+        }
         <div class="row">
             <div id="main" class="col-sm-8 col-md-9">
                 <div class="search-box-wrapper style1">
@@ -102,149 +113,149 @@
                             <div class="tab-pane fade active in" id="flights-tab">
                                 @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { id = "Airsearch" }))
                                 {
-                                    <div class="title-container">
-                                        <h2 class="search-title">Search and Book Flights</h2>
-                                        <p>We're bringing you a new level of comfort.</p>
-                                        <i class="soap-icon-plane-right takeoff-effect"></i>
+                                <div class="title-container">
+                                    <h2 class="search-title">Search and Book Flights</h2>
+                                    <p>We're bringing you a new level of comfort.</p>
+                                    <i class="soap-icon-plane-right takeoff-effect"></i>
+                                </div>
+                                <div class="search-content">
+                                    <div class="row choose-travel">
+                                        <div class="col-xs-4">
+                                            <label class="radio radio-inline">
+                                                @Html.RadioButtonFor(m => m.JourneyType, "Return", new { @name = "choose-travel", @checked = "checked" })
+                                                @*<input type="radio" name="choose-travel" checked="checked" value="1">*@Round Trip
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label class="radio radio-inline">
+                                                @Html.RadioButtonFor(m => m.JourneyType, "OneWay", new { @class = "choose-travel" })
+                                                @*<input type="radio" name="choose-travel" value="2">*@Oneway
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <label class="radio radio-inline">
+                                                @Html.RadioButtonFor(m => m.JourneyType, "MultiDestination", new { @class = "choose-travel" })
+                                                @*<input type="radio" name="choose-travel" value="3">*@Multi-city
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="search-content">
-                                        <div class="row choose-travel">
-                                            <div class="col-xs-4">
-                                                <label class="radio radio-inline">
-                                                    @Html.RadioButtonFor(m => m.JourneyType, "Return", new { @name = "choose-travel", @checked = "checked" })
-                                                    @*<input type="radio" name="choose-travel" checked="checked" value="1">*@Round Trip
-                                                </label>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label class="radio radio-inline">
-                                                    @Html.RadioButtonFor(m => m.JourneyType, "OneWay", new { @class = "choose-travel" })
-                                                    @*<input type="radio" name="choose-travel" value="2">*@Oneway
-                                                </label>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <label class="radio radio-inline">
-                                                    @Html.RadioButtonFor(m => m.JourneyType, "MultiDestination", new { @class = "choose-travel" })
-                                                    @*<input type="radio" name="choose-travel" value="3">*@Multi-city
-                                                </label>
+                                    <hr>
+                                    <h5 class="title">Where</h5>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label>Leaving From</label>
+                                            @Html.TextBoxFor(m => m.CityPares[0].Origin, new { @class = "validate[required] input-text full-width", @placeholder = "enter your location", value = "", autocomplete = "off", data_autocomplete = Url.Action("AirportList", "Search") })
+                                            @*<input type="text" class="input-text full-width" placeholder="enter your location" data-provide="typeahead" />*@
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label>Going To</label>
+                                            @Html.TextBoxFor(m => m.CityPares[0].Destination, new { @class = "validate[required] input-text full-width destination", @placeholder = "enter a destination", value = "", autocomplete = "off", data_autocomplete = Url.Action("AirportList", "Search") })
+                                            @*<input type="text" class="input-text full-width" placeholder="enter a destination" />*@
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h5 class="title">When</h5>
+                                    <label>Departing On</label>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-5">
+                                            <div class="datepicker-wrap">
+                                                @Html.TextBoxFor(m => m.CityPares[0].DepartureDateTime, new { @class = "validate[required] input-text full-width", @placeholder = "select date" })
+                                                @*<input type="text" class="input-text full-width" placeholder="select date" />*@
                                             </div>
                                         </div>
-                                        <hr>
-                                        <h5 class="title">Where</h5>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <label>Leaving From</label>
-                                                @Html.TextBoxFor(m => m.CityPares[0].Origin, new { @class = "validate[required] input-text full-width", @placeholder = "enter your location", value = "", autocomplete = "off", data_autocomplete = Url.Action("AirportList", "Search") })
-                                                @*<input type="text" class="input-text full-width" placeholder="enter your location" data-provide="typeahead" />*@
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Going To</label>
-                                                @Html.TextBoxFor(m => m.CityPares[0].Destination, new { @class = "validate[required] input-text full-width destination", @placeholder = "enter a destination", value = "", autocomplete = "off", data_autocomplete = Url.Action("AirportList", "Search") })
-                                                @*<input type="text" class="input-text full-width" placeholder="enter a destination" />*@
+                                        <div class="col-xs-6 col-md-5">
+                                            <div class="selector">
+                                                <select>
+                                                    <option value="">select date</option>
+                                                    <option value="1">anytime</option>
+                                                    <option value="2">morning</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <hr>
-                                        <h5 class="title">When</h5>
-                                        <label>Departing On</label>
-                                        <div class="row">
-                                            <div class="col-xs-6 col-md-5">
-                                                <div class="datepicker-wrap">
-                                                    @Html.TextBoxFor(m => m.CityPares[0].DepartureDateTime, new { @class = "validate[required] input-text full-width", @placeholder = "select date" })
-                                                    @*<input type="text" class="input-text full-width" placeholder="select date" />*@
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-md-5">
-                                                <div class="selector">
-                                                    <select>
-                                                        <option value="">select date</option>
-                                                        <option value="1">anytime</option>
-                                                        <option value="2">morning</option>
-                                                    </select>
-                                                </div>
+                                    </div>
+                                    <label>Arriving On</label>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-md-5">
+                                            <div class="datepicker-wrap">
+                                                @Html.TextBoxFor(m => m.CityPares[0].ReturnDateTime, new { @class = "validate[required] input-text full-width", @placeholder = "select date" })
+                                                @*<input type="text" class="input-text full-width" placeholder="select date" />*@
                                             </div>
                                         </div>
-                                        <label>Arriving On</label>
-                                        <div class="row">
-                                            <div class="col-xs-6 col-md-5">
-                                                <div class="datepicker-wrap">
-                                                    @Html.TextBoxFor(m => m.CityPares[0].ReturnDateTime, new { @class = "validate[required] input-text full-width", @placeholder = "select date" })
-                                                    @*<input type="text" class="input-text full-width" placeholder="select date" />*@
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6 col-md-5">
-                                                <div class="selector">
-                                                    <select>
-                                                        <option value="">select date</option>
-                                                        <option value="1">anytime</option>
-                                                        <option value="2">morning</option>
-                                                    </select>
-                                                </div>
+                                        <div class="col-xs-6 col-md-5">
+                                            <div class="selector">
+                                                <select>
+                                                    <option value="">select date</option>
+                                                    <option value="1">anytime</option>
+                                                    <option value="2">morning</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <hr>
-                                        <h5 class="title">Who</h5>
-                                        <div class="row">
-                                            <div class="col-xs-4 col-md-3">
-                                                <label>Adults</label>
-                                                <div class="selector">
-                                                    @Html.DropDownListFor(m => m.AdultCount, Model.AdultList)
-                                                    @*<select>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>*@
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4 col-md-3">
-                                                <label>Kids</label>
-                                                <div class="selector">
-                                                    @Html.DropDownListFor(m => m.ChildCount, Model.ChildList)
-                                                    @*<select>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>*@
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-4 col-md-3">
-                                                <label>Infants</label>
-                                                <div class="selector">
-                                                    @Html.DropDownListFor(m => m.InfantCount, Model.InfantList)
-                                                    @*<select>
-                                                            <option value="1">01</option>
-                                                            <option value="2">02</option>
-                                                            <option value="3">03</option>
-                                                            <option value="4">04</option>
-                                                        </select>*@
-                                                </div>
+                                    </div>
+                                    <hr>
+                                    <h5 class="title">Who</h5>
+                                    <div class="row">
+                                        <div class="col-xs-4 col-md-3">
+                                            <label>Adults</label>
+                                            <div class="selector">
+                                                @Html.DropDownListFor(m => m.AdultCount, Model.AdultList)
+                                                @*<select>
+                                                        <option value="1">01</option>
+                                                        <option value="2">02</option>
+                                                        <option value="3">03</option>
+                                                        <option value="4">04</option>
+                                                    </select>*@
                                             </div>
                                         </div>
-                                        <hr>
-                                        <h5 class="title">Class <small>(Optional)</small></h5>
-                                        <div class="row">
-                                            <div class="col-xs-6">
-                                                <label>Class of travel</label>
-                                                <div class="selector">
-                                                    @Html.DropDownListFor(m => m.CabinClass, Model.CabinClassList)
-                                                    @*<select>
-                                                            <option value="">Economy</option>
-                                                        </select>*@
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-6">
-                                                <label>Preferred Airline</label>
-                                                <div class="selector">
-                                                    <select>
-                                                        <option value="">select name</option>
-                                                    </select>
-                                                </div>
+                                        <div class="col-xs-4 col-md-3">
+                                            <label>Kids</label>
+                                            <div class="selector">
+                                                @Html.DropDownListFor(m => m.ChildCount, Model.ChildList)
+                                                @*<select>
+                                                        <option value="1">01</option>
+                                                        <option value="2">02</option>
+                                                        <option value="3">03</option>
+                                                        <option value="4">04</option>
+                                                    </select>*@
                                             </div>
                                         </div>
-                                        <hr>
+                                        <div class="col-xs-4 col-md-3">
+                                            <label>Infants</label>
+                                            <div class="selector">
+                                                @Html.DropDownListFor(m => m.InfantCount, Model.InfantList)
+                                                @*<select>
+                                                        <option value="1">01</option>
+                                                        <option value="2">02</option>
+                                                        <option value="3">03</option>
+                                                        <option value="4">04</option>
+                                                    </select>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <h5 class="title">Class <small>(Optional)</small></h5>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label>Class of travel</label>
+                                            <div class="selector">
+                                                @Html.DropDownListFor(m => m.CabinClass, Model.CabinClassList)
+                                                @*<select>
+                                                        <option value="">Economy</option>
+                                                    </select>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label>Preferred Airline</label>
+                                            <div class="selector">
+                                                <select>
+                                                    <option value="">select name</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
 
-                                        <button type="submit" class="btn full-width btn-medium" onclick="return loader()">PROCEED TO RESULT</button>
-                                    </div>
+                                    <button type="submit" class="btn full-width btn-medium" onclick="return loader()">PROCEED TO RESULT</button>
+                                </div>
                                 }
                             </div>
                             <div class="tab-pane fade" id="flight-and-hotel-tab">

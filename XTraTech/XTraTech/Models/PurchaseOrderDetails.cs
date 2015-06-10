@@ -10,6 +10,7 @@ namespace XTraTech.Models
     {
         public PurchaseOrder purchaseOrder = new PurchaseOrder();
         public FareXtractorRq SearchRequest = new FareXtractorRq();
+        public bool IsShowThankYou { get; set; }
         public string GetFare(List<FlightFare> flightFare, string content)
         {
             string result = string.Empty;

@@ -148,7 +148,17 @@ tjq(document).ready(function() {
     //});
 
     //Validation scripts.
-    tjq("#Airsearch").validationEngine();
+    tjq("#Airsearch").validationEngine({
+        scroll: false,
+        promptPosition: "bottomLeft",
+        onValidationComplete: function (form, status) {
+            if (status == true) {
+                tjq('#loader').show();
+                setstorage();
+                return true;
+            }
+        }
+    });
 
     tjq("#LoginForm").validationEngine({ autoHidePrompt: true });
 
