@@ -16,6 +16,9 @@ namespace XTraTechWeb
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             Airport airport = new Airport();
             base.Application["Airports"] = airport.Load("EN");
+
+            Airline airline = new Airline();
+            base.Application["Airlines"] = airline.Load();
         }
     }
 }

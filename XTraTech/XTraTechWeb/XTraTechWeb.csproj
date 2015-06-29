@@ -74,6 +74,7 @@
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -202,7 +203,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\airline.png" />
+    <Content Include="images\arrow-up.png" />
     <Content Include="images\background1.jpg" />
+    <Content Include="images\BeTixBG.jpg" />
     <Content Include="images\blog\full_width_post\image\1.png" />
     <Content Include="images\blog\full_width_post\slideshow\1.png" />
     <Content Include="images\blog\full_width_post\slideshow\2.png" />
@@ -211,6 +214,12 @@
     <Content Include="images\blog\post\slideshow\1.png" />
     <Content Include="images\blog\post\slideshow\2.png" />
     <Content Include="images\blog\post\slideshow\3.png" />
+    <Content Include="images\BookingStatus\booked.png" />
+    <Content Include="images\BookingStatus\canceled.png" />
+    <Content Include="images\BookingStatus\expired.png" />
+    <Content Include="images\BookingStatus\inprocess.png" />
+    <Content Include="images\BookingStatus\pending.png" />
+    <Content Include="images\BookingStatus\ticketed.png" />
     <Content Include="images\cars\10.png" />
     <Content Include="images\cars\11.png" />
     <Content Include="images\cars\12.png" />
@@ -404,6 +413,9 @@
     <Content Include="images\logo2.png" />
     <Content Include="images\logo\bketixfff.png" />
     <Content Include="images\logo\Bketixlogo.png" />
+    <Content Include="images\logo\Bketixlogo_small.png" />
+    <Content Include="images\logo\booketixblue.png" />
+    <Content Include="images\logo\booketixwhite.png" />
     <Content Include="images\logo\skin10\logo.png" />
     <Content Include="images\logo\skin1\logo.png" />
     <Content Include="images\logo\skin2\logo.png" />
@@ -501,6 +513,7 @@
     <Content Include="images\pages\extra\visa-passport.jpg" />
     <Content Include="images\pages\image1.png" />
     <Content Include="images\pages\loading\girl.png" />
+    <Content Include="images\pages\login\bg.jpg" />
     <Content Include="images\pages\login\places.png" />
     <Content Include="images\pages\login\plane.png" />
     <Content Include="images\pages\paris.png" />
@@ -1024,6 +1037,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\CommanController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PassengerDetailsController.cs" />
     <Compile Include="Controllers\PurchaseOrderController.cs" />
@@ -1033,6 +1048,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\client.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\PassengerModel.cs" />
     <Compile Include="Models\PurchaseOrderDetails.cs" />
@@ -1079,6 +1095,10 @@
     <Content Include="Views\PurchaseOrder\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Reservations\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\XTTPublish.pubxml" />
+    <Content Include="Views\Administration\ViewClients.cshtml" />
+    <Content Include="Views\Administration\ViewClientDetails.cshtml" />
+    <Content Include="Views\Comman\ErrorPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

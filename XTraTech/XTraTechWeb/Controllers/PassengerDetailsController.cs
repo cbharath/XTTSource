@@ -148,20 +148,7 @@ namespace XTraTechWeb.Controllers
             }
             catch (Exception ex)
             {
-                string text = string.Empty;
-                if (ex.InnerException != null)
-                {
-                    text = ex.InnerException.Message + "\n" + ex.InnerException.StackTrace;
-                }
-                return base.RedirectToActionPermanent("Index", "Error", new
-                {
-                    ErrorMsg = string.Concat(new string[]
-					{
-						ex.Message,
-						"\n",
-						ex.StackTrace
-					})
-                });
+                return base.RedirectToAction("ErrorPage", "Comman");
             }
             return base.RedirectToAction("Index", "PurchaseOrder");
         }

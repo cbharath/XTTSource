@@ -1,5 +1,5 @@
 /*
- * Title:   Travelo | Responsive HTML5 Travel Template - Main Javascript file
+ * Title:   BookeTickets | Responsive HTML5 Travel Template - Main Javascript file
  * Author:  http://themeforest.net/user/soaptheme
  */
 
@@ -298,7 +298,7 @@ tjq("body").on("click", "a.popup-gallery", function(e) {
     return false;
 });
 
-function changeTraveloElementUI() {
+function changeBookeTicketsElementUI() {
     // change UI of select box
     tjq(".selector select").each(function() {
         var obj = tjq(this);
@@ -423,7 +423,7 @@ function changeTraveloElementUI() {
 }
 
 tjq(document).ready(function() {
-    changeTraveloElementUI();
+    changeBookeTicketsElementUI();
 
     if ( stGlobals.isMobile ) {
         tjq("body").addClass("is-mobile");
@@ -1101,7 +1101,7 @@ tjq(window).load(function() {
             url: "ajax/header-style" + headerStyleIndex + ".html",
             success: function(headerHtml) {
                 tjq("#header").replaceWith(headerHtml);
-                changeTraveloElementUI();
+                changeBookeTicketsElementUI();
                 fixPositionMegaMenu("#header");
 
                 // THIS SCRIPT DETECTS THE ACTIVE ELEMENT AND ADDS ACTIVE CLASS
@@ -1214,11 +1214,11 @@ function fixPositionMegaMenu(parentObj) {
 fixPositionMegaMenu();
 
 // login box
-tjq("body").on("click", ".travelo-signup-box .signup-email", function(e) {
+tjq("body").on("click", ".BookeTickets-signup-box .signup-email", function(e) {
     e.preventDefault();
-    tjq(this).closest(".travelo-signup-box").find(".simple-signup").hide();
-    tjq(this).closest(".travelo-signup-box").find(".email-signup").show();
-    tjq(this).closest(".travelo-signup-box").find(".email-signup").find(".input-text").eq(0).focus();
+    tjq(this).closest(".BookeTickets-signup-box").find(".simple-signup").hide();
+    tjq(this).closest(".BookeTickets-signup-box").find(".email-signup").show();
+    tjq(this).closest(".BookeTickets-signup-box").find(".email-signup").find(".input-text").eq(0).focus();
 });
 
 
@@ -1233,7 +1233,7 @@ if (tjq("#style-changer").length > 0 && typeof localStorage != "undefined") {
             url: "ajax/header-style" + headerStyleIndex + ".html",
             success: function(headerHtml) {
                 tjq("#header").replaceWith(headerHtml);
-                changeTraveloElementUI();
+                changeBookeTicketsElementUI();
                 fixPositionMegaMenu();
                 var pathname = window.location.pathname,
                     page = pathname.split(/[/ ]+/).pop(),

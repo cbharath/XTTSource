@@ -185,10 +185,11 @@ namespace MyFares
                         //};
 
                         //Temp changes for demo
+                        int ROE = 1;
                         fare.SinglePassangerBaseFare = new Money
                         {
-                            Amount = ((Convert.ToDouble(searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.Amount) - 5) * 0.65).ToString("#.##"),
-                            Currency = "GBP"//searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode
+                            Amount = ((Convert.ToDouble(searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.Amount) - 5) * ROE).ToString("#.##"),
+                            Currency = "USD"//searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode
                         };
 
                         Money taxes = new Money();
@@ -203,8 +204,8 @@ namespace MyFares
                         //taxes.Currency = searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode;
 
                         //Temp changes for demo.
-                        taxes.Amount = (Convert.ToDouble(totaltax) * 0.65).ToString("#.##");
-                        taxes.Currency = "GBP";// searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode;
+                        taxes.Amount = (Convert.ToDouble(totaltax) * ROE).ToString("#.##");
+                        taxes.Currency = "USD";// searchRS.PricedItineraries[i].AirItineraryPricingInfo.PTC_FareBreakdowns[fareindex].PassengerFare.EquivFare.CurrencyCode;
                         fare.SinglePassangerTax = taxes;
                         fares.Add(fare);
                     }

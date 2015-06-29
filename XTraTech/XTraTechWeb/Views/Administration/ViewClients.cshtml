@@ -1,0 +1,57 @@
+﻿@model XTraTechWeb.Models.clientmodel
+@{
+    ViewBag.Title = "ViewClients";
+}
+
+<section id="content">
+    <div class="container flight-detail-page">
+        <div class="row">
+            <div id="main" class="col-md-12">
+                <div class="booking-section BookeTickets-box">
+                    <div class="person-information">
+                        <h2>Clients List</h2>
+                        <hr />
+                        <table class="table table-bordered table-condensed" align="center">
+                            <thead>
+                                <tr class="info">
+                                    <th>Client ID</th>
+                                    <th>Name</th>
+                                    <th>Company Name</th>
+                                    <th>Country</th>
+                                    <th>Email ID</th>
+                                    <th>Phone Number</th>
+                                    <th>Is Profile Complete</th>
+                                    <th>Joined On</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0, j = 1; i < Model.ListofClients.Count; i++, j++)
+                                {
+                                    <tr>
+                                        <td>@Model.ListofClients[i].ClintID</td>
+                                        <td>@Model.ListofClients[i].FirstName @Model.ListofClients[i].LastName</td>
+                                        <td>@Model.ListofClients[i].CompanyName</td>
+                                        <td>@Model.ListofClients[i].Country</td>
+                                        <td>@Model.ListofClients[i].Email</td>
+                                        <td>@Model.ListofClients[i].PhoneNumber</td>
+                                        @if (string.IsNullOrEmpty(Model.ListofClients[i].ZIP))
+                                        {
+                                            <td>No</td>
+                                        }
+                                        else
+                                        {
+                                            <td>Yes</td>
+                                        }
+                                        <td>@Model.ListofClients[i].CreatedOn</td>
+                                        <td><a href="#">@Html.ActionLink("View Details", "ViewClientDetails", "Administration", new { ClientID = Model.ListofClients[i].ClintID }, new { @class = "skin-color" })</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

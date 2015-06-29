@@ -67,16 +67,16 @@ namespace XTraTech.Entities.COM
                 for (int index = 0; index < dataTable.Rows.Count; index++)
                 {
                     Staff staff = new Staff();
-                    staff.StaffID = Convert.ToInt32(dataTable.Rows[index]["StaffID"].ToString());
-                    staff.ClientID = Convert.ToInt32(dataTable.Rows[index]["ClintID"].ToString());
-                    staff.UserName = dataTable.Rows[index]["UserName"].ToString();
-                    staff.Password = dataTable.Rows[index]["Password"].ToString();
-                    staff.FirstName = dataTable.Rows[index]["FirstName"].ToString();
-                    staff.LastName = dataTable.Rows[index]["LastName"].ToString();
-                    staff.Email = dataTable.Rows[index]["Email"].ToString();
-                    staff.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
-                    staff.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
-                    staff.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
+                    staff.StaffID = dataTable.Rows[index]["StaffID"] != null ? Convert.ToInt32(dataTable.Rows[index]["StaffID"].ToString()) : 0;
+                    staff.ClientID = dataTable.Rows[index]["ClientID"] != null ?Convert.ToInt32(dataTable.Rows[index]["ClientID"].ToString()): 0;
+                    staff.UserName = dataTable.Rows[index]["UserName"] != null ? dataTable.Rows[index]["UserName"].ToString() : string.Empty;
+                    staff.Password = dataTable.Rows[index]["Password"] != null ? dataTable.Rows[index]["Password"].ToString() : string.Empty;
+                    staff.FirstName = dataTable.Rows[index]["FirstName"] != null ? dataTable.Rows[index]["FirstName"].ToString() : string.Empty;
+                    staff.LastName = dataTable.Rows[index]["LastName"] != null ? dataTable.Rows[index]["LastName"].ToString() : string.Empty;
+                    staff.Email = dataTable.Rows[index]["EmailID"] != null ? dataTable.Rows[index]["EmailID"].ToString() : string.Empty;
+                    staff.PhoneNumber = dataTable.Rows[index]["PhoneNumber"] != null ? dataTable.Rows[index]["PhoneNumber"].ToString() : string.Empty;
+                    staff.CreatedOn = dataTable.Rows[index]["CreatedOn"] != null ? Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]) : DateTime.Now;
+                    staff.ModefiedOn = dataTable.Rows[index]["ModefiedOn"] != null ? Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]) : DateTime.Now;
                     Staffs.Add(staff);
                 }
             }
@@ -130,16 +130,16 @@ namespace XTraTech.Entities.COM
                 for (int index = 0; index < dataTable.Rows.Count;)
                 {
                     staff = new Staff();
-                    staff.StaffID = Convert.ToInt32(dataTable.Rows[index]["StaffID"].ToString());
-                    staff.ClientID = Convert.ToInt32(dataTable.Rows[index]["ClintID"].ToString());
-                    staff.UserName = dataTable.Rows[index]["UserName"].ToString();
-                    staff.Password = dataTable.Rows[index]["Password"].ToString();
-                    staff.FirstName = dataTable.Rows[index]["FirstName"].ToString();
-                    staff.LastName = dataTable.Rows[index]["LastName"].ToString();
-                    staff.Email = dataTable.Rows[index]["Email"].ToString();
-                    staff.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
-                    staff.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
-                    staff.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
+                    staff.StaffID = dataTable.Rows[index]["StaffID"] != null ? Convert.ToInt32(dataTable.Rows[index]["StaffID"].ToString()) : 0;
+                    staff.ClientID = dataTable.Rows[index]["ClientID"] != null ? Convert.ToInt32(dataTable.Rows[index]["ClientID"].ToString()) : 0;
+                    staff.UserName = dataTable.Rows[index]["UserName"] != null ? dataTable.Rows[index]["UserName"].ToString() : string.Empty;
+                    staff.Password = dataTable.Rows[index]["Password"] != null ? dataTable.Rows[index]["Password"].ToString() : string.Empty;
+                    staff.FirstName = dataTable.Rows[index]["FirstName"] != null ? dataTable.Rows[index]["FirstName"].ToString() : string.Empty;
+                    staff.LastName = dataTable.Rows[index]["LastName"] != null ? dataTable.Rows[index]["LastName"].ToString() : string.Empty;
+                    staff.Email = dataTable.Rows[index]["EmailID"] != null ? dataTable.Rows[index]["EmailID"].ToString() : string.Empty;
+                    staff.PhoneNumber = dataTable.Rows[index]["PhoneNumber"] != null ? dataTable.Rows[index]["PhoneNumber"].ToString() : string.Empty;
+                    staff.CreatedOn = dataTable.Rows[index]["CreatedOn"] != null ? Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]) : DateTime.Now;
+                    staff.ModefiedOn = dataTable.Rows[index]["ModefiedOn"] != null ? Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]) : DateTime.Now;
                     break;
                 }
             }

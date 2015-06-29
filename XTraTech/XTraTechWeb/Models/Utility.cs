@@ -10,18 +10,47 @@ namespace XTraTech.Models
     {
         public static string GetAirportName(string airportCode)
         {
-            string result = string.Empty;
-            List<Airport> source = new List<Airport>();
-            source = (HttpContext.Current.Application["Airports"] as List<Airport>);
-            IEnumerable<Airport> source2 =
-                from r in source
-                where r.airportCode.ToLower().Equals(airportCode.ToLower())
-                select r;
-            if (source2.Any<Airport>())
+            if (HttpContext.Current.Application["Airports"] != null)
             {
-                result = source2.FirstOrDefault<Airport>().airportName;
+                string result = string.Empty;
+                List<Airport> source = new List<Airport>();
+                source = (HttpContext.Current.Application["Airports"] as List<Airport>);
+                IEnumerable<Airport> source2 =
+                    from r in source
+                    where r.airportCode.ToLower().Equals(airportCode.ToLower())
+                    select r;
+                if (source2.Any<Airport>())
+                {
+                    result = source2.FirstOrDefault<Airport>().airportName;
+                }
+                return result;
             }
-            return result;
+            else
+            {
+                return string.Empty;
+            }
+        }
+        public static string GetAirlinetName(string airlineCode)
+        {
+            if (HttpContext.Current.Application["Airlines"] != null)
+            {
+                string result = string.Empty;
+                List<Airline> source = new List<Airline>();
+                source = (HttpContext.Current.Application["Airlines"] as List<Airline>);
+                IEnumerable<Airline> source2 =
+                    from r in source
+                    where r.IATA.ToLower().Equals(airlineCode.ToLower())
+                    select r;
+                if (source2.Any<Airline>())
+                {
+                    result = source2.FirstOrDefault<Airline>().Name;
+                }
+                return result;
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
         public static string GetCabinName(string CabinCode)
         {

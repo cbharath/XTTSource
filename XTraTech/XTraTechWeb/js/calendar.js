@@ -1,5 +1,5 @@
 /*
- * Title:   Travelo | Responsive HTML5 Travel Template - Calendar Js used in the detailed pages
+ * Title:   BookeTickets | Responsive HTML5 Travel Template - Calendar Js used in the detailed pages
  * Author:  http://themeforest.net/user/soaptheme
  */
 

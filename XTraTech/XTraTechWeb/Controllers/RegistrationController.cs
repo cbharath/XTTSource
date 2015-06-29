@@ -100,7 +100,7 @@ namespace XTraTechWeb.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("RegistrationSuccess", new { Success = false });
+                return base.RedirectToAction("ErrorPage", "Comman");
             }
             return RedirectToAction("RegistrationSuccess", new { Success = true });
         }

@@ -233,7 +233,7 @@
                                                         height="38" />*@
                                                 </span>
                                                 <span class="airline-details">
-                                                    <span class="skin-color">Malaysian Airlines</span><br>(@PricedItinerary.FlightSegments[i].OperatingAirline-@PricedItinerary.FlightSegments[i].FlightNumber)
+                                                    <span class="skin-color">@Utility.GetAirlinetName(PricedItinerary.FlightSegments[i].OperatingAirline)</span><br>(@PricedItinerary.FlightSegments[i].OperatingAirline-@PricedItinerary.FlightSegments[i].FlightNumber)
                                                 </span>
                                             </div>
                                             <div class="col-md-3 city-pair">
@@ -289,7 +289,7 @@
                                 </div>
 
                                 <div class="col-md-2 pull-right">
-                                    @Html.ActionLink("SELECT NOW", "Index", "PassengerDetails", new { ItineraryID = PricedItinerary.ItineraryID }, new { @class = "button btn-medium green icon-check full-width" })
+                                    @Html.ActionLink("SELECT NOW", "Index", "PassengerDetails", new { ItineraryID = PricedItinerary.ItineraryID }, new { @class = "button btn-medium sea-blue icon-check full-width" })
                                 </div>
 
                             </div>

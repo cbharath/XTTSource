@@ -16,6 +16,7 @@ namespace XTraTechWeb.Controllers
         public ActionResult Index()
         {
             Login login = new Login();
+            login.Member = true;
             return View(login);
         }
 
@@ -92,8 +93,7 @@ namespace XTraTechWeb.Controllers
             }
             catch (Exception)
             {
-
-                throw;
+                return base.RedirectToAction("ErrorPage", "Comman");
             }
 
         }

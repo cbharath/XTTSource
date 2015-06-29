@@ -32,7 +32,7 @@ a {
 }
 
     a:hover, a:focus {
-        color: #01b7f2;
+        color: #3d98d3;
         text-decoration: none;
     }
 
@@ -51,7 +51,7 @@ dt {
 }
 
 span.active, a.active, h2.active, h3.active, h4.active, h5.active, h6.active {
-    color: #01b7f2;
+    color: #3d98d3;
 }
 
 .info-primary, .info-success {
@@ -259,7 +259,7 @@ img.full-width {
 }
 
 .blue-color {
-    color: #01b7f2 !important;
+    color: #3d98d3 !important;
 }
 
 .light-blue-color {
@@ -287,7 +287,7 @@ img.full-width {
 }
 
 .skin-color {
-    color: #01b7f2;
+    color: #3d98d3;
 }
 
 .default-color {
@@ -299,7 +299,7 @@ img.full-width {
 }
 
 .hotel-color {
-    color: #01b7f2;
+    color: #3d98d3;
 }
 
 .select-color {
@@ -307,7 +307,7 @@ img.full-width {
 }
 
 .blue-bg {
-    background-color: #01b7f2 !important;
+    background-color: #3d98d3 !important;
 }
 
 .yellow-bg {
@@ -331,7 +331,7 @@ img.full-width {
 }
 
 .skin-bg {
-    background-color: #01b7f2 !important;
+    background-color: #3d98d3 !important;
 }
 
 .gray-bg {
@@ -1347,7 +1347,7 @@ h1.box-title small {
 }
 
 .s-title {
-    color: #01b7f2;
+    color: #3d98d3;
 }
 
     .s-title a:hover {
@@ -1459,7 +1459,7 @@ select {
             right: 0;
             top: 0;
             content: '';
-            background: #fdb714;
+            background: #2d3e52;
             width: 24px;
             height: 100%;
         }
@@ -1548,9 +1548,9 @@ select {
     }
 
     .checkbox.checked:before, .radio.checked:before {
-        border-color: #01b7f2;
+        border-color: #3d98d3;
         color: #fff;
-        background: #01b7f2;
+        background: #3d98d3;
         content: "\e8ba";
     }
 
@@ -1734,7 +1734,7 @@ a.button {
     }
 
     button.sky-blue1, a.button.sky-blue1 {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         button.sky-blue1:hover, a.button.sky-blue1:hover {
@@ -1817,7 +1817,7 @@ a.button {
         background: transparent;
         color: #fff;
         line-height: 1.5em;
-        border: 1px solid #01b7f2;
+        border: 1px solid #3d98d3;
         border-left: none;
         position: relative;
         overflow: hidden;
@@ -1831,7 +1831,7 @@ a.button {
         button.btn-extra > i, a.button.btn-extra > i {
             width: 55px;
             vertical-align: middle;
-            background: #01b7f2;
+            background: #3d98d3;
             color: #2d3e52;
             font-size: 36px;
             display: table-cell;
@@ -1845,7 +1845,7 @@ a.button {
                 content: "";
                 position: absolute;
                 left: 55px;
-                border-bottom: 70px solid #01b7f2;
+                border-bottom: 70px solid #3d98d3;
                 border-right: 16px solid transparent;
                 top: 0;
                 bottom: 0;
@@ -1859,7 +1859,7 @@ a.button {
         }
 
             button.btn-extra > span em, a.button.btn-extra > span em {
-                color: #01b7f2;
+                color: #3d98d3;
                 font-size: 1.6667em;
                 font-weight: bold;
                 font-style: normal;
@@ -1877,19 +1877,19 @@ a.button {
             }
 
         button.btn-extra.blue, a.button.btn-extra.blue {
-            border-color: #01b7f2;
+            border-color: #3d98d3;
         }
 
             button.btn-extra.blue > i, a.button.btn-extra.blue > i {
-                background: #01b7f2;
+                background: #3d98d3;
             }
 
                 button.btn-extra.blue > i:after, a.button.btn-extra.blue > i:after {
-                    border-bottom-color: #01b7f2;
+                    border-bottom-color: #3d98d3;
                 }
 
             button.btn-extra.blue > span em, a.button.btn-extra.blue > span em {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
         button.btn-extra.yellow, a.button.btn-extra.yellow {
@@ -1922,11 +1922,11 @@ a.button {
         right: 0;
         width: 30px;
         height: 100%;
-        background: url(../images/icon/icon-check.png) no-repeat center center #7db921;
+        background: url(../images/icon/icon-check.png) no-repeat center center #0ab596;
     }
 
     .icon-check:hover:after {
-        background-color: #98ce44;
+        background-color: #0ab596;
     }
 
 .with-icon {
@@ -2071,12 +2071,12 @@ a.button {
 
 .info-box {
     padding: 20px 25px;
-    border: 1px solid #01b7f2;
+    border: 1px solid #3d98d3;
     position: relative;
 }
 
     .info-box .close {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     .info-box p {
@@ -2102,7 +2102,7 @@ dl.term-description {
 
     dl.term-description dt {
         border-right: 1px solid #f5f5f5;
-        color: #01b7f2;
+        color: #3d98d3;
         font-weight: 400;
         padding-right: 5px;
         clear: both;
@@ -2120,7 +2120,7 @@ dl.term-description {
 
 .dropcap:first-letter {
     float: left;
-    color: #01b7f2;
+    color: #3d98d3;
     font-size: 4.153em;
     line-height: 0.8667em;
     padding: 0;
@@ -2132,7 +2132,7 @@ dl.term-description {
 
 .dropcap.colored:first-letter {
     color: #fff;
-    background: #01b7f2;
+    background: #3d98d3;
     padding: 4px 4px;
     margin-top: 3px;
     margin-right: 10px;
@@ -2203,11 +2203,11 @@ blockquote {
         }
 
         blockquote.style1.border-color-blue {
-            border-color: #01b7f2;
+            border-color: #3d98d3;
         }
 
             blockquote.style1.border-color-blue > span.triangle:before {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
         blockquote.style1.border-color-yellow {
@@ -2219,7 +2219,7 @@ blockquote {
             }
 
         blockquote.style1.quote-color-blue:before, blockquote.style1.quote-color-blue:after {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
         blockquote.style1.quote-color-yellow:before, blockquote.style1.quote-color-yellow:after {
@@ -2227,7 +2227,7 @@ blockquote {
         }
 
     blockquote.style2 {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
         blockquote.style2:before, blockquote.style2:after {
@@ -2393,7 +2393,7 @@ blockquote {
     }
 
     .hover-effect.style1:hover {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         .hover-effect.style1:hover img {
@@ -2409,7 +2409,7 @@ blockquote {
     position: relative;
     background: none;
     overflow: hidden;
-    background: #01b7f2;
+    background: #3d98d3;
 }
 
     .selected-effect img {
@@ -2468,7 +2468,7 @@ blockquote {
     }
 
         .social-icons li a:hover {
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
     .social-icons li:last-child {
@@ -2484,7 +2484,7 @@ blockquote {
 }
 
 .social-icons.style1 a:hover {
-    background: #01b7f2;
+    background: #3d98d3;
 }
 
 .social-icons.style2 a {
@@ -2556,7 +2556,8 @@ blockquote {
     }
 
 .price {
-    color: #7db921;
+    color: #0ab596;
+    font-weight: bold;
     font-size: 1.6667em;
     text-transform: uppercase;
     float: right;
@@ -2663,45 +2664,45 @@ blockquote {
     margin-bottom: 0;
 }
 
-.travelo-box {
+.BookeTickets-box {
     background: #fff;
     padding: 20px;
     margin-bottom: 30px;
 }
 
-    .travelo-box > *:last-child {
+    .BookeTickets-box > *:last-child {
         margin-bottom: 0;
     }
 
-    .travelo-box .title {
+    .BookeTickets-box .title {
         margin-bottom: 5px;
     }
 
-    .travelo-box .box-title {
+    .BookeTickets-box .box-title {
         margin-bottom: 15px;
     }
 
-    .travelo-box.box-full {
+    .BookeTickets-box.box-full {
         padding: 30px;
     }
 
-    .travelo-box.search-stories-box button {
+    .BookeTickets-box.search-stories-box button {
         height: 34px;
         padding: 0 10px;
         font-size: 1em;
     }
 
-    .travelo-box.twitter-box .twitter-holder > ul li {
+    .BookeTickets-box.twitter-box .twitter-holder > ul li {
         border-bottom: 1px solid #f5f5f5;
         padding: 15px 0 15px 40px;
         position: relative;
     }
 
-        .travelo-box.twitter-box .twitter-holder > ul li:last-child {
+        .BookeTickets-box.twitter-box .twitter-holder > ul li:last-child {
             border: none;
         }
 
-        .travelo-box.twitter-box .twitter-holder > ul li:before {
+        .BookeTickets-box.twitter-box .twitter-holder > ul li:before {
             content: "\f099";
             font-family: FontAwesome;
             display: block;
@@ -2720,37 +2721,37 @@ blockquote {
             font-size: 16px;
         }
 
-        .travelo-box.twitter-box .twitter-holder > ul li .tweet-text a {
-            color: #01b7f2;
+        .BookeTickets-box.twitter-box .twitter-holder > ul li .tweet-text a {
+            color: #3d98d3;
         }
 
-            .travelo-box.twitter-box .twitter-holder > ul li .tweet-text a:hover {
+            .BookeTickets-box.twitter-box .twitter-holder > ul li .tweet-text a:hover {
                 text-decoration: underline;
             }
 
-    .travelo-box.contact-box .contact-details {
+    .BookeTickets-box.contact-box .contact-details {
         margin: 0;
     }
 
-        .travelo-box.contact-box .contact-details .contact-phone {
-            color: #01b7f2;
+        .BookeTickets-box.contact-box .contact-details .contact-phone {
+            color: #3d98d3;
         }
 
-            .travelo-box.contact-box .contact-details .contact-phone > i {
+            .BookeTickets-box.contact-box .contact-details .contact-phone > i {
                 color: #fdb714;
             }
 
-        .travelo-box.contact-box .contact-details .contact-email {
+        .BookeTickets-box.contact-box .contact-details .contact-email {
             color: inherit;
         }
 
-    .travelo-box.book-with-us-box li, .travelo-box.contact-us-box .contact-address li {
+    .BookeTickets-box.book-with-us-box li, .BookeTickets-box.contact-us-box .contact-address li {
         border-bottom: 1px solid #f5f5f5;
         padding: 10px 0 10px 40px;
         position: relative;
     }
 
-        .travelo-box.book-with-us-box li > i, .travelo-box.contact-us-box .contact-address li > i {
+        .BookeTickets-box.book-with-us-box li > i, .BookeTickets-box.contact-us-box .contact-address li > i {
             position: absolute;
             font-size: 1.5em;
             color: #fdb714;
@@ -2758,109 +2759,109 @@ blockquote {
             top: 12px;
         }
 
-        .travelo-box.book-with-us-box li:last-child, .travelo-box.contact-us-box .contact-address li:last-child {
+        .BookeTickets-box.book-with-us-box li:last-child, .BookeTickets-box.contact-us-box .contact-address li:last-child {
             border-bottom-width: 0;
             padding-bottom: 0;
         }
 
-        .travelo-box.book-with-us-box li .title, .travelo-box.contact-us-box .contact-address li .title {
+        .BookeTickets-box.book-with-us-box li .title, .BookeTickets-box.contact-us-box .contact-address li .title {
             color: #2d3e52;
         }
 
-        .travelo-box.book-with-us-box li:after, .travelo-box.contact-us-box .contact-address li:after {
+        .BookeTickets-box.book-with-us-box li:after, .BookeTickets-box.contact-us-box .contact-address li:after {
             display: table;
             clear: both;
             content: "";
         }
 
-        .travelo-box.book-with-us-box li > *:last-child, .travelo-box.contact-us-box .contact-address li > *:last-child {
+        .BookeTickets-box.book-with-us-box li > *:last-child, .BookeTickets-box.contact-us-box .contact-address li > *:last-child {
             margin-bottom: 0;
         }
 
-    .travelo-box.contact-us-box .title {
+    .BookeTickets-box.contact-us-box .title {
         color: #2d3e52;
     }
 
-    .travelo-box.contact-us-box .contact-address {
+    .BookeTickets-box.contact-us-box .contact-address {
         margin-bottom: 25px;
     }
 
-        .travelo-box.contact-us-box .contact-address li {
+        .BookeTickets-box.contact-us-box .contact-address li {
             padding-left: 50px;
         }
 
-            .travelo-box.contact-us-box .contact-address li p {
+            .BookeTickets-box.contact-us-box .contact-address li p {
                 font-size: 0.8333em;
                 text-transform: uppercase;
                 margin-bottom: 0;
             }
 
-            .travelo-box.contact-us-box .contact-address li:last-child {
+            .BookeTickets-box.contact-us-box .contact-address li:last-child {
                 border-bottom-width: 1px;
                 padding-bottom: 10px;
             }
 
-    .travelo-box.contact-us-box .social-icons a {
+    .BookeTickets-box.contact-us-box .social-icons a {
         overflow: hidden;
     }
 
-        .travelo-box.contact-us-box .social-icons a:hover i:before {
+        .BookeTickets-box.contact-us-box .social-icons a:hover i:before {
             -webkit-animation: toBottomFromTop 0.4s forwards;
             -moz-animation: toBottomFromTop 0.4s forwards;
             animation: toBottomFromTop 0.4s forwards;
         }
 
-    .travelo-box.newsletter-box {
+    .BookeTickets-box.newsletter-box {
         padding: 20px 30px;
     }
 
-        .travelo-box.newsletter-box button {
+        .BookeTickets-box.newsletter-box button {
             margin-right: 0 !important;
             margin-bottom: 0 !important;
         }
 
-        .travelo-box.newsletter-box .row > div {
+        .BookeTickets-box.newsletter-box .row > div {
             margin-bottom: 0 !important;
         }
 
-    .travelo-box.re-search-box label {
+    .BookeTickets-box.re-search-box label {
         font-size: 0.8333em;
         text-transform: uppercase;
         margin: 5px 0 0 0;
     }
 
-    .travelo-box.re-search-box button {
+    .BookeTickets-box.re-search-box button {
         text-transform: uppercase;
     }
 
-    .travelo-box.about-travelo-box .title {
-        color: #01b7f2;
+    .BookeTickets-box.about-BookeTickets-box .title {
+        color: #3d98d3;
     }
 
-    .travelo-box.guarantee-box {
+    .BookeTickets-box.guarantee-box {
         text-align: center;
     }
 
-        .travelo-box.guarantee-box .guarantee-image {
+        .BookeTickets-box.guarantee-box .guarantee-image {
             display: block;
             margin: 0 auto 15px;
         }
 
-    .travelo-box.insurance-benefits ul {
+    .BookeTickets-box.insurance-benefits ul {
         font-size: 0.9167em;
     }
 
-        .travelo-box.insurance-benefits ul li {
+        .BookeTickets-box.insurance-benefits ul li {
             line-height: 3.6667em;
             border-bottom: 1px solid #f5f5f5;
             text-transform: uppercase;
         }
 
-            .travelo-box.insurance-benefits ul li:before {
+            .BookeTickets-box.insurance-benefits ul li:before {
                 color: #d9d9d9;
             }
 
-            .travelo-box.insurance-benefits ul li.active:before, .travelo-box.insurance-benefits ul.hover li:hover:before {
+            .BookeTickets-box.insurance-benefits ul li.active:before, .BookeTickets-box.insurance-benefits ul.hover li:hover:before {
                 color: #fdb714;
             }
 
@@ -2874,11 +2875,11 @@ blockquote {
     }
 
         .contact-details .contact-phone i {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
     .contact-details .contact-email {
-        color: #01b7f2;
+        color: #3d98d3;
         font-size: 1.1667em;
         padding: 0 24px;
         line-height: 2em;
@@ -2983,7 +2984,7 @@ ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.chec
 }
 
     ul.arrow li.active, ul.arrow li.active:before, ul.arrow.hover li:hover, ul.arrow.hover li:hover:before, ul.triangle li.active, ul.triangle li.active:before, ul.triangle.hover li:hover, ul.triangle.hover li:hover:before, ul.circle li.active, ul.circle li.active:before, ul.circle.hover li:hover, ul.circle.hover li:hover:before, ul.check li.active, ul.check li.active:before, ul.check.hover li:hover, ul.check.hover li:hover:before, ul.chevron li.active, ul.chevron li.active:before, ul.chevron.hover li:hover, ul.chevron.hover li:hover:before, ul.arrow-square li.active, ul.arrow-square li.active:before, ul.arrow-square.hover li:hover, ul.arrow-square.hover li:hover:before, ul.check-square li.active, ul.check-square li.active:before, ul.check-square.hover li:hover, ul.check-square.hover li:hover:before, ul.check-circle li.active, ul.check-circle li.active:before, ul.check-circle.hover li:hover, ul.check-circle.hover li:hover:before, ul.decimal li.active, ul.decimal li.active:before, ul.decimal.hover li:hover, ul.decimal.hover li:hover:before, ul.upper-roman li.active, ul.upper-roman li.active:before, ul.upper-roman.hover li:hover, ul.upper-roman.hover li:hover:before, ul.lower-latin li.active, ul.lower-latin li.active:before, ul.lower-latin.hover li:hover, ul.lower-latin.hover li:hover:before, ul.upper-latin li.active, ul.upper-latin li.active:before, ul.upper-latin.hover li:hover, ul.upper-latin.hover li:hover:before {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     ul.arrow.hover li, ul.triangle.hover li, ul.circle.hover li, ul.check.hover li, ul.chevron.hover li, ul.arrow-square.hover li, ul.check-square.hover li, ul.check-circle.hover li, ul.decimal.hover li, ul.upper-roman.hover li, ul.lower-latin.hover li, ul.upper-latin.hover li {
@@ -3002,7 +3003,7 @@ ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.chec
     ul.arrow li:before {
         content: "\f178";
         margin-right: 10px;
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     ul.triangle li:before {
@@ -3015,13 +3016,13 @@ ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.chec
     }
 
     ul.triangle li.active, ul.triangle li.active:before, ul.triangle.hover li:hover, ul.triangle.hover li:hover .box-title, ul.triangle.hover li:hover:before {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     ul.circle li:before {
         content: "\f111";
         margin-right: 10px;
-        color: #01b7f2;
+        color: #3d98d3;
         display: block;
         float: left;
         font-size: 5px;
@@ -3036,7 +3037,7 @@ ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.chec
     }
 
     ul.circle.bullet-blue li:before {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     ul.check li:before {
@@ -3060,13 +3061,13 @@ ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.chec
             margin-top: -10px;
             line-height: 20px;
             content: "\f054";
-            color: #01b7f2;
+            color: #3d98d3;
             display: block;
             width: 20px;
             height: 20px;
             text-align: center;
             font-size: 10px;
-            border: 1px solid #01b7f2;
+            border: 1px solid #3d98d3;
             -webkit-border-radius: 50% 50% 50% 50%;
             -moz-border-radius: 50% 50% 50% 50%;
             -ms-border-radius: 50% 50% 50% 50%;
@@ -3077,7 +3078,7 @@ ul.arrow, ul.triangle, ul.circle, ul.check, ul.chevron, ul.arrow-square, ul.chec
         content: "\f178";
         margin-right: 10px;
         color: #fff;
-        background: #01b7f2;
+        background: #3d98d3;
         padding: 0 2px 0 3px;
     }
 
@@ -3107,7 +3108,7 @@ ul.upper-latin {
 }
 
     ul.upper-roman.bullet-colored li, ul.lower-latin.bullet-colored li, ul.upper-latin.bullet-colored li {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
         ul.upper-roman.bullet-colored li > *, ul.lower-latin.bullet-colored li > *, ul.upper-latin.bullet-colored li > * {
@@ -3125,7 +3126,7 @@ ul.check-square li:before {
 }
 
 ul.check-square li.active {
-    background: #01b7f2;
+    background: #3d98d3;
     color: #fff;
 }
 
@@ -3239,7 +3240,7 @@ ul.check-circle li:before {
             .toggle-container .panel.style1 .panel-title > a.collapsed:before {
                 content: "\f067";
                 color: #fff;
-                background: #01b7f2;
+                background: #3d98d3;
             }
 
         .toggle-container .panel.style1 .panel-content {
@@ -3279,7 +3280,7 @@ ul.check-circle li:before {
                 display: block;
                 line-height: normal;
                 padding: 15px 20px;
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
                 .toggle-container .panel.style2 .panel-title > a.collapsed {
@@ -3288,7 +3289,7 @@ ul.check-circle li:before {
                 }
 
                     .toggle-container .panel.style2 .panel-title > a.collapsed:hover {
-                        color: #01b7f2;
+                        color: #3d98d3;
                     }
 
                 .toggle-container .panel.style2 .panel-title > a:after {
@@ -3310,7 +3311,7 @@ ul.check-circle li:before {
                 .toggle-container .panel.style2 .panel-title > a.collapsed:after {
                     content: "\f067";
                     color: #fff;
-                    background: #01b7f2;
+                    background: #3d98d3;
                 }
 
         .toggle-container .panel.style2 .panel-content {
@@ -3318,7 +3319,7 @@ ul.check-circle li:before {
         }
 
     .toggle-container.with-image > .image-container {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         .toggle-container.with-image > .image-container > img {
@@ -3331,7 +3332,7 @@ ul.check-circle li:before {
     }
 
     .toggle-container.with-image .panel-title > a {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
         .toggle-container.with-image .panel-title > a.collapsed {
@@ -3339,7 +3340,7 @@ ul.check-circle li:before {
         }
 
             .toggle-container.with-image .panel-title > a.collapsed:hover {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
 .tab-wrapper {
@@ -3391,7 +3392,7 @@ ul.check-circle li:before {
         }
 
         .tab-container ul.tabs li.active > a, .tab-container ul.tabs li:hover > a {
-            color: #01b7f2;
+            color: #3d98d3;
             background: #fff;
         }
 
@@ -3468,7 +3469,7 @@ ul.check-circle li:before {
 
         .tab-container.style1 ul.tabs li.active > a, .tab-container.style1 ul.tabs li:hover > a {
             color: #fff;
-            background: #01b7f2;
+            background: #3d98d3;
             position: relative;
         }
 
@@ -3477,7 +3478,7 @@ ul.check-circle li:before {
                 bottom: -5px;
                 left: 50%;
                 margin-left: -10px;
-                border-top: 5px solid #01b7f2;
+                border-top: 5px solid #3d98d3;
                 border-left: 7px solid transparent;
                 border-right: 7px solid transparent;
                 content: "";
@@ -3532,7 +3533,7 @@ ul.check-circle li:before {
                 -moz-opacity: 0.8;
                 -khtml-opacity: 0.8;
                 opacity: 0.8;
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
                 .tab-container.trans-style ul.tabs li a:hover i {
@@ -3547,7 +3548,7 @@ ul.check-circle li:before {
             -moz-opacity: 1;
             -khtml-opacity: 1;
             opacity: 1;
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
             .tab-container.trans-style ul.tabs li a:hover i, .tab-container.trans-style ul.tabs li.active a i {
@@ -3656,7 +3657,7 @@ ul.check-circle li:before {
 }
 
     .tab-container.full-width-style .tab-content .tab-content-title {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
 .tab-container.full-width-style:after {
@@ -3752,7 +3753,7 @@ ul.check-circle li:before {
     .photo-gallery .flex-direction-nav li a, .image-carousel.style2 .flex-direction-nav li a {
         width: 30px;
         height: 22px;
-        background: #01b7f2;
+        background: #3d98d3;
         color: #fff;
         text-indent: -9999px;
         text-align: left;
@@ -3798,7 +3799,7 @@ ul.check-circle li:before {
             background: #d9d9d9;
         }
 
-.travelo-box > .image-carousel.style2 .flex-direction-nav {
+.BookeTickets-box > .image-carousel.style2 .flex-direction-nav {
     top: -60px;
 }
 
@@ -3979,7 +3980,7 @@ ul.check-circle li:before {
             }
 
                 .image-carousel.style1 .flex-direction-nav li a:hover {
-                    background: #01b7f2;
+                    background: #3d98d3;
                 }
 
                 .image-carousel.style1 .flex-direction-nav li a:before {
@@ -4243,7 +4244,7 @@ ul.check-circle li:before {
 
     .image-style.style2 .title {
         font-size: 1.25em;
-        color: #01b7f2;
+        color: #3d98d3;
         margin-top: 20px;
     }
 
@@ -4797,7 +4798,7 @@ ul.check-circle li:before {
 
     .icon-box.style2 {
         line-height: 1.75em;
-        color: #01b7f2;
+        color: #3d98d3;
         font-size: 0.9167em;
         display: inline-block;
     }
@@ -4805,7 +4806,7 @@ ul.check-circle li:before {
         .icon-box.style2 > i {
             font-size: 1.5em;
             margin-right: 10px;
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
     .icon-box.style3 {
@@ -4857,7 +4858,7 @@ ul.check-circle li:before {
             display: block;
             width: 70px;
             float: left;
-            background: #01b7f2;
+            background: #3d98d3;
             line-height: 70px;
             color: #fff;
             font-size: 3em;
@@ -4921,7 +4922,7 @@ ul.check-circle li:before {
             width: 60px;
             height: 60px;
             line-height: 60px;
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
             .icon-box.style7 > i.glyphicon {
@@ -4968,7 +4969,7 @@ ul.check-circle li:before {
         }
 
         .icon-box.style9 > i {
-            background: #01b7f2;
+            background: #3d98d3;
             -webkit-border-radius: 50% 50% 50% 50%;
             -moz-border-radius: 50% 50% 50% 50%;
             -ms-border-radius: 50% 50% 50% 50%;
@@ -5058,8 +5059,8 @@ ul.check-circle li:before {
         }
 
             .icon-box.style12 > .icon-wrapper > i {
-                border-color: #01b7f2;
-                background: #01b7f2;
+                border-color: #3d98d3;
+                background: #3d98d3;
                 color: #fff;
                 font-size: 1.5em;
             }
@@ -5299,7 +5300,7 @@ ul.check-circle li:before {
             }
 
         .listing-style1.car .amenities ul li:hover, .listing-style1.car .amenities ul li:hover .glyphicon, .listing-style1.car .amenities ul li:hover [class^="soap-icon"], .listing-style3.car .amenities ul li:hover, .listing-style3.car .amenities ul li:hover .glyphicon, .listing-style3.car .amenities ul li:hover [class^="soap-icon"] {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
             .listing-style1.car .amenities ul li:hover [class^="soap-icon"]:before, .listing-style3.car .amenities ul li:hover [class^="soap-icon"]:before {
@@ -5369,7 +5370,7 @@ ul.check-circle li:before {
 }
 
     .listing-style3 [class^="soap-icon"].circle:hover {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
         .listing-style3 [class^="soap-icon"].circle:hover:before {
@@ -5809,7 +5810,7 @@ ul.check-circle li:before {
             }
 
     .pricing-table.blue {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         .pricing-table.blue .header {
@@ -5821,7 +5822,7 @@ ul.check-circle li:before {
         }
 
             .pricing-table.blue .features li:before {
-                background: #01b7f2;
+                background: #3d98d3;
             }
 
     .pricing-table.red {
@@ -5969,7 +5970,7 @@ ul.check-circle li:before {
         }
 
         .blog-infinite .post-meta .entry-author a.author, .single .post-meta .entry-author a.author {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
     .blog-infinite .post-meta .entry-action, .single .post-meta .entry-action {
@@ -5998,7 +5999,7 @@ ul.check-circle li:before {
             }
 
         .blog-infinite .post-meta .entry-action a.button:hover, .single .post-meta .entry-action a.button:hover {
-            background: #01b7f2;
+            background: #3d98d3;
             color: #fff;
         }
 
@@ -6080,7 +6081,7 @@ ul.check-circle li:before {
 
     .about-author .wrote-posts-count i {
         font-size: 1.8333em;
-        color: #01b7f2;
+        color: #3d98d3;
         float: left;
         margin-right: 10px;
     }
@@ -6142,7 +6143,7 @@ ul.check-circle li:before {
     }
 
     .single .suggestions li:hover a.hover-effect {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
     .single .suggestions li:hover img {
@@ -6159,7 +6160,7 @@ ul.check-circle li:before {
     }
 
     .single .suggestions li:hover .caption {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
 .comment-list .the-comment {
@@ -6221,7 +6222,7 @@ ul.check-circle li:before {
 
 .testimonial.style1 .description, .testimonial.style2 .description {
     font-size: 1.3333em;
-    color: #01b7f2;
+    color: #3d98d3;
     font-style: italic;
 }
 
@@ -6317,7 +6318,7 @@ ul.check-circle li:before {
                 display: block;
                 width: 30px;
                 height: 22px;
-                background: #01b7f2;
+                background: #3d98d3;
                 color: #fff;
                 text-indent: -9999px;
             }
@@ -6391,11 +6392,11 @@ ul.check-circle li:before {
         }
 
         .testimonial.style3 .description:before, .testimonial.style3 .description:after {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
     .testimonial.style3 .name {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
         .testimonial.style3 .name:before {
@@ -6420,7 +6421,7 @@ ul.check-circle li:before {
         width: 40px;
         text-indent: -9999px;
         background: #fff;
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
         .testimonial.style3 .testimonial-direction-nav .testimonial-prev:before, .testimonial.style3 .testimonial-direction-nav .testimonial-next:before {
@@ -6503,7 +6504,7 @@ ul.check-circle li:before {
             }
 
                 .team figure figcaption > .social-icons > li a:hover {
-                    color: #01b7f2;
+                    color: #3d98d3;
                     filter: alpha(opacity=100);
                     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
                     -moz-opacity: 1;
@@ -6601,7 +6602,7 @@ ul.check-circle li:before {
         height: 55px;
         line-height: 55px;
         color: #fff;
-        background: #01b7f2;
+        background: #3d98d3;
         -webkit-border-radius: 0 0 15px 0;
         -moz-border-radius: 0 0 15px 0;
         -ms-border-radius: 0 0 15px 0;
@@ -6633,7 +6634,7 @@ ul.check-circle li:before {
         }
 
             .style-changer .style-changer-header .style-toggle > .fa {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
     .style-changer .style-chagner-main {
@@ -6687,11 +6688,11 @@ ul.check-circle li:before {
                 }
 
                 .style-changer .style-chagner-main .design-skins li.light-blue {
-                    border-color: #01b7f2;
+                    border-color: #3d98d3;
                 }
 
                     .style-changer .style-chagner-main .design-skins li.light-blue a {
-                        background: #01b7f2;
+                        background: #3d98d3;
                     }
 
                 .style-changer .style-chagner-main .design-skins li.purple {
@@ -6838,7 +6839,7 @@ ul.check-circle li:before {
 
     #header .topnav {
         height: 30px;
-        background: #01b7f2;
+        background: #3d98d3;
         width: 100%;
     }
 
@@ -6924,7 +6925,7 @@ ul.check-circle li:before {
         }
 
     #header .mobile-menu-toggle {
-        background: url(../images/icon/mobile-menu.png) no-repeat center center #01b7f2;
+        background: url(../images/icon/mobile-menu.png) no-repeat center center #3d98d3;
         padding: 0;
         margin: 0;
         height: 66px;
@@ -6943,7 +6944,7 @@ ul.check-circle li:before {
         }
 
     #header.style1 {
-        background: #01b7f2;
+        background: #3d98d3;
         padding-top: 30px;
     }
 
@@ -6970,7 +6971,7 @@ ul.check-circle li:before {
                     display: block;
                     width: 130px;
                     height: 30px;
-                    background: url("../images/themes/header/style01/logo_txt.png") no-repeat #01b7f2;
+                    background: url("../images/themes/header/style01/logo_txt.png") no-repeat #3d98d3;
                     content: "";
                     top: 0;
                     right: 0;
@@ -7172,7 +7173,7 @@ ul.check-circle li:before {
         }
 
         #header.style3 #main-menu .menu > li:hover > a, #header.style3 #main-menu .menu > li.active > a {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
     #header.style4 {
@@ -7407,7 +7408,7 @@ ul.check-circle li:before {
     }
 
         #header.style7 .contact-details i {
-            color: #01b7f2;
+            color: #3d98d3;
             vertical-align: middle;
         }
 
@@ -7472,7 +7473,7 @@ ul.check-circle li:before {
         }
 
             #header.style7 .social-icons li > a:hover {
-                background: #01b7f2;
+                background: #3d98d3;
                 color: #fff;
             }
 
@@ -7569,12 +7570,12 @@ ul.check-circle li:before {
         }
 
         #main-menu ul.menu > li.active > a, .chaser ul.menu > li.active > a {
-            color: #01b7f2;
+            color: #3d98d3;
             font-weight: bold;
         }
 
         #main-menu ul.menu > li:hover > a, .chaser ul.menu > li:hover > a {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
         #main-menu ul.menu > li > ul.left, .chaser ul.menu > li > ul.left {
@@ -7590,7 +7591,7 @@ ul.check-circle li:before {
             z-index: -1;
             width: 180px;
             padding: 0;
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
             #main-menu ul.menu > li ul li, .chaser ul.menu > li ul li {
@@ -7638,7 +7639,7 @@ ul.check-circle li:before {
                 }
 
         #main-menu ul.menu > li.menu-color-blue ul, .chaser ul.menu > li.menu-color-blue ul {
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
             #main-menu ul.menu > li.menu-color-blue ul li:hover > a, #main-menu ul.menu > li.menu-color-blue ul li.active > a, .chaser ul.menu > li.menu-color-blue ul li:hover > a, .chaser ul.menu > li.menu-color-blue ul li.active > a {
@@ -7727,7 +7728,7 @@ ul.check-circle li:before {
         display: table;
         table-layout: fixed;
         width: 100%;
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         #main-menu ul.menu > .megamenu-menu ul.megamenu li.menu-item-has-children.active > a, #main-menu ul.menu > .megamenu-menu ul.megamenu li.menu-item-has-children:hover > a, .chaser ul.menu > .megamenu-menu ul.megamenu li.menu-item-has-children.active > a, .chaser ul.menu > .megamenu-menu ul.megamenu li.menu-item-has-children:hover > a {
@@ -7833,7 +7834,7 @@ ul.check-circle li:before {
             }
 
     #main-menu ul.menu .megamenu-menu.menu-color-blue ul.megamenu, .chaser ul.menu .megamenu-menu.menu-color-blue ul.megamenu {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         #main-menu ul.menu .megamenu-menu.menu-color-blue ul.megamenu ul.sub-menu li li a, .chaser ul.menu .megamenu-menu.menu-color-blue ul.megamenu ul.sub-menu li li a {
@@ -7869,7 +7870,7 @@ ul.check-circle li:before {
         }
 
     #main-menu ul.menu .megamenu-menu.menu-skin-light .megamenu-wrapper, .chaser ul.menu .megamenu-menu.menu-skin-light .megamenu-wrapper {
-        border: 2px solid #01b7f2;
+        border: 2px solid #3d98d3;
     }
 
     #main-menu ul.menu .megamenu-menu.menu-skin-light ul.megamenu, .chaser ul.menu .megamenu-menu.menu-skin-light ul.megamenu {
@@ -7891,15 +7892,15 @@ ul.check-circle li:before {
         }
 
             #main-menu ul.menu .megamenu-menu.menu-skin-light ul.megamenu ul.sub-menu li li:hover > a:before, #main-menu ul.menu .megamenu-menu.menu-skin-light ul.megamenu ul.sub-menu li li.active > a:before, .chaser ul.menu .megamenu-menu.menu-skin-light ul.megamenu ul.sub-menu li li:hover > a:before, .chaser ul.menu .megamenu-menu.menu-skin-light ul.megamenu ul.sub-menu li li.active > a:before {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
     #main-menu ul.menu .megamenu-menu.menu-skin-light.menu-color-blue .megamenu-wrapper, .chaser ul.menu .megamenu-menu.menu-skin-light.menu-color-blue .megamenu-wrapper {
-        border-color: #01b7f2;
+        border-color: #3d98d3;
     }
 
     #main-menu ul.menu .megamenu-menu.menu-skin-light.menu-color-blue ul.megamenu ul.sub-menu li li:hover > a:before, #main-menu ul.menu .megamenu-menu.menu-skin-light.menu-color-blue ul.megamenu ul.sub-menu li li.active > a:before, .chaser ul.menu .megamenu-menu.menu-skin-light.menu-color-blue ul.megamenu ul.sub-menu li li:hover > a:before, .chaser ul.menu .megamenu-menu.menu-skin-light.menu-color-blue ul.megamenu ul.sub-menu li li.active > a:before {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     #main-menu ul.menu .megamenu-menu.menu-skin-light.menu-color-yellow .megamenu-wrapper, .chaser ul.menu .megamenu-menu.menu-skin-light.menu-color-yellow .megamenu-wrapper {
@@ -7920,7 +7921,7 @@ ul.check-circle li:before {
 
 ul.menu.mini {
     min-width: 180px;
-    border: 2px solid #01b7f2;
+    border: 2px solid #3d98d3;
     background: #fff;
 }
 
@@ -7945,7 +7946,7 @@ ul.menu.mini {
         }
 
             ul.menu.mini li:hover a, ul.menu.mini li.active a {
-                color: #01b7f2;
+                color: #3d98d3;
                 font-weight: bold;
             }
 
@@ -7977,7 +7978,7 @@ ul.menu.mini {
     }
 
 .menu-color-skin ul.menu.mini, .menu-color-blue ul.menu.mini, .menu-color-yellow ul.menu.mini, .menu-color-green ul.menu.mini {
-    background: #01b7f2;
+    background: #3d98d3;
 }
 
     .menu-color-skin ul.menu.mini li a, .menu-color-blue ul.menu.mini li a, .menu-color-yellow ul.menu.mini li a, .menu-color-green ul.menu.mini li a {
@@ -7989,7 +7990,7 @@ ul.menu.mini {
     }
 
 .menu-color-blue ul.menu.mini {
-    background: #01b7f2;
+    background: #3d98d3;
 }
 
     .menu-color-blue ul.menu.mini li a {
@@ -8025,7 +8026,7 @@ ul.menu.mini {
     }
 
 #header .mobile-menu {
-    background: #01b7f2;
+    background: #3d98d3;
     text-align: left;
 }
 
@@ -8126,7 +8127,7 @@ ul.menu.mini {
             }
 
             #header .mobile-menu > ul.menu > li.menu-item-has-children > ul {
-                border-top: 1px solid #01b7f2;
+                border-top: 1px solid #3d98d3;
             }
 
         #header .mobile-menu > ul.menu > li:first-child > a {
@@ -8171,7 +8172,7 @@ ul.menu.mini {
             }
 
         #header .mobile-menu > ul.menu > li > ul li.menu-item-has-children > ul {
-            border-bottom: 1px solid #01b7f2;
+            border-bottom: 1px solid #3d98d3;
         }
 
         #header .mobile-menu > ul.menu > li > ul li.menu-item-has-children:last-child > ul {
@@ -8248,7 +8249,7 @@ ul.menu.mini {
     }
 
     #header .mobile-menu.menu-color-blue {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         #header .mobile-menu.menu-color-blue ul.menu > li > a {
@@ -8260,7 +8261,7 @@ ul.menu.mini {
         }
 
             #header .mobile-menu.menu-color-blue ul.menu > li.menu-item-has-children.open > a, #header .mobile-menu.menu-color-blue ul.menu > li.menu-item-has-children > ul {
-                border-top-color: #01b7f2;
+                border-top-color: #3d98d3;
             }
 
         #header .mobile-menu.menu-color-blue ul.menu > li:last-child > a {
@@ -8268,7 +8269,7 @@ ul.menu.mini {
         }
 
         #header .mobile-menu.menu-color-blue ul.menu > li > ul li.menu-item-has-children > ul {
-            border-bottom-color: #01b7f2;
+            border-bottom-color: #3d98d3;
         }
 
     #header .mobile-menu.menu-color-yellow {
@@ -8372,14 +8373,14 @@ ul.menu.mini {
     -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/logo/skin1/logo.png', sizingMethod='scale')";
 }
 
-.travelo-signup-box, .travelo-login-box {
-    border: 2px solid #01b7f2;
+.BookeTickets-signup-box, .BookeTickets-login-box {
+    border: 2px solid #3d98d3;
     width: 300px;
     margin: 0 auto;
     display: none;
 }
 
-    .travelo-signup-box .login-social .button, .travelo-login-box .login-social .button {
+    .BookeTickets-signup-box .login-social .button, .BookeTickets-login-box .login-social .button {
         width: 100%;
         height: 36px;
         line-height: 36px;
@@ -8391,7 +8392,7 @@ ul.menu.mini {
         letter-spacing: 0.04em;
     }
 
-        .travelo-signup-box .login-social .button i, .travelo-login-box .login-social .button i {
+        .BookeTickets-signup-box .login-social .button i, .BookeTickets-login-box .login-social .button i {
             font-size: 1.5em;
             margin-right: 36px;
             width: 20px;
@@ -8399,15 +8400,15 @@ ul.menu.mini {
             display: block;
         }
 
-    .travelo-signup-box .login-facebook, .travelo-login-box .login-facebook {
+    .BookeTickets-signup-box .login-facebook, .BookeTickets-login-box .login-facebook {
         background: #155c92;
     }
 
-    .travelo-signup-box .login-googleplus, .travelo-login-box .login-googleplus {
+    .BookeTickets-signup-box .login-googleplus, .BookeTickets-login-box .login-googleplus {
         background: #d13535;
     }
 
-    .travelo-signup-box .seperator, .travelo-login-box .seperator {
+    .BookeTickets-signup-box .seperator, .BookeTickets-login-box .seperator {
         line-height: 0;
         border-top: 1px solid #f5f5f5;
         position: relative;
@@ -8415,7 +8416,7 @@ ul.menu.mini {
         margin-bottom: 10px;
     }
 
-        .travelo-signup-box .seperator label, .travelo-login-box .seperator label {
+        .BookeTickets-signup-box .seperator label, .BookeTickets-login-box .seperator label {
             display: block;
             font-size: 0.9167em;
             position: absolute;
@@ -8433,50 +8434,50 @@ ul.menu.mini {
             font-weight: 400;
         }
 
-    .travelo-signup-box p, .travelo-login-box p {
+    .BookeTickets-signup-box p, .BookeTickets-login-box p {
         margin-bottom: 0;
     }
 
-    .travelo-signup-box .description, .travelo-login-box .description {
+    .BookeTickets-signup-box .description, .BookeTickets-login-box .description {
         font-size: 1em;
         color: #9e9e9e;
     }
 
-    .travelo-signup-box .form-group, .travelo-login-box .form-group {
+    .BookeTickets-signup-box .form-group, .BookeTickets-login-box .form-group {
         margin-bottom: 10px;
         text-align: left;
     }
 
-    .travelo-signup-box .checkbox label, .travelo-login-box .checkbox label {
+    .BookeTickets-signup-box .checkbox label, .BookeTickets-login-box .checkbox label {
         font-size: 1em;
     }
 
-    .travelo-signup-box .goto-login, .travelo-signup-box .goto-signup, .travelo-signup-box .signup-email, .travelo-login-box .goto-login, .travelo-login-box .goto-signup, .travelo-login-box .signup-email {
-        color: #01b7f2;
+    .BookeTickets-signup-box .goto-login, .BookeTickets-signup-box .goto-signup, .BookeTickets-signup-box .signup-email, .BookeTickets-login-box .goto-login, .BookeTickets-login-box .goto-signup, .BookeTickets-login-box .signup-email {
+        color: #3d98d3;
         font-size: 1.0833em;
     }
 
-    .travelo-signup-box .signup-email-section {
+    .BookeTickets-signup-box .signup-email-section {
         margin-bottom: 10px;
     }
 
-    .travelo-signup-box .signup-email i {
+    .BookeTickets-signup-box .signup-email i {
         font-size: 1.2em;
         margin-right: 4px;
     }
 
-    .travelo-signup-box .email-signup {
+    .BookeTickets-signup-box .email-signup {
         margin-top: 5px;
         margin-bottom: 20px;
         display: none;
     }
 
-    .travelo-login-box .checkbox-inline {
+    .BookeTickets-login-box .checkbox-inline {
         margin-left: 0;
     }
 
-    .travelo-login-box .forgot-password {
-        color: #01b7f2;
+    .BookeTickets-login-box .forgot-password {
+        color: #3d98d3;
         text-decoration: underline;
     }
 
@@ -8567,7 +8568,7 @@ ul.menu.mini {
             }
 
                 .page-title-container .breadcrumbs li a:hover {
-                    color: #01b7f2;
+                    color: #3d98d3;
                 }
 
             .page-title-container .breadcrumbs li:after {
@@ -8644,7 +8645,7 @@ ul.menu.mini {
         }
 
             .page-title-container.style2 .breadcrumbs li.active {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
             .page-title-container.style2 .breadcrumbs li {
@@ -8821,7 +8822,7 @@ ul.menu.mini {
             }
 
                 .page-title-container.style5 .breadcrumbs li a {
-                    color: #01b7f2;
+                    color: #3d98d3;
                 }
 
                 .page-title-container.style5 .breadcrumbs li:before {
@@ -8833,7 +8834,7 @@ ul.menu.mini {
                     -moz-border-radius: 50% 50% 50% 50%;
                     -ms-border-radius: 50% 50% 50% 50%;
                     border-radius: 50% 50% 50% 50%;
-                    color: #01b7f2;
+                    color: #3d98d3;
                     border: 1px solid;
                     line-height: 12px;
                     text-align: center;
@@ -8891,7 +8892,7 @@ ul.menu.mini {
                     }
 
                 .page-title-container.style5 .social-icons a i {
-                    color: #01b7f2;
+                    color: #3d98d3;
                 }
 
     .page-title-container.style6 {
@@ -9109,7 +9110,7 @@ ul.search-tabs {
             -moz-opacity: 1;
             -khtml-opacity: 1;
             opacity: 1;
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
 .visible-mobile .search-tabs li {
@@ -9117,7 +9118,7 @@ ul.search-tabs {
 }
 
     .visible-mobile .search-tabs li a {
-        color: #01b7f2;
+        color: #3d98d3;
         filter: alpha(opacity=100);
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
         -moz-opacity: 1;
@@ -9167,7 +9168,7 @@ ul.search-tabs {
 }
 
 .search-box .bx-wrapper .bx-prev, .search-box .bx-wrapper .bx-next {
-    background: #01b7f2;
+    background: #3d98d3;
     font-family: FontAwesome;
 }
 
@@ -9213,9 +9214,9 @@ ul.search-tabs {
     }
 
         .search-box-wrapper.style1 .search-box > ul.search-tabs {
-            margin-top: 80px;
+            margin-top: 50px;
             float: left;
-            width: 31%;
+            width: 17%;
         }
 
             .search-box-wrapper.style1 .search-box > ul.search-tabs li {
@@ -9277,7 +9278,7 @@ ul.search-tabs {
                         font-family: "soap-icons";
                         position: absolute;
                         right: 15px;
-                        color: #01b7f2;
+                        color: #3d98d3;
                         font-size: 20px;
                     }
 
@@ -9288,14 +9289,14 @@ ul.search-tabs {
     .search-box-wrapper.style1 .search-tab-content {
         background: #fff;
         float: left;
-        width: 69%;
+        width: 83%;
         padding: 0;
     }
 
         .search-box-wrapper.style1 .search-tab-content .title-container {
-            background: #fdb714;
+            background: #3d98d3;
             padding: 15px 40px 0 25px;
-            height: 80px;
+            height: 50px;
             position: relative;
         }
 
@@ -9361,7 +9362,7 @@ ul.search-tabs {
                 .search-box-wrapper.style2 .search-box > ul.search-tabs li > a {
                     height: 35px;
                     line-height: 35px;
-                    background: #01b7f2;
+                    background: #3d98d3;
                     filter: alpha(opacity=100);
                     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
                     -moz-opacity: 1;
@@ -9398,7 +9399,7 @@ ul.search-tabs {
                     margin-bottom: 0;
                     height: 40px;
                     background: #fff;
-                    color: #01b7f2;
+                    color: #3d98d3;
                 }
 
     .search-box-wrapper.style2 .search-tab-content {
@@ -9542,7 +9543,7 @@ ul.search-tabs {
         }
 
         .sort-by-section .swap-tiles li:hover > a > i, .sort-by-section .swap-tiles li.active > a > i {
-            background: #01b7f2;
+            background: #3d98d3;
             color: #fff;
         }
 
@@ -9626,7 +9627,7 @@ ul.search-tabs {
         }
 
         .filters-container ul.filters-option li.active {
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
             .filters-container ul.filters-option li.active a {
@@ -9778,12 +9779,12 @@ ul.search-tabs {
             }
 
         #hotel-main-content .calendar table tbody td.date-passed > a, #hotel-main-content .calendar table tbody td.date-passed > span, #flight-main-content .calendar table tbody td.date-passed > a, #flight-main-content .calendar table tbody td.date-passed > span, #cruise-main-content .calendar table tbody td.date-passed > a, #cruise-main-content .calendar table tbody td.date-passed > span {
-            border-color: #01b7f2;
-            color: #01b7f2;
+            border-color: #3d98d3;
+            color: #3d98d3;
         }
 
             #hotel-main-content .calendar table tbody td.date-passed > a:before, #hotel-main-content .calendar table tbody td.date-passed > span:before, #flight-main-content .calendar table tbody td.date-passed > a:before, #flight-main-content .calendar table tbody td.date-passed > span:before, #cruise-main-content .calendar table tbody td.date-passed > a:before, #cruise-main-content .calendar table tbody td.date-passed > span:before {
-                background: #01b7f2;
+                background: #3d98d3;
                 content: "DATE PASSED";
             }
 
@@ -9828,7 +9829,7 @@ ul.search-tabs {
         }
 
         #hotel-main-content .calendar-legend label.past:before, #flight-main-content .calendar-legend label.past:before, #cruise-main-content .calendar-legend label.past:before {
-            border-color: #01b7f2;
+            border-color: #3d98d3;
         }
 
 #hotel-description .intro, #hotel-reviews .intro, #hotel-write-review .intro, #car-details .intro, #flight-details .intro, #cruise-description .intro, #cruise-reviews .intro, #cruise-write-review .intro, #travel-guide .intro, #tour-details .intro {
@@ -9878,7 +9879,7 @@ ul.search-tabs {
         width: 110px;
         border-right: 1px solid #f5f5f5;
         margin-right: 20px;
-        color: #01b7f2;
+        color: #3d98d3;
         white-space: nowrap;
     }
 
@@ -10011,7 +10012,7 @@ ul.search-tabs {
         }
 
         #hotel-faqs .topics li.active, #flight-fare-rules .topics li.active {
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
 .image-box.style2.activities .details {
@@ -10135,13 +10136,13 @@ ul.search-tabs {
     }
 
     #hotel-write-review .sort-trip li.active i, #cruise-write-review .sort-trip li.active i {
-        background: #01b7f2;
+        background: #3d98d3;
         color: #fff;
-        border-color: #01b7f2;
+        border-color: #3d98d3;
     }
 
     #hotel-write-review .sort-trip li.active > span, #cruise-write-review .sort-trip li.active > span {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     #hotel-write-review .sort-trip li:hover i, #cruise-write-review .sort-trip li:hover i {
@@ -10170,7 +10171,7 @@ ul.search-tabs {
             float: left;
             line-height: 22px;
             height: 22px;
-            background: #01b7f2;
+            background: #3d98d3;
             color: #fff;
             font-weight: bold;
             margin-top: 8px;
@@ -10182,7 +10183,7 @@ ul.search-tabs {
             .overall-rating .star-rating .status:before {
                 display: block;
                 content: "";
-                border-right: 15px solid #01b7f2;
+                border-right: 15px solid #3d98d3;
                 border-top: 11px solid transparent;
                 border-bottom: 11px solid transparent;
                 position: absolute;
@@ -10205,7 +10206,7 @@ ul.search-tabs {
         }
 
         .detailed-rating li label {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
         .detailed-rating li .five-stars-container {
@@ -10255,7 +10256,7 @@ ul.search-tabs {
     }
 
         .guest-review .comment-container .comment-title {
-            color: #01b7f2;
+            color: #3d98d3;
             float: left;
             font-style: italic;
         }
@@ -10356,7 +10357,7 @@ ul.search-tabs {
     }
 
     .booking-details .timing label {
-        color: #01b7f2;
+        color: #3d98d3;
         font-size: 1em;
         margin-bottom: 0;
         font-weight: normal;
@@ -10387,7 +10388,7 @@ ul.search-tabs {
         float: left;
         text-align: left;
         margin: 0;
-        color: #01b7f2;
+        color: #3d98d3;
         clear: both;
     }
 
@@ -10419,7 +10420,7 @@ ul.search-tabs {
     }
 
     .booking-information > .booking-confirmation .main-message {
-        color: #01b7f2;
+        color: #3d98d3;
         margin-bottom: 0;
         letter-spacing: 0.04em;
     }
@@ -10523,7 +10524,7 @@ ul.search-tabs {
         line-height: 1.1667em;
     }
 
-#flight-details .travelo-box, #car-details .travelo-box {
+#flight-details .BookeTickets-box, #car-details .BookeTickets-box {
     padding: 25px 25px 20px 25px;
     margin: 0;
 }
@@ -10659,7 +10660,7 @@ ul.search-tabs {
         .explore-more .intro i {
             float: left;
             margin-right: 10px;
-            color: #01b7f2;
+            color: #3d98d3;
             font-size: 16px;
         }
 
@@ -10725,7 +10726,7 @@ ul.search-tabs {
 }
 
     #car-details .car-features .icon-box > i {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
 #car-details .protect-passengers .icon-box {
@@ -10793,7 +10794,7 @@ ul.search-tabs {
         }
 
     .cruise-line-deals .box-title small {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
     .cruise-line-deals .box {
@@ -10847,7 +10848,7 @@ ul.search-tabs {
     line-height: 2.5em;
 }
 
-.cruise-itinerary .travelo-box {
+.cruise-itinerary .BookeTickets-box {
     margin: 0;
 }
 
@@ -10856,7 +10857,7 @@ ul.search-tabs {
 }
 
 .cruise-itinerary th {
-    color: #01b7f2;
+    color: #3d98d3;
     font-weight: normal;
     padding-bottom: 10px;
 }
@@ -10899,7 +10900,7 @@ ul.search-tabs {
 }
 
 #hotel-availability .room-list .box-title dt, #cruise-availability .room-list .box-title dt, #cruise-food-dinning .food-dinning-list .box-title dt {
-    color: #01b7f2;
+    color: #3d98d3;
     margin-right: 5px;
     clear: both;
 }
@@ -11079,7 +11080,7 @@ ul.search-tabs {
     }
 
     #tour-details .flights dt {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
 #tour-details .tour-google-map {
@@ -11203,7 +11204,7 @@ ul.search-tabs {
     }
 
     .tour-locations .box .time span {
-        color: #01b7f2;
+        color: #3d98d3;
         letter-spacing: 0.04em;
     }
 
@@ -11435,7 +11436,7 @@ ul.search-tabs {
         }
 
     #dashboard .fact.blue {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         #dashboard .fact.blue .description {
@@ -11488,7 +11489,7 @@ ul.search-tabs {
 }
 
 #dashboard .notifications .price {
-    color: #01b7f2;
+    color: #3d98d3;
     float: none;
     text-align: left;
     display: inline;
@@ -11821,7 +11822,7 @@ ul.search-tabs {
     }
 
     .dashboard.style1 #footer #main-menu ul.menu > li:hover > a, .dashboard.style1 #footer #main-menu ul.menu > li.active > a, .post-404page.style1 #footer #main-menu ul.menu > li:hover > a, .post-404page.style1 #footer #main-menu ul.menu > li.active > a, .soap-login-page.style1 #footer #main-menu ul.menu > li:hover > a, .soap-login-page.style1 #footer #main-menu ul.menu > li.active > a {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
 .dashboard.style2, .post-404page.style2 {
@@ -11896,7 +11897,7 @@ ul.search-tabs {
         position: absolute;
         z-index: 1;
         border: none;
-        background: #01b7f2;
+        background: #3d98d3;
         -webkit-border-radius: 5px 5px 5px 5px;
         -moz-border-radius: 5px 5px 5px 5px;
         -ms-border-radius: 5px 5px 5px 5px;
@@ -11908,7 +11909,7 @@ ul.search-tabs {
     }
 
     .ui-slider.slider-color-blue .ui-slider-range {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
     .ui-slider.slider-color-green .ui-slider-range {
@@ -12009,7 +12010,7 @@ button.ui-button::-moz-focus-inner {
     }
 
     .datepicker-wrap.blue:after {
-        background-color: #01b7f2;
+        background-color: #3d98d3;
     }
 
     .datepicker-wrap.dark-blue:after {
@@ -12196,23 +12197,23 @@ button.ui-button::-moz-focus-inner {
         }
 
     .ui-datepicker.blue {
-        border: 1px solid #01b7f2;
+        border: 1px solid #3d98d3;
     }
 
         .ui-datepicker.blue .ui-datepicker-header {
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
         .ui-datepicker.blue th span {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
         .ui-datepicker.blue .ui-datepicker-calendar td.ui-datepicker-current-day a, .ui-datepicker.blue .ui-datepicker-calendar td a:hover {
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
         .ui-datepicker.blue .ui-datepicker-calendar td.ui-datepicker-today a:before {
-            border-right-color: #01b7f2;
+            border-right-color: #3d98d3;
         }
 
     .ui-datepicker.dark-blue {
@@ -12306,7 +12307,7 @@ button.ui-button::-moz-focus-inner {
     }
 
         #footer .bottom #back-to-top i {
-            border-color: #01b7f2;
+            border-color: #3d98d3;
             font-weight: bold;
             overflow: hidden;
         }
@@ -12763,19 +12764,19 @@ button.ui-button::-moz-focus-inner {
         max-width: 100%;
     }
 
-.travelo-process {
+.BookeTickets-process {
     display: inline-block;
     position: relative;
     padding: 0 !important;
     float: none !important;
 }
 
-    .travelo-process img {
+    .BookeTickets-process img {
         max-width: 100%;
         margin-bottom: 2px;
     }
 
-    .travelo-process .process {
+    .BookeTickets-process .process {
         display: inline-block;
         position: absolute;
         width: 100%;
@@ -12784,64 +12785,64 @@ button.ui-button::-moz-focus-inner {
         margin-right: -32.4px;
     }
 
-        .travelo-process .process .icon-wrapper {
+        .BookeTickets-process .process .icon-wrapper {
             vertical-align: top;
         }
 
-            .travelo-process .process .icon-wrapper i {
+            .BookeTickets-process .process .icon-wrapper i {
                 display: block;
                 font-size: 36px;
             }
 
-        .travelo-process .process .details {
+        .BookeTickets-process .process .details {
             min-width: 250px;
             width: 100%;
         }
 
-        .travelo-process .process.first {
+        .BookeTickets-process .process.first {
             top: 14.6446%;
             right: 85.3554%;
             margin-left: 0;
             text-align: right;
         }
 
-            .travelo-process .process.first .details {
+            .BookeTickets-process .process.first .details {
                 padding-right: 8%;
                 padding-left: 0;
             }
 
-        .travelo-process .process.second {
+        .BookeTickets-process .process.second {
             top: 14.6446%;
             left: 85.3554%;
             margin-right: 0;
             text-align: left;
         }
 
-            .travelo-process .process.second .details {
+            .BookeTickets-process .process.second .details {
                 padding-left: 8%;
                 padding-right: 0;
             }
 
-        .travelo-process .process.third {
+        .BookeTickets-process .process.third {
             top: 85.3554%;
             left: 85.3554%;
             margin-right: 0;
             text-align: left;
         }
 
-            .travelo-process .process.third .details {
+            .BookeTickets-process .process.third .details {
                 padding-left: 8%;
                 padding-right: 0;
             }
 
-        .travelo-process .process.forth {
+        .BookeTickets-process .process.forth {
             top: 85.3554%;
             right: 85.3554%;
             margin-left: 0;
             text-align: right;
         }
 
-            .travelo-process .process.forth .details {
+            .BookeTickets-process .process.forth .details {
                 padding-right: 8%;
                 padding-left: 0;
             }
@@ -12872,7 +12873,7 @@ button.ui-button::-moz-focus-inner {
     transition: opacity 0.25s ease-in;
 }
 
-.investor-list .travelo-box {
+.investor-list .BookeTickets-box {
     height: 100px;
     display: table;
     width: 100%;
@@ -12880,14 +12881,14 @@ button.ui-button::-moz-focus-inner {
     padding: 0 10px;
 }
 
-    .investor-list .travelo-box > a {
+    .investor-list .BookeTickets-box > a {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
         overflow: hidden;
     }
 
-        .investor-list .travelo-box > a:hover > img {
+        .investor-list .BookeTickets-box > a:hover > img {
             -webkit-filter: none;
             filter: none;
             -o-filter: none;
@@ -12926,7 +12927,7 @@ button.ui-button::-moz-focus-inner {
     }
 
         .service-page .services article > i {
-            background: #01b7f2;
+            background: #3d98d3;
             -moz-transition: all 0.4s ease-in;
             -o-transition: all 0.4s ease-in;
             -webkit-transition: all 0.4s ease-in;
@@ -12936,9 +12937,9 @@ button.ui-button::-moz-focus-inner {
         }
 
         .service-page .services article:hover > i {
-            box-shadow: 0 0 0 4px #01b7f2;
+            box-shadow: 0 0 0 4px #3d98d3;
             background: #fff;
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
             .service-page .services article:hover > i:before {
@@ -12987,7 +12988,7 @@ button.ui-button::-moz-focus-inner {
     }
 
     .items-container .box:hover .details {
-        background: #01b7f2;
+        background: #3d98d3;
     }
 
         .items-container .box:hover .details .box-title {
@@ -13014,7 +13015,7 @@ button.ui-button::-moz-focus-inner {
     }
 
         .filters-container ul.categories-filter li.active:before {
-            background: #01b7f2;
+            background: #3d98d3;
             color: #fff;
         }
 
@@ -13023,7 +13024,7 @@ button.ui-button::-moz-focus-inner {
         }
 
             .filters-container ul.categories-filter li.active a small {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
 .faqs .search-questions {
@@ -13097,7 +13098,7 @@ button.ui-button::-moz-focus-inner {
     }
 
         .faqs.style1 .filters-option li.active a {
-            color: #01b7f2;
+            color: #3d98d3;
         }
 
     .faqs.style1 .filters-option li:last-child {
@@ -13130,11 +13131,11 @@ button.ui-button::-moz-focus-inner {
             padding-right: 20px;
         }
 
-.travelo-google-map {
+.BookeTickets-google-map {
     height: 255px;
 }
 
-    .travelo-google-map.full-box {
+    .BookeTickets-google-map.full-box {
         height: 400px;
     }
 
@@ -13143,21 +13144,21 @@ button.ui-button::-moz-focus-inner {
     margin-bottom: 3px;
 }
 
-.travelo-policies.style1 ul.tabs {
+.BookeTickets-policies.style1 ul.tabs {
     border-bottom: none;
 }
 
-.travelo-policies.style1 hr {
+.BookeTickets-policies.style1 hr {
     margin: 20px -20px;
 }
 
-.travelo-policies .policy {
+.BookeTickets-policies .policy {
     padding: 0 10px;
     margin: 40px 0;
 }
 
 .sitemap .column {
-    border: 1px solid #01b7f2;
+    border: 1px solid #3d98d3;
     border-left: none;
     position: relative;
     margin-bottom: 40px;
@@ -13179,7 +13180,7 @@ button.ui-button::-moz-focus-inner {
     .sitemap .column.sitemap-columns-2 > ul {
         width: 48%;
         float: left;
-        border-right: 1px solid #01b7f2;
+        border-right: 1px solid #3d98d3;
     }
 
         .sitemap .column.sitemap-columns-2 > ul:last-child {
@@ -13246,7 +13247,7 @@ button.ui-button::-moz-focus-inner {
     font-weight: 100;
     font-size: 25em;
     text-align: center;
-    color: #01b7f2;
+    color: #3d98d3;
     line-height: 1.0833em;
 }
 
@@ -13434,7 +13435,7 @@ button.ui-button::-moz-focus-inner {
 
         .coming-soon-page .clock li span {
             display: block;
-            border: 2px solid #01b7f2;
+            border: 2px solid #3d98d3;
             font-family: "Roboto";
             font-weight: 300;
             font-size: 6.6667em;
@@ -13445,7 +13446,7 @@ button.ui-button::-moz-focus-inner {
 
         .coming-soon-page .clock li.sep {
             font-size: 5.5em;
-            color: #01b7f2;
+            color: #3d98d3;
             font-weight: 300;
             padding: 0 0 38px 0;
             width: 4%;
@@ -13482,12 +13483,12 @@ button.ui-button::-moz-focus-inner {
 
 .coming-soon-page .email-notify input.input-text {
     background: #1c2733;
-    border: 1px solid #01b7f2;
+    border: 1px solid #3d98d3;
     color: #7692b4;
 }
 
 .coming-soon-page .email-notify .icon {
-    background: #01b7f2;
+    background: #3d98d3;
     color: #fff;
 }
 
@@ -13779,7 +13780,7 @@ button.ui-button::-moz-focus-inner {
             -moz-border-radius: 6px 6px 6px 6px;
             -ms-border-radius: 6px 6px 6px 6px;
             border-radius: 6px 6px 6px 6px;
-            background: #01b7f2;
+            background: #3d98d3;
         }
 
     .loading-page.style2 {
@@ -13821,7 +13822,7 @@ button.ui-button::-moz-focus-inner {
             top: 7px;
             height: 50px;
             line-height: 50px;
-            color: #01b7f2;
+            color: #3d98d3;
             font-weight: 900;
             font-size: 2em;
             letter-spacing: -0.02em;
@@ -13928,7 +13929,7 @@ button.ui-button::-moz-focus-inner {
 
     .soap-login-page.style1 .login-form .input-text {
         background: #1d2835;
-        border: 1px solid #01b7f2;
+        border: 1px solid #3d98d3;
         color: #708bac;
     }
 
@@ -13938,7 +13939,7 @@ button.ui-button::-moz-focus-inner {
     }
 
         .soap-login-page.style1 .login-form .checkbox:before {
-            border-color: #01b7f2;
+            border-color: #3d98d3;
         }
 
         .soap-login-page.style1 .login-form .checkbox.checked:before {
@@ -14202,7 +14203,7 @@ button.ui-button::-moz-focus-inner {
         }
 
             .sidebar .widget-queries li a:hover i {
-                color: #01b7f2;
+                color: #3d98d3;
             }
 
     .sidebar .widget-queries li i {
@@ -14317,7 +14318,7 @@ button.ui-button::-moz-focus-inner {
 
             .travel-story-container .travel-story-meta .travel-miles i {
                 font-size: 1.8333em;
-                color: #01b7f2;
+                color: #3d98d3;
                 margin-right: 8px;
                 float: left;
             }
@@ -14416,7 +14417,7 @@ button.ui-button::-moz-focus-inner {
     }
 
     .suggested-places ul.check-square li:hover .box-title, .suggested-places ul.check-square li.active .box-title {
-        color: #01b7f2;
+        color: #3d98d3;
     }
 
 .travel-ideas .idea-title .index {
@@ -14472,7 +14473,7 @@ span.from_date, span.to_date, .flight-class {
 }
 
 span.from_de, span.to_de {
-    color: #01B7F2;
+    color: #3d98d3;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 13px;
@@ -14497,7 +14498,7 @@ ul.swap-tiles.clearfix.block-sm.modify-search li {
     }
 
         ul.swap-tiles.clearfix.block-sm.modify-search li a:hover {
-            background: #01B7F2;
+            background: #3d98d3;
             color: #fff;
         }
 
@@ -14516,7 +14517,7 @@ ul.swap-tiles.clearfix.block-sm.modify-search li {
     padding-left: 10px;
     padding-right: 10px;
     color: #FFF;
-    background-color: #01B7F2;
+    background-color: #3d98d3;
 }
 
 .single-segment {

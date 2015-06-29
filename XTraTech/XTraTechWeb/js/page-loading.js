@@ -1,5 +1,5 @@
 /*
- * Title:   Travelo | Responsive HTML5 Travel Template - Page Loading Js
+ * Title:   BookeTickets | Responsive HTML5 Travel Template - Page Loading Js
  * Author:  http://themeforest.net/user/soaptheme
  */
 
@@ -23,7 +23,7 @@
                                                  '<div class="loading-page-wrapper">' +
                                                      '<div class="container">' +
                                                              '<h1 class="logo block">' +
-                                                                 '<a title="Travelo" href="#">' +
+                                                                 '<a title="BookeTickets" href="#">' +
                                                                      '<img alt="" src="images/logo2.png">' +
                                                                  '</a>' +
                                                              '</h1>' +

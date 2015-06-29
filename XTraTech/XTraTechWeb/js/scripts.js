@@ -2,7 +2,41 @@
 
 tjq(document).ready(function() {
     // UI Form Element
+    tjq('.cloned').fadeOut(0)
+    tjq('.oneway').click(function () {
+        if (tjq(this).is(':checked')) {
 
+            tjq('.cloned').fadeOut(0);
+            tjq('.toggler_one').fadeOut('slow');
+
+        }
+
+
+    })
+
+
+    tjq('.return').click(function () {
+        if (tjq(this).is(':checked')) {
+            tjq('.cloned').fadeOut(0);
+            tjq('.toggler_one').fadeIn('slow');
+
+        }
+
+
+    });
+
+
+
+    tjq('.multi').click(function () {
+        if (tjq(this).is(':checked')) {
+
+
+            tjq('.cloned').fadeIn(0);
+            tjq('.toggler_one').fadeOut(0);
+        }
+
+
+    });
     //$('.oneway').click(function () {
     //    $('#JourneyType').val("One way")
 

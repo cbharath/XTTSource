@@ -1,0 +1,119 @@
+﻿@model XTraTechWeb.Models.clientmodel
+@{
+    ViewBag.Title = "ViewClientDetails";
+}
+
+<section id="content">
+    <div class="container flight-detail-page">
+        <div class="row">
+            <div id="main" class="col-md-12">
+                <div class="booking-section BookeTickets-box">
+                    <div class="person-information">
+                        <h2>Client Details</h2>
+                        <hr />
+                        @if (string.IsNullOrEmpty(Model.Client.ZIP))
+                        {
+                            <div class="row">
+                                <div class="col-sms-12 col-md-12">
+                                    <div class="alert alert-notice">
+                                        This client profile is not complete. Please  @Html.ActionLink(" CLICK HERE ", "Index", "Registration", new { ClientId = ViewBag.ClientId }, new { @class = "skin-color" }) to complete client profile details!..
+                                        <span class="close"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <dl class="term-description">
+                                        <dt>Client Name</dt>
+                                        <dd>@Model.Client.FirstName @Model.Client.LastName</dd>
+                                        <dt>Member Of</dt>
+                                        <dd>@Model.Client.MemberOf</dd>
+                                        <dt>Country</dt>
+                                        <dd>@Model.Client.Country</dd>
+                                        <dt>City</dt>
+                                        <dd>@Model.Client.City</dd>
+                                        <dt>State</dt>
+                                        <dd>@Model.Client.State</dd>
+                                        <dt>ZIP</dt>
+                                        <dd>@Model.Client.ZIP</dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-6">
+                                    <dl class="term-description">
+                                        <dt>Company Name</dt>
+                                        <dd>@Model.Client.CompanyName</dd>
+                                        <dt>Email</dt>
+                                        <dd>@Model.Client.Email</dd>
+                                        <dt>Phone</dt>
+                                        <dd>@Model.Client.PhoneNumber</dd>
+                                        <dt>Joined On</dt>
+                                        <dd>@Model.Client.CreatedOn</dd>
+                                        <dt>Address1</dt>
+                                        <dd>@Model.Client.Address1</dd>
+                                        <dt>Address2</dt>
+                                        <dd>@Model.Client.Address2</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <h4>Email Credentials</h4>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <dl class="term-description">
+                                        <dt>Use Default SMTP</dt>
+                                        <dd>@Model.Client.UseDefaultSMTP</dd>
+                                        <dt>SMTP Address</dt>
+                                        <dd>@Model.Client.SMTPAddress</dd>
+                                        <dt>Port Number</dt>
+                                        <dd>@Model.Client.PortNumber</dd>
+                                    </dl>
+                                </div>
+                                <div class="col-md-6">
+                                    <dl class="term-description">
+                                        <dt>Enable SSL</dt>
+                                        <dd>@Model.Client.EnableSSL</dd>
+                                        <dt>From Email</dt>
+                                        <dd>@Model.Client.FromEmail</dd>
+                                        <dt>Email Password</dt>
+                                        <dd>@Model.Client.EmailPassword</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <h4>Staffs List</h4>
+                            <hr />
+                            <table class="table table-bordered table-condensed" align="center">
+                                <thead>
+                                    <tr class="info">
+                                        <th>Staff ID</th>
+                                        <th>Name</th>
+                                        <th>User ID</th>
+                                        <th>Email ID</th>
+                                        <th>Phone Number</th>
+                                        <th>Created On</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0, j = 1; i < Model.Client.Staffs.Count; i++, j++)
+                                    {
+                                        <tr>
+                                            <td>@Model.Client.Staffs[i].StaffID</td>
+                                            <td>@Model.Client.Staffs[i].FirstName @Model.Client.Staffs[i].LastName</td>
+                                            <td>@Model.Client.Staffs[i].UserName</td>
+                                            <td>@Model.Client.Staffs[i].Email</td>
+                                            <td>@Model.Client.Staffs[i].PhoneNumber</td>
+                                            <td>@Model.Client.Staffs[i].CreatedOn</td>
+                                            
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

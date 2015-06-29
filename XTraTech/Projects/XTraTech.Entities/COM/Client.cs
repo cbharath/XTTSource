@@ -97,29 +97,29 @@ namespace XTraTech.Entities.COM
 				}.ToArray());
                 for (int index = 0; index < dataTable.Rows.Count; index++)
                 {
-                    this.ClintID = Convert.ToInt32(dataTable.Rows[index]["ClintID"].ToString());
-                    this.CompanyName = dataTable.Rows[index]["CompanyName"].ToString();
-                    this.MemberOf = dataTable.Rows[index]["MemberOf"].ToString();
-                    this.Country = dataTable.Rows[index]["Country"].ToString();
-                    this.City = dataTable.Rows[index]["City"].ToString();
-                    this.State = dataTable.Rows[index]["State"].ToString();
-                    this.ZIP = dataTable.Rows[index]["ZIP"].ToString();
-                    this.Address1 = dataTable.Rows[index]["Address1"].ToString();
-                    this.Address2 = dataTable.Rows[index]["Address2"].ToString();
-                    this.FirstName = dataTable.Rows[index]["FirstName"].ToString();
-                    this.LastName = dataTable.Rows[index]["LastName"].ToString();
-                    this.Email = dataTable.Rows[index]["Email"].ToString();
-                    this.PhoneNumber = dataTable.Rows[index]["PhoneNumber"].ToString();
+                    this.ClintID = dataTable.Rows[index]["ClientID"] != null ? Convert.ToInt32(dataTable.Rows[index]["ClientID"].ToString()) : 0;
+                    this.CompanyName = dataTable.Rows[index]["CompanyName"] != null ? dataTable.Rows[index]["CompanyName"].ToString() : string.Empty;
+                    this.MemberOf = dataTable.Rows[index]["MemberOf"] != null ? dataTable.Rows[index]["MemberOf"].ToString() : string.Empty;
+                    this.Country = dataTable.Rows[index]["Country"] != null ? dataTable.Rows[index]["Country"].ToString() : string.Empty;
+                    this.City = dataTable.Rows[index]["City"] != null ? dataTable.Rows[index]["City"].ToString() : string.Empty;
+                    this.State = dataTable.Rows[index]["State"] != null ? dataTable.Rows[index]["State"].ToString() : string.Empty;
+                    this.ZIP = dataTable.Rows[index]["ZIP"] != null ? dataTable.Rows[index]["ZIP"].ToString() : string.Empty;
+                    this.Address1 = dataTable.Rows[index]["Address1"] != null ? dataTable.Rows[index]["Address1"].ToString() : string.Empty;
+                    this.Address2 = dataTable.Rows[index]["Address2"] != null ? dataTable.Rows[index]["Address2"].ToString() : string.Empty;
+                    this.FirstName = dataTable.Rows[index]["FirstName"] != null ? dataTable.Rows[index]["FirstName"].ToString() : string.Empty;
+                    this.LastName = dataTable.Rows[index]["LastName"] != null ? dataTable.Rows[index]["LastName"].ToString() : string.Empty;
+                    this.Email = dataTable.Rows[index]["Email"] != null ? dataTable.Rows[index]["Email"].ToString() : string.Empty;
+                    this.PhoneNumber = dataTable.Rows[index]["PhoneNumber"] != null ? dataTable.Rows[index]["PhoneNumber"].ToString() : string.Empty;
 
-                    this.PhoneNumber = dataTable.Rows[index]["UseDefaultSMTP"].ToString();
-                    this.PhoneNumber = dataTable.Rows[index]["SMTPAddress"].ToString();
-                    this.PhoneNumber = dataTable.Rows[index]["PortNumber"].ToString();
-                    this.PhoneNumber = dataTable.Rows[index]["EnableSSL"].ToString();
-                    this.PhoneNumber = dataTable.Rows[index]["FromEmail"].ToString();
-                    this.PhoneNumber = dataTable.Rows[index]["EmailPassword"].ToString();
+                    this.UseDefaultSMTP = dataTable.Rows[index]["UseDefaultSMTP"] != null ? Convert.ToBoolean(dataTable.Rows[index]["UseDefaultSMTP"]) : true;
+                    this.SMTPAddress = dataTable.Rows[index]["SMTPAddress"] != null ? dataTable.Rows[index]["SMTPAddress"].ToString() : string.Empty;
+                    this.PortNumber = dataTable.Rows[index]["PortNumber"] != null ? dataTable.Rows[index]["PortNumber"].ToString() : string.Empty;
+                    this.EnableSSL = dataTable.Rows[index]["EnableSSL"] != null ? Convert.ToBoolean(dataTable.Rows[index]["EnableSSL"]) : false;
+                    this.FromEmail = dataTable.Rows[index]["FromEmail"] != null ? dataTable.Rows[index]["FromEmail"].ToString() : string.Empty;
+                    this.EmailPassword = dataTable.Rows[index]["EmailPassword"] != null ? dataTable.Rows[index]["EmailPassword"].ToString() : string.Empty;
 
-                    this.CreatedOn = Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]);
-                    this.ModefiedOn = Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]);
+                    this.CreatedOn = dataTable.Rows[index]["ClientID"] != null ? Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]) : DateTime.Now;
+                    this.ModefiedOn = dataTable.Rows[index]["ClientID"] != null ? Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]) : DateTime.Now;
                     if (doLoadStaff)
                     {
                         Staff staff = new Staff();
@@ -130,6 +130,50 @@ namespace XTraTech.Entities.COM
             catch (Exception)
             {
             }
+        }
+
+        public List<Client> Load()
+        {
+            DataTable dataTable = new DataTable();
+            List<Client> clients = new List<Client>();
+            try
+            {
+                dataTable = SqlHelper.FillDataTableSP("GetFullClient");
+                for (int index = 0; index < dataTable.Rows.Count; index++)
+                {
+                    Client singleClient = new Client();
+                    singleClient.ClintID = dataTable.Rows[index]["ClientID"] != null ? Convert.ToInt32(dataTable.Rows[index]["ClientID"].ToString()) : 0;
+                    singleClient.CompanyName = dataTable.Rows[index]["CompanyName"] != null ? dataTable.Rows[index]["CompanyName"].ToString() : string.Empty;
+                    singleClient.MemberOf = dataTable.Rows[index]["MemberOf"] != null ? dataTable.Rows[index]["MemberOf"].ToString() : string.Empty;
+                    singleClient.Country = dataTable.Rows[index]["Country"] != null ? dataTable.Rows[index]["Country"].ToString() : string.Empty;
+                    singleClient.City = dataTable.Rows[index]["City"] != null ? dataTable.Rows[index]["City"].ToString() : string.Empty;
+                    singleClient.State = dataTable.Rows[index]["State"] != null ? dataTable.Rows[index]["State"].ToString() : string.Empty;
+                    singleClient.ZIP = dataTable.Rows[index]["ZIP"] != null ? dataTable.Rows[index]["ZIP"].ToString() : string.Empty;
+                    singleClient.Address1 = dataTable.Rows[index]["Address1"] != null ? dataTable.Rows[index]["Address1"].ToString() : string.Empty;
+                    singleClient.Address2 = dataTable.Rows[index]["Address2"] != null ? dataTable.Rows[index]["Address2"].ToString() : string.Empty;
+                    singleClient.FirstName = dataTable.Rows[index]["FirstName"] != null ? dataTable.Rows[index]["FirstName"].ToString() : string.Empty;
+                    singleClient.LastName = dataTable.Rows[index]["LastName"] != null ? dataTable.Rows[index]["LastName"].ToString() : string.Empty;
+                    singleClient.Email = dataTable.Rows[index]["Email"] != null ? dataTable.Rows[index]["Email"].ToString() : string.Empty;
+                    singleClient.PhoneNumber = dataTable.Rows[index]["PhoneNumber"] != null ? dataTable.Rows[index]["PhoneNumber"].ToString() : string.Empty;
+
+                    singleClient.UseDefaultSMTP = dataTable.Rows[index]["UseDefaultSMTP"] != null ? Convert.ToBoolean(dataTable.Rows[index]["UseDefaultSMTP"]) : true;
+                    singleClient.SMTPAddress = dataTable.Rows[index]["SMTPAddress"] != null ? dataTable.Rows[index]["SMTPAddress"].ToString() : string.Empty;
+                    singleClient.PortNumber = dataTable.Rows[index]["PortNumber"] != null ? dataTable.Rows[index]["PortNumber"].ToString() : string.Empty;
+                    singleClient.EnableSSL = dataTable.Rows[index]["EnableSSL"] != null ? Convert.ToBoolean(dataTable.Rows[index]["EnableSSL"]) : false;
+                    singleClient.FromEmail = dataTable.Rows[index]["FromEmail"] != null ? dataTable.Rows[index]["FromEmail"].ToString() : string.Empty;
+                    singleClient.EmailPassword = dataTable.Rows[index]["EmailPassword"] != null ? dataTable.Rows[index]["EmailPassword"].ToString() : string.Empty;
+
+                    singleClient.CreatedOn = dataTable.Rows[index]["CreatedOn"] != null ? Convert.ToDateTime(dataTable.Rows[index]["CreatedOn"]) : DateTime.Now;
+                    singleClient.ModefiedOn = dataTable.Rows[index]["ModefiedOn"] != null ? Convert.ToDateTime(dataTable.Rows[index]["ModefiedOn"]) : DateTime.Now;
+
+                    clients.Add(singleClient);
+                }
+                
+            }
+            catch (Exception)
+            {
+            }
+            return clients;
         }
     }
 }
