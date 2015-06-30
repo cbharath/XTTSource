@@ -1,0 +1,423 @@
+﻿@model XTraTech.Models.SearchModel
+@{
+    ViewBag.Title = "Search";
+}
+<script>
+    $(function () {
+        $("#accordion").accordion();
+
+        var tabs = $("#tabs").tabs();
+        tabs.find(".ui-tabs-nav").sortable({
+            axis: "x",
+            stop: function () {
+                tabs.tabs("refresh");
+            }
+        });
+    });
+</script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", { packages: ["corechart"] });
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004', 1000, 400],
+          ['2005', 1170, 460],
+          ['2006', 660, 1120],
+          ['2007', 1030, 540],
+        ]);
+
+        var options = {
+            title: 'Company Performance',
+            hAxis: { title: 'Year', titleTextStyle: { color: 'red' } }
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        // Create the data table.
+        var data1 = new google.visualization.DataTable();
+        data1.addColumn('string', 'Topping');
+        data1.addColumn('number', 'Slices');
+        data1.addRows([
+          ['Booked', 3],
+          ['Ticketed', 1],
+          ['NotBooked', 1],
+          ['Pending', 1],
+          ['Cancelled', 2]
+        ]);
+
+        // Set chart options
+        var options1 = {
+            'title': 'Booking Statisticks'
+        };
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart1 = new google.visualization.PieChart(document.getElementById('chart_div1'));
+        chart1.draw(data1, options1);
+
+    }
+</script>
+
+<style type="text/css">
+    .dashboard {
+        width: auto;
+        border: 1px solid rgb(205, 224, 241);
+        background: #f2f7fb;
+        position: relative;
+        float: right;
+        margin-right: 10px;
+        text-transform: capitalize;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    }
+
+    .dashtitle {
+        background: #cde0f1;
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        margin: 3px;
+    }
+
+    .dashdonutcharts {
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        float: left;
+    }
+
+    .dashdonutchart {
+        width: 100%;
+        height: auto;
+        position: relative;
+        float: left;
+    }
+
+    .dashbarcharts {
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        float: left;
+    }
+
+    .dashbarchart {
+        width: 100%;
+        height: auto;
+        position: relative;
+        float: left;
+    }
+</style>
+<div class="wrapper col2" style="margin:20px 10px 20px 0;" >
+    @if (!ViewBag.EnableNewDesign)
+    {
+        <script src="~/Scripts/SearchRq/SearchRq.js" type="text/javascript"></script>
+        <div class="wrap">
+            <h3 style="margin-top:5px;">BOOK AIRLINE TICKETS HERE</h3>
+            @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "search_form" }))
+            {
+                <div class="radios">
+                    @Html.RadioButtonFor(m => m.JourneyType, "Return", new { @class = "return", @name = "a", @checked = "checked" })
+                    <label>Round Trip</label>
+                    @Html.RadioButtonFor(m => m.JourneyType, "OneWay", new { @class = "oneway", @name = "a" })
+                    <label>One Way</label>
+                    @Html.RadioButtonFor(m => m.JourneyType, "MultiDestination", new { @class = "multi", @name = "a" })
+                    <label>Open Jaw</label>
+                </div>
+                <div class="fields">
+                    <div class="add_aln mcloned" style="display: block;">
+                        <div class="add_aln cloned" style="display: block;">
+                            <label>From</label>
+                            @Html.TextBoxFor(m => m.CityPares[3].Origin, new { @class = "origin" })
+                        </div>
+                        <div class="add_aln cloned" style="display: block;">
+                            <label>Date</label>
+                            @Html.TextBoxFor(m => m.CityPares[3].DepartureDateTime, new { @class = "depart_date" })
+                            <select class="time" style="display: none;">
+                                <option>1 AM</option>
+                            </select>
+                        </div>
+                        <div class="add_aln cloned" style="display: block;">
+                            <label>To</label>
+                            @Html.TextBoxFor(m => m.CityPares[3].Destination, new { @class = "destination" })
+                        </div>
+                    </div>
+                    <div style="float:right; position: relative; width: 40%;"></div>
+                    <div class="add_aln clone">
+                        <label>From</label>
+                        @Html.TextBoxFor(m => m.CityPares[0].Origin, new { @class = "origin" })
+                    </div>
+                    <div class="add_aln clone">
+                        <label>Date</label>
+                        @Html.TextBoxFor(m => m.CityPares[0].DepartureDateTime, new { @class = "depart_date" })
+                        <select class="time" style="display: none;">
+                            <option>1 AM</option>
+                        </select>
+                    </div>
+                    <div class="add_aln clone">
+                        <label>To</label>
+                        @Html.TextBoxFor(m => m.CityPares[0].Destination, new { @class = "destination" })
+                    </div>
+                    <div class="add_aln clone">
+                        <label class="toggler_one">Date</label>
+                        @Html.TextBoxFor(m => m.CityPares[0].ReturnDateTime, new { @class = "return_date toggler_one" })
+                        <select class="time" style="display: none;">
+                            <option>1 AM</option>
+                        </select>
+                    </div>
+
+                    <div style="float:left; position: relative; width:auto; padding: 10px 0px 10px 0px;">
+                        <div class="add_aln dpclssrv">
+                            <label>Class of Service</label>
+                            @Html.DropDownListFor(m => m.CabinClass, Model.CabinClassList, new { @class = "class_s" })
+                        </div>
+                        <div style="float:left; position: relative; width:auto; padding: 5px 0 0 0;">
+                            <div class="add_aln dpnopx">
+                                <label>Adult</label>
+                                @Html.DropDownListFor(m => m.AdultCount, Model.AdultList, new { @class = "adlut" })
+                                <em>(12 years +)</em>
+                            </div>
+                            <div class="add_aln dpnopx">
+                                <label>Child</label>
+                                @Html.DropDownListFor(m => m.ChildCount, Model.ChildList, new { @class = "child" })
+                                <em>(2 - 11 years)</em>
+                            </div>
+                            <div class="add_aln dpnopx">
+                                <label class="sp_rght2">Infant</label>
+                                @Html.DropDownListFor(m => m.InfantCount, Model.InfantList, new { @class = "infant" })
+                                <em>(< 2 years)</em>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <input type="submit" class="submit_btn" value="Search" onclick="return loader()" />
+                        </div>
+                    </div>
+                </div>
+                    <!--ending fields-->
+            }
+
+            <div class="dashboard" align="center">
+                <div class="dashdonutcharts">
+                    <div class="dashtitle">Top Three Carriers</div>
+                    <div class="dashdonutchart"><img src="~/images/donut.png" width="267" height="117" /></div>
+                </div>
+
+                <div class="dashbarcharts">
+                    <div class="dashtitle">Top Destination / City Pair</div>
+                    <div class="dashbarchart">
+                        <img src="~/images/vertbar.png" width="267" height="117" />
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    }
+
+
+</div>
+@*<div class="wrapper col3">
+        <div>
+            <div style="width: auto;position:relative;float:left;margin:5px;">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        Booking Performance
+                    </div>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="home"><div id="chart_div"></div></div>
+                        <div role="tabpanel" class="tab-pane" id="profile"><div id="chart_div1"></div></div>
+                        <div role="tabpanel" class="tab-pane" id="messages">TBD</div>
+                        <div role="tabpanel" class="tab-pane" id="settings">TBD</div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: auto;position:relative;float:left;margin:5px;">
+                <div class="panel1 panel-primary">
+                    <div class="panel-heading">
+                        Booking Performance
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                            suscipit faucibus urna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+@*<div class="wrapper col4" style="background-color:#ddd;">
+        <div style="width:58%; padding: 5px; position: relative; float: left;">
+            <div id="accordion">
+                <h3>Column Chart</h3>
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Booked</a></li>
+                        <li><a href="#tabs-2">Proin dolor</a></li>
+                        <li><a href="#tabs-3">Aenean lacinia</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                        <div id="chart_div" style="width: 700px; height: 200px;"></div>
+                        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                    </div>
+                    <div id="tabs-2">
+                        <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+                    </div>
+                    <div id="tabs-3">
+                        <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                        <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+                    </div>
+                </div>
+                <h3>Donut Chart</h3>
+                <div>
+                    <p>
+                        Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                        purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                        velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                        suscipit faucibus urna.
+                    </p>
+                </div>
+                <h3>Section 3</h3>
+                <div>
+                    <p>
+                        Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                        Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                        ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                        lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                    </p>
+                    <ul>
+                        <li>List item one</li>
+                        <li>List item two</li>
+                        <li>List item three</li>
+                    </ul>
+                </div>
+                <h3>Section 4</h3>
+                <div>
+                    <p>
+                        Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                        faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                        mauris vel est.
+                    </p>
+                    <p>
+                        Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                        inceptos himenaeos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="width:40%; padding: 5px; border: 1px solid white; position: relative; float: left;">
+            <div id="chart_div1"></div>
+        </div>
+    </div>*@
+@*<div class="wrapper col4">
+        <div id="services">
+            <ul>
+                <li>
+                    <div class="fl_left"><img src="../../images/lastmindeal.gif" alt="Last Minute Deals" /></div>
+                    <div class="fl_right">
+                        <h2>last minute deals</h2>
+                        <p>Nullamlacus dui ipsum cons eque loborttis non euis que morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
+                        <p class="readmore"><a href="#">more &raquo;</a></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="fl_left"><img src="../../images/spcloffer.gif" alt="Special Offers" height="150" /></div>
+                    <div class="fl_right">
+                        <h2>special offers</h2>
+                        <p>Nullamlacus dui ipsum cons eque loborttis non euis que morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
+                        <p class="readmore"><a href="#">more &raquo;</a></p>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="fl_left"><img src="../../images/custsrvc.gif" alt="Customer Service" /></div>
+                    <div class="fl_right">
+                        <h2>customer service</h2>
+                        <p>Nullamlacus dui ipsum cons eque loborttis non euis que morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque.</p>
+                        <p class="readmore"><a href="#">more &raquo;</a></p>
+                    </div>
+                </li>
+            </ul>
+            <br class="clear" />
+        </div>
+    </div>
+    <br class="clear" />
+    <div class="wrapper col6">
+        <div id="footer">
+            <div id="newsletter">
+                <h2>Special Offers!</h2>
+                <p>Subscribe for specials deals here...</p>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Client Login</legend>
+                        <div class="fl_left">
+                            <input type="text" value="Name&hellip;" onfocus="this.value=(this.value=='Name&hellip;')? '' : this.value ;" />
+                            <input type="text" value="Email&hellip;" onfocus="this.value=(this.value=='Email&hellip;')? '' : this.value ;" />
+                        </div>
+                        <div class="fl_right">
+                            <input type="submit" name="news_go" id="news_go" value="GET!" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="footbox">
+                <h2>Services Offered</h2>
+                <ul>
+                    <li><a href="#">Airline Tickets</a></li>
+                    <li><a href="#">Vacation Packages</a></li>
+                    <li><a href="#">Hotel Reservations</a></li>
+                    <li><a href="#">Bus & Train Tickets</a></li>
+                    <li class="last"><a href="#">Mobile Recharges</a></li>
+                </ul>
+            </div>
+            <div class="footbox">
+                <h2>Popular Destinations</h2>
+                <ul>
+                    <li><a href="#">Travel to London</a></li>
+                    <li><a href="#">Travel to New York</a></li>
+                    <li><a href="#">Travel to Las Vegas</a></li>
+                    <li><a href="#">Travel to Singapore</a></li>
+                    <li class="last"><a href="#">Travel to Bangkok</a></li>
+                </ul>
+            </div>
+            <div class="footbox">
+                <h2>Travel Resources</h2>
+                <ul>
+                    <li><a href="#">Flight Tracker</a></li>
+                    <li><a href="#">World Time Zones</a></li>
+                    <li><a href="#">Weather Forcast</a></li>
+                    <li><a href="#">Currency Converter</a></li>
+                    <li class="last"><a href="#">Map an address</a></li>
+                </ul>
+            </div>
+            <div class="footbox">
+                <h2>Other links</h2>
+                <ul>
+                    <li><a href="#">Online Check-in</a></li>
+                    <li><a href="#">Print Itinerary</a></li>
+                    <li><a href="#">Refer a Traveler</a></li>
+                    <li><a href="#">Worldwide News</a></li>
+                    <li class="last"><a href="#">Travel Trend</a></li>
+                </ul>
+            </div>
+
+            <br class="clear" />
+        </div>
+    </div>*@

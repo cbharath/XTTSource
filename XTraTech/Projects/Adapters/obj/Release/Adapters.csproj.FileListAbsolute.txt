@@ -7,3 +7,4 @@ E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\Adapters\bin\Release\Adapt
 E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\Adapters\bin\Release\Adapters.pdb
 E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\Adapters\obj\Release\Adapters.dll
 E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\Adapters\obj\Release\Adapters.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\Adapters\obj\Release\Adapters.csprojResolveAssemblyReference.cache

@@ -1,0 +1,35 @@
+﻿@using XTraTech.Models
+@model XTraTech.Models.SearchResponse
+@{
+    ViewBag.Title = "SearchResponse";
+}
+<div class="wrapper col3s">
+    <div id="intro">
+        <script src="~/Scripts/SearchRq/SearchRs.js" type="text/javascript"></script>
+        <div class="rwrap">
+            <div class="results_holder">
+                @using (Html.BeginForm())
+                {
+                    <div class="submission">
+                        <p class="pge_head">
+                            Travel Itinerary</p>
+                    </div>
+                    int i = 0;
+                    if (Model.SearchResults != null)
+                    {
+                        foreach (var PricedItinerary in Model.SearchResults)
+                        {
+                            i++;
+                    @Html.Partial("~/Views/Shared/_Itinerary.cshtml", PricedItinerary)        
+                
+                        }
+                    }
+                }
+            </div>
+        </div>
+        @*<div id="draggable" class="ui-widget-content">
+            <p>
+                Drag me around</p>
+        </div>*@
+    </div>
+</div>

@@ -7,3 +7,4 @@ E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.DAL\bin\Release\X
 E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.DAL\bin\Release\XTraTech.DAL.pdb
 E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.DAL\obj\Release\XTraTech.DAL.dll
 E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.DAL\obj\Release\XTraTech.DAL.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.DAL\obj\Release\XTraTech.DAL.csprojResolveAssemblyReference.cache

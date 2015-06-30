@@ -34,3 +34,12 @@ D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Entiti
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Entities\obj\Debug\XTraTech.Entities.csprojResolveAssemblyReference.cache
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Entities\obj\Debug\XTraTech.Entities.dll
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Entities\obj\Debug\XTraTech.Entities.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\bin\Debug\XTraTech.Entities.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\bin\Debug\XTraTech.Entities.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\bin\Debug\XTraTech.DAL.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\bin\Debug\XTraTech.Helper.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\bin\Debug\XTraTech.DAL.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\bin\Debug\XTraTech.Helper.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\obj\Debug\XTraTech.Entities.csprojResolveAssemblyReference.cache
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\obj\Debug\XTraTech.Entities.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Entities\obj\Debug\XTraTech.Entities.pdb

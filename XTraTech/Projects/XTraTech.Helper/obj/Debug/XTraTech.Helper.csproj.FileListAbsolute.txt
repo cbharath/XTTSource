@@ -17,3 +17,10 @@ D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Helper
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Helper\obj\Debug\XTraTech.Helper.csprojResolveAssemblyReference.cache
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Helper\obj\Debug\XTraTech.Helper.dll
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Helper\obj\Debug\XTraTech.Helper.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\bin\Debug\XTraTech.Helper.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\bin\Debug\XTraTech.Helper.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\bin\Debug\XTraTech.DAL.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\bin\Debug\XTraTech.DAL.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\obj\Debug\XTraTech.Helper.csprojResolveAssemblyReference.cache
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\obj\Debug\XTraTech.Helper.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.Helper\obj\Debug\XTraTech.Helper.pdb

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "RegistrationSuccess";
+}
+
+<div class="wrapper col3s">
+    <div id="intro">
+        <div class="rwrap">
+            @if (ViewBag.Success)
+            {
+                <h1>Thank You... Your are Registered now.</h1>
+            }
+            else
+            {
+                <h1>There is a problem in your registration Please contact Adminstration.</h1>
+            }
+        </div>
+    </div>
+</div>
+

@@ -62,3 +62,22 @@ D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.Flight
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.FlightCore\obj\Debug\XTraTech.FlightCore.csprojResolveAssemblyReference.cache
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.FlightCore\obj\Debug\XTraTech.FlightCore.dll
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Projects\XTraTech.FlightCore\obj\Debug\XTraTech.FlightCore.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.FlightCore.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.FlightCore.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\MyFares.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\Sabre.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\Tickets.ID.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.Entities.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.Helper.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\Adapters.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.DAL.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\MyFares.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\Sabre.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\Tickets.ID.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.Entities.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.Helper.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\Adapters.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\bin\Debug\XTraTech.DAL.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\obj\Debug\XTraTech.FlightCore.csprojResolveAssemblyReference.cache
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\obj\Debug\XTraTech.FlightCore.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Projects\XTraTech.FlightCore\obj\Debug\XTraTech.FlightCore.pdb

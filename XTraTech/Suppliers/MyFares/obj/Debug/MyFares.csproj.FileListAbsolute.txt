@@ -42,3 +42,14 @@ D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Suppliers\MyFares\bin\De
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Suppliers\MyFares\obj\Debug\MyFares.csprojResolveAssemblyReference.cache
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Suppliers\MyFares\obj\Debug\MyFares.dll
 D:\Bharath BKP\Bharath\Personal\work\19NOV2014\XTraTech\Suppliers\MyFares\obj\Debug\MyFares.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\MyFares.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\MyFares.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\XTraTech.Entities.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\XTraTech.DAL.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\XTraTech.Helper.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\XTraTech.Entities.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\XTraTech.DAL.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\bin\Debug\XTraTech.Helper.pdb
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\obj\Debug\MyFares.csprojResolveAssemblyReference.cache
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\obj\Debug\MyFares.dll
+E:\Bharath\Code\DailyWork\XTTSource\XTraTech\Suppliers\MyFares\obj\Debug\MyFares.pdb

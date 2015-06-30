@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>BookeTickets.com - Ultimate enterprise for the best tariffs on flights, hotels and cars.</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @*@Styles.Render("~/Content/css")*@
+    <link href="@Url.Content("~/Content/style.css")"
+          rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/jquery-ui.css")"
+          rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/layout.css")"
+          rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/navibar.css")"
+          rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/Scripts/common.js" type="text/javascript"></script>
+    <link href="~/Content/ValidationJS/validationEngine.jquery.css" rel="stylesheet" />
+    <script src="~/Content/ValidationJS/jquery.validationEngine.js"></script>
+    <script src="~/Content/ValidationJS/jquery.validationEngine-en.js"></script>
+    @*<link href="~/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Content/bootstrap/js/bootstrap.min-Panel-Tabs.js"></script>*@
+</head>
+<body>
+    <div class="wrapper col1">
+        <div id="header">
+            <div id="logo">
+                <a href="http://www.booketickets.com"><img src="../../images/Bketixfff.png" height="22" width="101" title="BookeTickets.com" /></a>
+            </div>
+        </div>
+        <div style="position:relative; float:left;" id='betmenu'>
+            <ul>
+                @if (ViewBag.Title == "Search")
+                {
+                    <li class='active'><a href='/Search/'><span>Home</span></a></li>
+                }
+                else
+                {
+                    <li><a href='/Search/'><span>Home</span></a></li>
+                }
+                @if (ViewBag.Title == "Reservations")
+                {
+                    <li class='active'><a href='/Reservations/'><span>Manage Bookings</span></a></li>
+                }
+                else
+                {
+                    <li><a href='/Reservations/'><span>Manage Bookings</span></a></li>
+                }
+                <li><a href='#'><span>Company</span></a></li>
+                <li class='last'><a href='#'><span>Contact</span></a></li>
+            </ul>
+        </div>
+
+        <div id='betmenu' style="position:relative; float:right;">
+            <ul>
+                <li class='last'>
+                    <a href='#'><span>My Account</span></a>
+                    <ul>
+                        <li class='last'><a href='/Login/Logout'><span>Log out</span></a></li>
+                        <li class='last'><a href='#'><span>Profile</span></a></li>
+                        <li class='last'><a href='#'><span>Settings</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="wrapper col7">
+        <div id="copyright">
+            <p class="fl_left"><a href="#">BookeTickets.com</a></p>
+            <p class="fl_right">Copyright &copy; 2015 - All Rights Reserved</p>
+            <br class="clear" />
+        </div>
+    </div>
+    <a href="#" class="scrollup">
+        <img style="width: 58px;" src="../../Images/scrolltoTop.jpg" />
+    </a>
+</body>
+</html>
